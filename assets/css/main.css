@@ -137,8 +137,8 @@ a:not(.button):focus::before {
 
 .hero.is-link:not(.is-halfheight) {
     background-image: url('/assets/img/background.jpeg');
-    mask-image: url('/assets/img/cutout.svg');
-    -webkit-mask-image: url('/assets/img/cutout.svg');
+    /* mask-image: url('/assets/img/cutout.svg');
+    -webkit-mask-image: url('/assets/img/cutout.svg'); */
     mask-size: 100vw;
     -webkit-mask-size: 100vw;
     mask-repeat: no-repeat;
@@ -149,14 +149,19 @@ a:not(.button):focus::before {
 
 .hero.is-link.is-halfheight {
     background-image: url('/assets/img/background.jpeg');
-    /* mask-image: url('/assets/img/halfheight-cutout.svg'); */
-    /* -webkit-mask-image: url('/assets/img/halfheight-cutout.svg'); */
+    /* mask-image: url('/assets/img/halfheight-cutout.svg');
+    -webkit-mask-image: url('/assets/img/halfheight-cutout.svg'); */
     mask-size: 100vw;
     -webkit-mask-size: 100vw;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
     min-height: calc(100vw * calc(245 / 900));
     margin-bottom: 50px;
+}
+
+/* 调整hero区域高度 */
+.hero.is-halfheight {
+    min-height: 45vh !important;
 }
 
 body.modalpage {
@@ -254,8 +259,8 @@ footer {
     background-size: cover;
     user-select: none;
     padding: 4% 5% 4% 5%;
-    mask-image: url('/assets/img/footer-cutout.svg');
-    -webkit-mask-image: url('/assets/img/footer-cutout.svg');
+    /* mask-image: url('/assets/img/footer-cutout.svg');
+    -webkit-mask-image: url('/assets/img/footer-cutout.svg'); */
     mask-size: 100vw;
     -webkit-mask-size: 100vw;
     mask-repeat: no-repeat;
@@ -511,10 +516,11 @@ input.input.is-link.is-rounded[data-attr='username'] {
     top: 50px;
     background: var(--bg-color);
     z-index: 4;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: row;
     margin: auto;
+    margin-top: -50px;
     transition: .3s;
     position: sticky;
     position: -webkit-sticky;
@@ -585,6 +591,8 @@ input.input.is-link.is-rounded[data-attr='username'] {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    padding-bottom: 10px;
+    margin-bottom: -30px;
 }
 
 .category-title {
@@ -686,6 +694,23 @@ input.input.is-link.is-rounded[data-attr='username'] {
     .category-card h3 {
         font-size: 8px;
     }
+    
+    .hero.is-halfheight {
+        min-height: 40vh !important;
+    }
+    
+    .game-categories {
+        margin-bottom: -20px;
+    }
+    
+    .database_nav {
+        padding: 8px 15px;
+        margin-top: -35px;
+    }
+    
+    .games {
+        margin-top: -20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -740,6 +765,8 @@ input.input.is-link.is-rounded[data-attr='username'] {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: -30px;
+    padding-top: 5px;
 }
 
 .game {

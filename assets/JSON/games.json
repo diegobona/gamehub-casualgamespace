@@ -16,5 +16,54 @@
         "thumbnail": "/assets/img/logo.png",
         "url": "/assets/pages/player.html?title=GD-Demo&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
         "use": "redirect"
+    },
+    {
+        "id": 8,
+        "name": "Cyber Runner",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Cyber%20Runner&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 9,
+        "name": "Magic Quest",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Magic%20Quest&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 10,
+        "name": "Ocean Explorer",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Ocean%20Explorer&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 11,
+        "name": "Sky Fighter",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Sky%20Fighter&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 12,
+        "name": "Ninja Warrior",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Ninja%20Warrior&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 13,
+        "name": "Crystal Collector",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Crystal%20Collector&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1",
+        "use": "redirect"
+    },
+    {
+        "id": 14,
+        "name": "Robot Battle",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/player.html?title=Robot%20Battle&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
+        "use": "redirect"
     }
 ]
