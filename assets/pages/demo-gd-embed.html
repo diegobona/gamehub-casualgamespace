@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GD Embed Demo</title>
+  <style>
+    /* 固定宽高比容器（下面是 4:3，可按需改 16:9/3:2 等） */
+    .gd__aspect-ratio-box {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-top: 75%; /* 4:3 比例 = 3/4 = 0.75 -> 75% */
+    }
+    .gd__aspect-ratio-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gd__aspect-ratio-box">
+    <iframe
+      src="https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/405c00612981466cbc5d9dcef4214811/&width=510&height=900&language=en&gdpr-tracking=1&gdpr-targeting=1&gd_sdk_referrer_url=https://your-domain.example/app"
+      allowfullscreen
+      scrolling="no"
+      frameborder="0">
+    </iframe>
+  </div>
+</body>
+</html>

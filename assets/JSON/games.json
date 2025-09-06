@@ -1,0 +1,15 @@
+[
+    { "id": 1, "name": "Space Blaster", "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 2, "name": "Retro Racer",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 3, "name": "Puzzle Mania",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 4, "name": "Block Builder","thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 5, "name": "Dungeon Run",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 6, "name": "Fruit Catcher","thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    {
+        "id": 7,
+        "name": "GD 示例游戏",
+        "thumbnail": "/assets/img/logo.png",
+        "url": "/assets/pages/demo-gd-embed.html",
+        "use": "redirect"
+    }
+]
