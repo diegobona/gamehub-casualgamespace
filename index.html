@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <title>GameHub</title>
 </head>
@@ -19,10 +19,10 @@
         <div class="navbar is-link is-fixed-top">
             <div class="container">
                 <div class="navbar-brand is-dark">
-                    <a class="heroIcon" href="/app">
-                        <img src="/assets/img/logo.png" alt="Logo">
+                    <a class="heroIcon" href="#">
+                        <img src="assets/img/logo.png" alt="Logo">
                     </a>
-                    <a class="navTitle" href="/app">GameHub</a>
+                    <a class="navTitle" href="#">GameHub</a>
 
                     <span class="navbar-burger" data-target="navbarMenuHeroC">
                         <span></span>
@@ -33,7 +33,7 @@
 
                 <div id="navbarMenuHeroC" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active" href="/app">
+                        <a class="navbar-item is-active" href="#">
                             Home
                         </a>
                         <div class="navbar-item has-dropdown is-hoverable">
@@ -64,125 +64,33 @@
                     <div class="game-categories">
                         <h2 class="category-title">Game Categories</h2>
                         <div class="categories-grid">
-                            <div class="category-card" data-category="action">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-rocket"></i>
-                                </div>
-                                <h3>Action</h3>
+                            <div class="category-card" data-category="all" onclick="filterGames('all')">
+                                <div class="category-icon">🎮</div>
+                                <div class="category-name">All Games</div>
                             </div>
-                            <div class="category-card" data-category="puzzle">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-puzzle-piece"></i>
-                                </div>
-                                <h3>Puzzle</h3>
+                            <div class="category-card" data-category="Action" onclick="filterGames('Action')">
+                                <div class="category-icon">⚔️</div>
+                                <div class="category-name">Action</div>
                             </div>
-                            <div class="category-card" data-category="racing">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-car"></i>
-                                </div>
-                                <h3>Racing</h3>
+                            <div class="category-card" data-category="Puzzle" onclick="filterGames('Puzzle')">
+                                <div class="category-icon">🧩</div>
+                                <div class="category-name">Puzzle</div>
                             </div>
-                            <div class="category-card" data-category="adventure">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-map"></i>
-                                </div>
-                                <h3>Adventure</h3>
+                            <div class="category-card" data-category="Racing" onclick="filterGames('Racing')">
+                                <div class="category-icon">🏎️</div>
+                                <div class="category-name">Racing</div>
                             </div>
-                            <div class="category-card" data-category="arcade">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-gamepad"></i>
-                                </div>
-                                <h3>Arcade</h3>
+                            <div class="category-card" data-category="Adventure" onclick="filterGames('Adventure')">
+                                <div class="category-icon">🗺️</div>
+                                <div class="category-name">Adventure</div>
                             </div>
-                            <div class="category-card" data-category="strategy">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-chess"></i>
-                                </div>
-                                <h3>Strategy</h3>
+                            <div class="category-card" data-category="Arcade" onclick="filterGames('Arcade')">
+                                <div class="category-icon">🕹️</div>
+                                <div class="category-name">Arcade</div>
                             </div>
-                            <div class="category-card" data-category="sports">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-football"></i>
-                                </div>
-                                <h3>Sports</h3>
-                            </div>
-                            <div class="category-card" data-category="shooting">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-crosshairs"></i>
-                                </div>
-                                <h3>Shooting</h3>
-                            </div>
-                            <div class="category-card" data-category="rpg">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-dragon"></i>
-                                </div>
-                                <h3>RPG</h3>
-                            </div>
-                            <div class="category-card" data-category="simulation">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-city"></i>
-                                </div>
-                                <h3>Simulation</h3>
-                            </div>
-                            <div class="category-card" data-category="fighting">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-hand-fist"></i>
-                                </div>
-                                <h3>Fighting</h3>
-                            </div>
-                            <div class="category-card" data-category="horror">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-ghost"></i>
-                                </div>
-                                <h3>Horror</h3>
-                            </div>
-                            <div class="category-card" data-category="music">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-music"></i>
-                                </div>
-                                <h3>Music</h3>
-                            </div>
-                            <div class="category-card" data-category="platform">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-stairs"></i>
-                                </div>
-                                <h3>Platform</h3>
-                            </div>
-                            <div class="category-card" data-category="card">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-cards"></i>
-                                </div>
-                                <h3>Card</h3>
-                            </div>
-                            <div class="category-card" data-category="casual">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-smile"></i>
-                                </div>
-                                <h3>Casual</h3>
-                            </div>
-                            <div class="category-card" data-category="educational">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                                <h3>Educational</h3>
-                            </div>
-                            <div class="category-card" data-category="multiplayer">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-users"></i>
-                                </div>
-                                <h3>Multiplayer</h3>
-                            </div>
-                            <div class="category-card" data-category="retro">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-tv-retro"></i>
-                                </div>
-                                <h3>Retro</h3>
-                            </div>
-                            <div class="category-card" data-category="sandbox">
-                                <div class="category-icon">
-                                    <i class="fa-solid fa-cube"></i>
-                                </div>
-                                <h3>Sandbox</h3>
+                            <div class="category-card" data-category="Strategy" onclick="filterGames('Strategy')">
+                                <div class="category-icon">🧠</div>
+                                <div class="category-name">Strategy</div>
                             </div>
                         </div>
                     </div>
@@ -260,9 +168,9 @@
         <div></div>
     </div>
 
-    <script src="/assets/js/main.js" type="module"></script>
-    <script src="/assets/js/gamemanger.js" type="module"></script>
-    <script src="/assets/js/profile.js" type="module"></script>
+    <script src="assets/js/main.js" type="module"></script>
+    <script src="assets/js/gamemanger.js" type="module"></script>
+    <script src="assets/js/profile.js" type="module"></script>
 </body>
 
 </html>

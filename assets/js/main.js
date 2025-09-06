@@ -58,3 +58,69 @@ if (authNeeded.includes(window.location.pathname)) {
     registerSiteNotification('GameHub is still in public beta, please report all bugs to our <a href="https://discord.gg/7VvJjhwYec">discord</a>.');
     if (urlParams.get('message') && urlParams.get('type')) registerSiteNotification(urlParams.get('message'), urlParams.get('type'));
 }, 1000);
+
+// 游戏筛选功能
+let allGames = []; // 存储所有游戏数据
+let currentCategory = 'all'; // 当前选中的分类
+
+// 筛选游戏函数
+function filterGames(category) {
+    currentCategory = category;
+    
+    // 更新分类卡片的激活状态
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.querySelector(`[data-category="${category}"]`).classList.add('active');
+    
+    // 筛选游戏
+    let filteredGames;
+    if (category === 'all') {
+        filteredGames = allGames;
+    } else {
+        filteredGames = allGames.filter(game => game.category === category);
+    }
+    
+    // 重新渲染游戏列表
+    renderGames(filteredGames);
+}
+
+// 将函数添加到全局作用域
+window.filterGames = filterGames;
+
+// 渲染游戏列表函数
+function renderGames(games) {
+    const gamesContainer = document.querySelector('.games');
+    gamesContainer.innerHTML = '';
+    
+    games.forEach(game => {
+        const gameElement = document.createElement('div');
+        gameElement.className = 'game';
+        gameElement.innerHTML = `
+            <img src=\"${game.thumbnail}\" alt=\"${game.name}\" onerror=\"this.parentElement.classList.add('failed')\">
+            <p>${game.name}</p>
+        `;
+        gameElement.onclick = () => {
+            if (game.use === 'redirect') {
+                window.location.href = game.url;
+            }
+        };
+        gamesContainer.appendChild(gameElement);
+    });
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', function() {
+    // 加载游戏数据
+    fetch('/assets/JSON/games.json')
+        .then(response => response.json())
+        .then(data => {
+            allGames = data;
+            renderGames(allGames); // 初始显示所有游戏
+            // 默认激活\"All Games\"分类
+            document.querySelector('[data-category=\"all\"]').classList.add('active');
+        })
+        .catch(error => {
+            console.error('Error loading games:', error);
+        });
+});
