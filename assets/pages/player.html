@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Player</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif; background: #0b0b0b; color: #e6e6e6; }
+    .topbar {
+      display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+      background: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 10;
+    }
+    .topbar button, .topbar a {
+      appearance: none; border: 1px solid #2a2a2a; background: #1a1a1a; color: #ddd;
+      padding: 6px 10px; border-radius: 6px; cursor: pointer; text-decoration: none;
+    }
+    .topbar button:hover, .topbar a:hover { background: #222; }
+    .title { font-weight: 600; margin-left: 4px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* 布局与容器尺寸（加宽主区、缩窄推荐区） */
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 16px; }
+    .layout { display: flex; gap: 20px; align-items: flex-start; }
+    .leftpane { flex: 1 1 auto; min-width: 0; }
+    .rightpane { flex: 0 0 320px; max-width: 340px; }
+    @media (max-width: 1200px) {
+      .layout { gap: 16px; }
+      .rightpane { flex-basis: 280px; max-width: 300px; }
+    }
+    @media (max-width: 1024px) {
+      .layout { flex-direction: column; }
+      .rightpane { flex: 1 1 auto; max-width: none; }
+    }
+
+    /* 左侧“游戏展示区”外观（参考截图但保持深色风格） */
+    .hero {
+      position: relative; border-radius: 20px; overflow: hidden;
+      padding: 32px; min-height: 460px; display: flex; align-items: center; justify-content: center;
+      background:
+        radial-gradient(1200px 600px at 30% 20%, rgba(120,120,120,0.06), transparent 60%),
+        radial-gradient(1200px 600px at 80% 80%, rgba(120,120,120,0.05), transparent 60%),
+        linear-gradient(180deg, #121212, #0f0f0f);
+      border: 1px solid #1e1e1e;
+      box-shadow: 0 2px 20px rgba(0,0,0,.5) inset, 0 6px 24px rgba(0,0,0,.45);
+    }
+    .hero-card { text-align: center; max-width: 560px; }
+    .hero-cover {
+      width: 220px; height: 220px; border-radius: 24px; object-fit: cover; display: block;
+      margin: 0 auto 18px; box-shadow: 0 8px 24px rgba(0,0,0,.6);
+    }
+    .hero-title { font-size: 24px; font-weight: 700; margin: 4px 0 6px; }
+    .hero-sub { font-size: 14px; color: #bdbdbd; margin-bottom: 18px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 22px; border-radius: 999px; border: 1px solid #2a2a2a;
+      background: linear-gradient(90deg, #5a6fff, #7b5bff); color: #fff;
+      text-decoration: none; cursor: pointer; font-weight: 600; box-shadow: 0 6px 18px rgba(90,111,255,.35);
+    }
+    .btn-primary:hover { filter: brightness(1.05); }
+
+    /* 播放器区域（点击 Play Now 后显示） */
+    .player {
+      position: relative; width: 100%; border-radius: 16px; overflow: hidden; background: #000;
+      border: 1px solid #1e1e1e; box-shadow: 0 2px 12px rgba(0,0,0,.5); margin-top: 16px;
+    }
+    .player::before { content: ""; display: block; padding-top: var(--ratio, 56.25%); }
+    .player > iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000;
+    }
+    .hint { color: #aaa; font-size: 14px; margin-top: 10px; }
+    .error { background: #2a1111; border: 1px solid #532; padding: 10px; border-radius: 6px; color: #f2c9c9; }
+
+    /* 右侧“Similar Games”样式（两列宫格卡片） */
+    .side-title { font-size: 16px; font-weight: 700; color: #cdd6f4; margin: 2px 0 12px; }
+    .reco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .reco-card {
+      display: flex; gap: 10px; padding: 8px; border-radius: 12px; background: #141414;
+      border: 1px solid #222; text-decoration: none; color: #ddd;
+    }
+    .reco-card:hover { background: #1a1a1a; }
+    .reco-thumb { width: 112px; height: 72px; border-radius: 10px; object-fit: cover; background: #000; flex: 0 0 112px; }
+    .reco-meta { display: flex; flex-direction: column; min-width: 0; }
+    .reco-name { font-size: 13px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; }
+    .reco-pub { font-size: 12px; color: #a9a9a9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .reco-more { display: inline-block; margin-top: 10px; font-size: 13px; color: #8fb4ff; text-decoration: none; }
+    .reco-more:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <button id="backBtn" title="返回">← 返回</button>
+    <div class="title" id="title">Game Player</div>
+    <button id="fsBtn" title="全屏" style="display:none">⛶ 全屏</button>
+    <a id="openBtn" href="#" target="_blank" rel="noopener" title="新标签页打开">↗ 打开</a>
+  </div>
+
+  <div class="wrap">
+    <div class="layout">
+      <section class="leftpane">
+        <!-- 详情展示（默认显示） -->
+        <div id="hero" class="hero">
+          <div class="hero-card">
+            <img id="heroCover" class="hero-cover" src="/assets/img/logo.png" alt="">
+            <div id="heroTitle" class="hero-title">Game Title</div>
+            <div id="heroSub" class="hero-sub"></div>
+            <button id="playBtn" class="btn-primary">▶ Play Now</button>
+          </div>
+        </div>
+
+        <!-- 播放器（点击 Play Now 后显示） -->
+        <div id="playerWrap" class="player" style="--ratio:56.25%; display:none">
+          <iframe id="frame"
+            src="about:blank"
+            allow="autoplay; fullscreen; gamepad; accelerometer; magnetometer; gyroscope; xr-spatial-tracking; midi; encrypted-media; clipboard-read; clipboard-write"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-presentation allow-top-navigation-by-user-activation"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="hint" id="hint"></div>
+      </section>
+
+      <aside class="rightpane">
+        <div class="side-title">Similar Games</div>
+        <div id="recoGrid" class="reco-grid"></div>
+        <a class="reco-more" href="/app.html">更多游戏 →</a>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const usp = new URLSearchParams(location.search);
+      const src = usp.get('src'); // 需 URL 编码
+      const title = usp.get('title') || 'Game Player';
+      const ar = (usp.get('ar') || '16:9').toLowerCase(); // 16:9 | 4:3 | 9:16
+      const fs = usp.get('fs') === '1'; // 是否展示全屏按钮
+      const rn = usp.get('rn') === '1'; // 是否强制 noreferrer
+
+      // 标题
+      document.title = title + ' - Game Player';
+      document.getElementById('title').textContent = title;
+
+      // 宽高比
+      function ratioFrom(ar) {
+        const map = { '16:9': 56.25, '4:3': 75, '9:16': (16/9)*100 };
+        if (map[ar]) return map[ar];
+        const m = ar.match(/^(\d+)\s*:\s*(\d+)$/);
+        if (m) return (+m[2] / +m[1]) * 100;
+        return 56.25;
+      }
+      const playerEl = document.getElementById('playerWrap');
+      playerEl.style.setProperty('--ratio', ratioFrom(ar) + '%');
+
+      // iframe 与按钮
+      const iframe = document.getElementById('frame');
+      const openBtn = document.getElementById('openBtn');
+      const fsBtn = document.getElementById('fsBtn');
+      const playBtn = document.getElementById('playBtn');
+
+      function showError(msg) {
+        document.getElementById('hint').innerHTML = '<div class="error">' + msg + '</div>';
+      }
+
+      // 顶部“打开/全屏”按钮
+      if (src) {
+        openBtn.href = src;
+        if (rn) openBtn.rel = 'noopener noreferrer';
+      }
+
+      if (fs) {
+        fsBtn.style.display = '';
+        fsBtn.addEventListener('click', async () => {
+          const el = playerEl;
+          if (!document.fullscreenElement) { try { await el.requestFullscreen(); } catch (e) { console.warn('全屏失败', e); } }
+          else { document.exitFullscreen?.(); }
+        });
+      }
+
+      // 返回逻辑：固定返回首页
+      document.getElementById('backBtn').addEventListener('click', () => {
+          location.href = '/index.html';
+      });
+
+      // 新增：辅助函数，用于规范化 URL（仅保留 path + search）
+      function normalizeUrl(u) {
+          try {
+              const x = new URL(u, location.origin);
+              return x.pathname + x.search;
+          } catch (e) {
+              return u;
+          }
+      }
+
+      // 从 games.json 获取当前游戏封面，构建“推荐”
+      async function loadDataAndRender() {
+          try {
+              const res = await fetch('/assets/JSON/games.json', { cache: 'no-store' });
+              const games = await res.json();
+
+              // 猜测当前条目（优先用 url 的 src 参数匹配）
+              let current = null;
+              for (const g of games) {
+                  try {
+                      const u = new URL(g.url, location.origin);
+                      const gsrc = u.searchParams.get('src');
+                      if (gsrc && src && decodeURIComponent(gsrc) === src) { current = g; break; }
+                  } catch {}
+              }
+
+              // 填充 hero 信息
+              document.getElementById('heroTitle').textContent = title;
+              if (current && current.thumbnail) {
+                  document.getElementById('heroCover').src = current.thumbnail;
+              }
+              document.getElementById('heroSub').textContent = (current && current.publisher) ? current.publisher : '';
+
+              // 推荐列表（仅排除“当前这条完整 URL”，随机取 6 个）
+              const curNorm = normalizeUrl(location.href);
+              const candidates = games.filter(g => {
+                  if (!g || !g.url) return false;
+                  return normalizeUrl(g.url) !== curNorm;
+              });
+
+              for (let i = candidates.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+              }
+              const list = candidates.slice(0, 6);
+
+              const grid = document.getElementById('recoGrid');
+              grid.innerHTML = '';
+              list.forEach(item => {
+                  const a = document.createElement('a');
+                  a.className = 'reco-card';
+                  a.href = item.url || '#';
+                  a.innerHTML =
+                    '<img class="reco-thumb" src="' + (item.thumbnail || '/assets/img/logo.png') + '" alt="">' +
+                    '<div class="reco-meta">' +
+                      '<div class="reco-name">' + (item.name || 'Untitled') + '</div>' +
+                      '<div class="reco-pub">' + (item.publisher || '') + '</div>' +
+                    '</div>';
+                  grid.appendChild(a);
+              });
+              if (!list.length) grid.innerHTML = '<div class="hint">暂无推荐</div>';
+      } catch (e) {
+        console.warn('数据加载失败', e);
+        showError('推荐模块加载失败，请稍后重试');
+      }
+    }
+
+    // 点击 Play Now：显示 iframe 播放器
+    playBtn.addEventListener('click', () => {
+      if (!src) {
+        showError('缺少 src 参数。示例：?title=Demo&src=' + encodeURIComponent('https://example.com/embed.html') + '&ar=16:9&fs=1');
+        return;
+      }
+      document.getElementById('hero').style.display = 'none';
+      playerEl.style.display = '';
+      if (!iframe.src || iframe.src === 'about:blank') iframe.src = src;
+    });
+
+    // 页面初始化
+    loadDataAndRender();
+
+    // 若希望直接进入播放状态，可在 URL 加入 play=1
+    if (usp.get('play') === '1' && src) {
+      playBtn.click();
+    }
+})();
+</script>
+</body>
+</html>

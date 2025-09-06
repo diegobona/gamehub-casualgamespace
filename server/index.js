@@ -96,7 +96,15 @@ server.on('request', (req, res) => {
         res.statusCode = 404;
         res.setHeader('content-type', 'text/html');
         res.end(fs.readFileSync(path.join(__dirname, '../', '404.html')));
-    } else if (!req.path.startsWith(config.mirror.config.path)) {
+    } else if (!config.mirror.enabled || !req.path.startsWith(config.mirror.config.path)) {
+        // 根路径直接返回游戏列表页（app.html）
+        if (req.method === 'GET' && (req.path === '/' || req.path === '/index.html' || req.path === '/index')) {
+            const appFile = path.join(__dirname, '../', 'app.html');
+            res.setHeader('content-type', mime.getType(appFile));
+            res.end(fs.readFileSync(appFile));
+            return;
+        }
+
         const file = pathToFile(req.path, path.join(__dirname, '../'));
 
         if (file.exists) {
@@ -115,5 +123,8 @@ server.on('listening', () => console.log(`GameHub server listening
 Port: ${server.address().port}
 Version: ${packageFile.version} ${getShortGitSha()}${config.mirror.enabled ? `\nMirror Server Version: ${mirrorServer.package.version} ${mirrorServer.latestCommit.sha.slice(0, 7)}` : ''}`));
 
-if (config.mirror.enabled) mirrorServer.on('ready', () => server.listen(config.port || process.env.PORT || 8080));
-else server.listen(config.port || process.env.PORT || 8080);
+if (config.mirror.enabled) {
+    mirrorServer.on('ready', () => server.listen(config.port || process.env.PORT || 8080));
+} else {
+    server.listen(config.port || process.env.PORT || 8080);
+}

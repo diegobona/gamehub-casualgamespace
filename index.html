@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,15 +16,13 @@
 
 <body>
     <div id="app" class="hidden">
-        <div class="shadow"></div>
-
         <div class="navbar is-link is-fixed-top">
             <div class="container">
-                <div class="navbar-brand">
-                    <a class="heroIcon" href="/">
+                <div class="navbar-brand is-dark">
+                    <a class="heroIcon" href="/app">
                         <img src="/assets/img/logo.png" alt="Logo">
                     </a>
-                    <a class="navTitle" href="/">GameHub</a>
+                    <a class="navTitle" href="/app">GameHub</a>
 
                     <span class="navbar-burger" data-target="navbarMenuHeroC">
                         <span></span>
@@ -35,35 +33,72 @@
 
                 <div id="navbarMenuHeroC" class="navbar-menu">
                     <div class="navbar-end">
-                        <span class="navbar-item">
-                            <a class="button is-link is-inverted" href="/auth?type=signin">Login</a>
-                        </span>
-                        <span class="navbar-item">
-                            <a class="button is-link" href="/auth?type=signup">Sign Up</a>
-                        </span>
+                        <a class="navbar-item is-active" href="/app">
+                            Home
+                        </a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <p id="username" class="navbar-item" data-action="open_profile">Loading...</p>
+                            <span class="avatar-small" data-action="open_profile"></span>
+
+                            <div class="navbar-dropdown">
+                                <a data-action="open_profile" class="navbar-item is-dropdown">
+                                    Profile
+                                </a>
+                                <a href="#settings" class="navbar-item is-dropdown">
+                                    Settings
+                                </a>
+                                <hr class="navbar-divider">
+                                <a href="/logout" class="navbar-item is-dropdown">
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="hero is-link is-fullheight">
+        <div class="hero is-link is-halfheight">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="heroTitle">GameHub</h1>
-                    <br>
-                    <a class="button is-link is-inverted" style="box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.616);"
-                        href="/auth?type=signup" id="launchbtn">Join GameHub</a>
+                    <h1 class="heroTitle">
+                        Games
+                    </h1>
                 </div>
             </div>
         </div>
 
-        <div class="content">
-            <h1>What is GameHub?</h1>
+        <div class="database_nav">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-            <p>GameHub is an <a href="https://github.com/EmberNetwork/GameHub" target="_blank">open-source</a> and
-                privacy-respecting gaming site. We have a large variety of 80+ games, and we're always open for
-                suggestions!</p>
+                <input class="input is-link is-rounded searchBar" data-func="search" placeholder="Search">
+            </div>
+
+            <div class="control has-icons-left sort">
+                <div class="select is-link is-rounded sortSelect">
+                    <select>
+                        <option selected>Default</option>
+                        <option disabled>Game Type</option>
+                        <option disabled>A-Z</option>
+                        <option disabled>Z-A</option>
+                    </select>
+                </div>
+
+                <span class="icon is-left">
+                    <i class="fa-solid fa-arrow-up-short-wide"></i>
+                </span>
+            </div>
         </div>
+
+        <div class="searchErr hidden">
+            <h1>¯\(°_o)/¯</h1>
+            <br>
+            <p>Oops, we couldn't find the game you were looking for. Join our <a href="https://discord.gg/RXBbxQ4wuJ" target="_blank" rel="noopener noreferrer">discord</a> to suggest a game.</p>
+        </div>
+
+        <div class="games"></div>
+        <div class="gameFrame hidden"></div>
 
         <footer>
             <div class="title">
@@ -104,6 +139,8 @@
     </div>
 
     <script src="/assets/js/main.js" type="module"></script>
+    <script src="/assets/js/gamemanger.js" type="module"></script>
+    <script src="/assets/js/profile.js" type="module"></script>
 </body>
 
 </html>

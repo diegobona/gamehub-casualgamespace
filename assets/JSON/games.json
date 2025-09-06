@@ -1,15 +1,20 @@
 [
-    { "id": 1, "name": "Space Blaster", "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
-    { "id": 2, "name": "Retro Racer",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
-    { "id": 3, "name": "Puzzle Mania",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
-    { "id": 4, "name": "Block Builder","thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
-    { "id": 5, "name": "Dungeon Run",  "thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
-    { "id": 6, "name": "Fruit Catcher","thumbnail": "/assets/img/logo.png", "url": "https://example.com", "use": "gameframe" },
+    { "id": 1, "name": "Space Blaster", "thumbnail": "/assets/img/logo.png", "url": "/assets/pages/player.html?title=Space%20Blaster&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1", "use": "redirect" },
+    { "id": 2, "name": "Retro Racer",  "thumbnail": "/assets/img/logo.png", "url": "/assets/pages/player.html?title=Retro%20Racer&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1", "use": "redirect" },
+    { "id": 3, "name": "Puzzle Mania",  "thumbnail": "/assets/img/logo.png", "url": "/assets/pages/player.html?title=Puzzle%20Mania&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1", "use": "redirect" },
+    { "id": 4, "name": "Block Builder","thumbnail": "/assets/img/logo.png", "url": "/assets/pages/player.html?title=Block%20Builder&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1", "use": "redirect" },
+    { "id": 5, "name": "Dungeon Run",  "thumbnail": "/assets/img/logo.png", "url": "/assets/pages/player.html?title=Dungeon%20Run&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=9:16&fs=1", "use": "redirect" },
+    { "id": 6,
+     "name": "Fruit Catcher",
+     "thumbnail": "/assets/img/logo.png", 
+     "url": "/assets/pages/player.html?title=GD-Demo&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
+     "use": "redirect" 
+    },
     {
         "id": 7,
         "name": "GD 示例游戏",
         "thumbnail": "/assets/img/logo.png",
-        "url": "/assets/pages/demo-gd-embed.html",
+        "url": "/assets/pages/player.html?title=GD-Demo&src=https%3A%2F%2Fembed.gamedistribution.com%2F%3Furl%3Dhttps%3A%2F%2Fhtml5.gamedistribution.com%2F405c00612981466cbc5d9dcef4214811%2F%26width%3D510%26height%3D900%26language%3Des%26gdpr-tracking%3D1%26gdpr-targeting%3D1%26gd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2Fgame-path&ar=16:9&fs=1",
         "use": "redirect"
     }
 ]
