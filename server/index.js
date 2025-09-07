@@ -77,10 +77,13 @@ server.on('request', (req, res) => {
     if (req.method === 'GET' && req.path === '/token') {
         return json(res, { token: 'dev-token', id: 'dev' });
     }
+    // 注释掉 /me 接口的处理
+    /*
     if (req.method === 'GET' && req.path === '/me') {
         // 前端只检查 res.status 字段是否为 404
         return json(res, { status: 404 });
     }
+    */
 
     config.ignoredPaths.forEach(path => {
         if (path.endsWith('/*') && req.path.startsWith(path.slice(-2))) ignoredPath = true;

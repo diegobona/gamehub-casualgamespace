@@ -13,21 +13,17 @@ class api_ {
      * 
      * @returns {Promise.<boolean, Error>}
      */
-    validSession = () => {
-        // 纯前端场景：固定为未登录，避免触发网络请求
-        return Promise.resolve(false);
-    };
+    // validSession = () => {
+    //     // 纯前端场景：固定为未登录，避免触发网络请求
+    //     return Promise.resolve(false);
+    // };
 
     /**
      * 
      * @returns {boolean}
      */
-    connected = () => {
-        try {
-            return Boolean(this.servers[0]);
-        } catch (e) {
-            return false;
-        }
+      connected = () => {
+        return false; // 纯前端模式，无服务器连接
     };
 
     /**

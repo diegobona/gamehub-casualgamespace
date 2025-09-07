@@ -109,6 +109,50 @@ function renderGames(games) {
     });
 }
 
+// 分类筛选功能
+function filterByCategory(category) {
+    currentCategory = category;
+    
+    // 更新分类卡片的激活状态
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.querySelector(`[data-category="${category}"]`).classList.add('active');
+    
+    // 筛选游戏
+    let filteredGames;
+    if (category === 'all') {
+        filteredGames = allGames;
+    } else {
+        filteredGames = allGames.filter(game => game.category === category);
+    }
+    
+    // 重新渲染游戏列表
+    renderGames(filteredGames);
+}
+
+// 搜索功能
+function searchGames(query) {
+    currentCategory = category;
+    
+    // 更新分类卡片的激活状态
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.querySelector(`[data-category="${category}"]`).classList.add('active');
+    
+    // 筛选游戏
+    let filteredGames;
+    if (category === 'all') {
+        filteredGames = allGames;
+    } else {
+        filteredGames = allGames.filter(game => game.category === category);
+    }
+    
+    // 重新渲染游戏列表
+    renderGames(filteredGames);
+}
+
 // 页面加载时初始化
 document.addEventListener('DOMContentLoaded', function() {
     // 加载游戏数据
@@ -118,9 +162,35 @@ document.addEventListener('DOMContentLoaded', function() {
             allGames = data;
             renderGames(allGames); // 初始显示所有游戏
             // 默认激活\"All Games\"分类
-            document.querySelector('[data-category=\"all\"]').classList.add('active');
+            document.querySelector('[data-category="all"]').classList.add('active');
         })
         .catch(error => {
             console.error('Error loading games:', error);
         });
 });
+
+// 注释掉所有登录相关的全局变量和函数
+/*
+// 检查用户登录状态的全局函数
+window.isLoggedIn = false;
+window.currentUser = null;
+
+// 在profile.js中设置全局状态
+API.get(`/me`).then(user => {
+    if (!user.error) {
+        window.isLoggedIn = true;
+        window.currentUser = user;
+    }
+});
+
+// 需要登录的功能检查
+function requireLogin(callback) {
+    if (window.isLoggedIn) {
+        callback();
+    } else {
+        registerError('此功能需要登录后使用');
+        // 可选：跳转到登录页面
+        // window.location.href = '/auth.html';
+    }
+}
+*/
