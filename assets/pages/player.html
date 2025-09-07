@@ -70,7 +70,49 @@
     .hint { color: #aaa; font-size: 14px; margin-top: 10px; }
     .error { background: #2a1111; border: 1px solid #532; padding: 10px; border-radius: 6px; color: #f2c9c9; }
 
-    /* 右侧“Similar Games”样式（两列宫格卡片） */
+    /* 游戏信息展示区域样式（新增） */
+    .game-info {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #1a1a1a, #141414);
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .info-section {
+      margin-bottom: 20px;
+    }
+    .info-section:last-child {
+      margin-bottom: 0;
+    }
+    .info-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #cdd6f4;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-title::before {
+      content: "";
+      width: 4px;
+      height: 16px;
+      background: linear-gradient(90deg, #5a6fff, #7b5bff);
+      border-radius: 2px;
+    }
+    .info-content {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #e6e6e6;
+      margin: 0;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border-left: 3px solid #5a6fff;
+    }
+
+    /* 右侧"Similar Games"样式（两列宫格卡片） */
     .side-title { font-size: 16px; font-weight: 700; color: #cdd6f4; margin: 2px 0 12px; }
     .reco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .reco-card {
@@ -88,10 +130,10 @@
 </head>
 <body>
   <div class="topbar">
-    <button id="backBtn" title="返回">← 返回</button>
+    <button id="backBtn" title="Home">← Home</button>
     <div class="title" id="title">Game Player</div>
-    <button id="fsBtn" title="全屏" style="display:none">⛶ 全屏</button>
-    <a id="openBtn" href="#" target="_blank" rel="noopener" title="新标签页打开">↗ 打开</a>
+    <button id="fsBtn" title="Fullscreen" style="display:none">⛶ Fullscreen</button>
+    <a id="openBtn" href="#" target="_blank" rel="noopener" title="Open in New Tab">↗ Open</a>
   </div>
 
   <div class="wrap">
@@ -116,13 +158,27 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+        
+        <!-- 游戏信息展示区域（新增） -->
+        <!-- 游戏信息展示区域（修改：默认显示） -->
+        <div id="gameInfo" class="game-info">
+          <div class="info-section">
+            <h3 class="info-title">DESCRIPTION</h3>
+            <p id="gameDescription" class="info-content">NO DATA</p>
+          </div>
+          <div class="info-section">
+            <h3 class="info-title">INSTRUCTIONS</h3>
+            <p id="gameGameplay" class="info-content">NO DATA</p>
+          </div>
+        </div>
+        
         <div class="hint" id="hint"></div>
       </section>
 
       <aside class="rightpane">
-        <div class="side-title">Similar Games</div>
+        <div class="side-title">Recommend Games</div>
         <div id="recoGrid" class="reco-grid"></div>
-        <a class="reco-more" href="/app.html">更多游戏 →</a>
+        <a class="reco-more" href="/app.html">More Games→</a>
       </aside>
     </div>
   </div>
@@ -214,6 +270,12 @@
               }
               document.getElementById('heroSub').textContent = (current && current.publisher) ? current.publisher : '';
 
+              // 填充游戏信息：description -> 游戏介绍，gameplay -> 操作说明（新增）
+              if (current) {
+                  document.getElementById('gameDescription').textContent = current.description || 'NO DATA';
+                  document.getElementById('gameGameplay').textContent = current.gameplay || 'NO DATA';
+              }
+
               // 推荐列表（仅排除“当前这条完整 URL”，随机取 6 个）
               const curNorm = normalizeUrl(location.href);
               const candidates = games.filter(g => {
@@ -241,7 +303,7 @@
                     '</div>';
                   grid.appendChild(a);
               });
-              if (!list.length) grid.innerHTML = '<div class="hint">暂无推荐</div>';
+              if (!list.length) grid.innerHTML = '<div class="hint">No Recommendation</div>';
       } catch (e) {
         console.warn('数据加载失败', e);
         showError('推荐模块加载失败，请稍后重试');
@@ -256,6 +318,7 @@
       }
       document.getElementById('hero').style.display = 'none';
       playerEl.style.display = '';
+      // 移除这行：document.getElementById('gameInfo').style.display = ''; 
       if (!iframe.src || iframe.src === 'about:blank') iframe.src = src;
     });
 

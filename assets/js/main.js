@@ -55,7 +55,7 @@ if (authNeeded.includes(window.location.pathname)) {
     document.querySelector('#loader').classList.add('hidden');
     document.documentElement.classList.remove('noscroll');
 
-    registerSiteNotification('GameHub is still in public beta, please report all bugs to our <a href="https://discord.gg/7VvJjhwYec">discord</a>.');
+    // registerSiteNotification('GameHub is still in public beta, please report all bugs to our <a href="https://discord.gg/7VvJjhwYec">discord</a>.');
     if (urlParams.get('message') && urlParams.get('type')) registerSiteNotification(urlParams.get('message'), urlParams.get('type'));
 }, 1000);
 

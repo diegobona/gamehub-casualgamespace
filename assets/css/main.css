@@ -642,7 +642,7 @@ input.input.is-link.is-rounded[data-attr='username'] {
 
 .category-name {
     font-family: 'Montserrat-Black';
-    font-size: 12px;
+    font-size: 14px;
     color: white;
     margin: 0;
     line-height: 1.2;
@@ -678,7 +678,7 @@ input.input.is-link.is-rounded[data-attr='username'] {
     }
     
     .category-name {
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
@@ -706,7 +706,7 @@ input.input.is-link.is-rounded[data-attr='username'] {
     }
     
     .category-name {
-        font-size: 10px;
+        font-size: 12px;
     }
     
     .hero.is-halfheight {
@@ -743,7 +743,7 @@ input.input.is-link.is-rounded[data-attr='username'] {
     }
     
     .category-name {
-        font-size: 7px;
+        font-size: 9px;
     }
 }
 .navTitle {
