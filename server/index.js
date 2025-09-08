@@ -102,7 +102,7 @@ server.on('request', (req, res) => {
     } else if (!config.mirror.enabled || !req.path.startsWith(config.mirror.config.path)) {
         // 根路径直接返回游戏列表页（app.html）
         if (req.method === 'GET' && (req.path === '/' || req.path === '/index.html' || req.path === '/index')) {
-            const appFile = path.join(__dirname, '../', 'app.html');
+            const appFile = path.join(__dirname, '../', 'index.html');
             res.setHeader('content-type', mime.getType(appFile));
             res.end(fs.readFileSync(appFile));
             return;
