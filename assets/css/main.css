@@ -1074,3 +1074,77 @@ input.input.is-link.is-rounded[data-attr='username'] {
         opacity: 0;
     }
 }
+
+/* 分页样式 */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    min-width: 44px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+    padding: 8px 4px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.pagination-info {
+    margin-left: 16px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .pagination-container {
+        margin: 20px 0;
+        gap: 4px;
+    }
+    
+    .pagination-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 36px;
+    }
+    
+    .pagination-info {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+}

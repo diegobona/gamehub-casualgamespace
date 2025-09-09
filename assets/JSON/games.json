@@ -138,6 +138,428 @@
         "use": "redirect",
         "description":"Get ready to skid the wheels of a stunning muscle car through an expansive night city map! Customize and upgrade your muscle car with cool upgradables and become the best driver in the city. Take your dog with you in 4 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
         "gameplay": "Car: Arrow Keys/W, A, S, D: Drive/Steer/Brake C: Change Camera F: Nitro Character: Arrow Keys/W,A,S,D: Move Mouse Orbit: Look Around."
+    },
+        { 
+        "id": 15, 
+        "name": "Hazmob FPS",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Hazmob FPS&src=https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hazmob FPS is an intense first-person shooter that blends tactical depth with fast-paced action. Players engage in strategic, team-based battles across diverse maps, utilizing customizable loadouts and a variety of game modes. With its dynamic gameplay mechanics, realistic graphics, and competitive ranked play, Hazmob FPS challenges players to master their skills, coordinate with teammates, and outwit opponents in a visually immersive and constantly evolving environment.",
+        "gameplay": "WASD = move Space = jump Left mouse / K = shoot Right mouse / L = aim P = leaderboard, pause, and settings G = pick up the gun C = crouch Shift = run 1, 2, 3 = switch weapons 4, 5, 6 = skills E = alternative skills Q = alternative skills"
+    },
+    { 
+        "id": 16, 
+        "name": "Snow Rider 3D",
+        "category": "Agility",
+        "thumbnail": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg", 
+        "url": "/assets/pages/player.html?title=Snow Rider 3D&src=https%3A%2F%2Fhtml5.gamedistribution.com%2F3b79a8537ebc414fb4f9672a9b8c68c8%2F%3Fgd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2F%7Bgame-path%7D&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Owned/Acquired by gamersplayhub@gmail.com. Would you like to ride on a sleigh? Then, no need to go anywhere. Because now, you can experience riding a sleigh for free anytime you want in Snow Ride 3D. Although you are not actually on a sleigh, you will feel like you’re actually riding one because the game is in 3D. Try to go as far as you can to get high score. You may also collect gifts to purchase sleigh.",
+        "gameplay": "Up arrow key or W - Jump Left arrow key or A - Steer Left Right arrow key or D - Steer Right"
+    },
+    { 
+        "id": 17, 
+        "name": "Formula Racers",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Formula Racers&src=https://html5.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Formula Racers is the ultimate HTML5 browser top-down arcade racing game - no download required! Race on any device across 10 thrilling tracks, tackle dynamic lap tracking and real-time placement, and earn coins to unlock and upgrade cars (engine, gearbox, steering, brakes). This online racing game features HD graphics, responsive design, immersive SFX & music - perfect for mobile & desktop gamers seeking fast-paced, addictive arcade action!",
+        "gameplay": "• Steer with touch or W-A-S-D/arrow keys, tap brake to drift around corners. • Finish in top positions to earn coins. • Spend coins between races to boost engine power, gearbox shifts, handling and braking—fine-tune your setup to dominate every circuit!"
+    },
+    { 
+        "id": 18, 
+        "name": "Traffic Cop 3D",
+        "category": "Simulation",
+        "thumbnail": "https://img.gamedistribution.com/fed5711667c840b3a394043324bf0def-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Traffic Cop 3D&src=https://html5.gamedistribution.com/fed5711667c840b3a394043324bf0def/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Traffic Cop 3D is a casual game where you play as a police officer enforcing the law of the road. Scan nearby drivers and use intel from the police database to decide whether you should pull them over, or let them go, all while progressing through the story and increasing your duties as a cop.",
+        "gameplay": "Use the left mouse button on desktop or touch on mobile to play the game."
+    },
+    { 
+        "id": 19, 
+        "name": "Summer Rider 3D",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Summer Rider 3D&src=https://html5.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hit the waves in Summer Rider 3D, a sun-soaked surf adventure inspired by high-speed endless runners. Glide over water on a surfboard or jet-ski, collect shimmering starfish, and push your reflexes to the limit as the speed cranks up. With a colorful summer theme and upbeat tropical soundtracks, the game offers endless fun for both solo and 2 player mode!",
+        "gameplay": "ARROW KEYS or WASD: Move left, right, or jump to navigate waves and obstacles. On MOBILE, tap left/right to steer, both sides to jump!"
+    },
+    { 
+        "id": 20, 
+        "name": "Obby Escape: Prison Rat Dance",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/0c621dfab60143809e321fa448476f04-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Obby Escape: Prison Rat Dance&src=https://html5.gamedistribution.com/0c621dfab60143809e321fa448476f04/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Obby Escape: Prison Rat Dance is an exhilarating adventure game that merges the thrill of intricate prison escape challenges with the dynamic agility required in parkour. Assume the role of a resourceful rat striving to escape the strict surveillance of a heavily fortified prison. Find your way through elaborate mazes and overcome diverse, challenging obstacles as you plot your daring prison escape.",
+        "gameplay": "Can you navigate the complex pathways, evade the guards, and secure your freedom? Join the action in Obby Escape: Prison Rat Dance and master the art of the prison break!"
+    },
+    { 
+        "id": 21, 
+        "name": "Brainrot Boing Boing Merge",
+        "category": "Merge",
+        "thumbnail": "https://img.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Brainrot Boing Boing Merge&src=https://html5.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to Brainrot Boing Boing Merge – a charming merge puzzle game where adorable creatures meet polished gameplay and juicy physics! Merge. Match. Maximize Satisfying Effects & Lively Details Unlockable Skins System Relaxing Yet Strategic If you love satisfying merges, juicy feedback, and charming characters, this game is for you. Play now and see what creature you’ll create next!",
+        "gameplay": "Click or Tap to merge!"
+    },
+    { 
+        "id": 22, 
+        "name": "MeatRider",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=MeatRider&src=https://html5.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to MeatRider — an intense action-packed game set in a post-apocalyptic world overrun by zombies. You find yourself right in the middle of the chaos, where your only goal is to survive at all costs. Choose one of the unique combat vehicles, each with its own special abilities and weapons, and get ready for dynamic battles across a zombie-infested desert landscape.",
+        "gameplay": "Choose a car, press the Start button and start crushing zombies! Management: WASD - car movement Moving the mouse - overview Left mouse button - shot The right mouse button is a sight Space bar - handbrake Esc or Tab - pause Recommendations: Use different cars for a variety of strategies. Try to shoot down groups of zombies to get bonus points."
+    },
+    { 
+        "id": 23, 
+        "name": "Ultra Realistic BlockCraft",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/484487c7d43b415c85db89d8e007c684-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Ultra Realistic BlockCraft&src=https://html5.gamedistribution.com/484487c7d43b415c85db89d8e007c684/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Help Steve in the ultra-realistic block world and make sure he reaches the portal. Remember, this realistic world is extremely challenging and monsters are roaming everywhere. You must collect all the diamonds. While collecting diamonds, don’t forget to open the chests you find along the way. Open the chests and crush all the monsters. Reach the portal at the end of the level safely to complete the stage. Remember, you only have one life and if it runs out you will lose everything you’ve earned.",
+        "gameplay": "*If your life runs out, your progress in the game will be erased, so you must play very carefully. *Use the “WASD” keys to play. *Jump on top of the monsters to crush them. *Find all the diamonds and chests and reach the end of the level."
+    },
+    { 
+        "id": 24, 
+        "name": "Max Crusher: Crazy Destruction and Car Crashes",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Max Crusher: Crazy Destruction and Car Crashes&src=https://html5.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Max Crusher: Crazy Destruction and Car Crashes is an exciting game in which the player has to become a real wrecking racer. There are many unique cars available in the game, each of which has its own characteristics and capabilities. From classic sports cars to massive monster trucks, you will have complete freedom to choose the vehicle for your crazy adventures.",
+        "gameplay": "Control: WASD - Driving. Shift - nitro. R - turn the car over. C - camera change. Esc - call MENU. T - Time dilation. Space - handbrake. Controls for mobile devices: Use the game interface on the screen."
+    },
+    { 
+        "id": 25, 
+        "name": "Catch Thief",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/919644af743a4a7a971738bbf2377e83-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Catch Thief&src=https://html5.gamedistribution.com/919644af743a4a7a971738bbf2377e83/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Catch Thief is an addictive puzzle game where you must outsmart a clever thief and stop his escape. Take control of the police, block every possible path and drive the criminal into a dead end. With each new level the challenge grows, requiring you to plan ahead, think strategically and act quickly. Bright cartoon graphics, fun scenarios and increasing difficulty make Catch Thief a perfect choice for fans of logic games who enjoy testing their skills, attention and reaction speed.",
+        "gameplay": "Tap or click on a police officer and then on the dot where you want him to move. Place your heroes wisely to block the thief’s escape routes. Simple controls, colorful visuals and dynamic gameplay make Catch Thief easy and fascinating. Enjoy the game and have fun!"
+    },
+    { 
+        "id": 26, 
+        "name": "Manyunya Saving the Princess",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Manyunya Saving the Princess&src=https://html5.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to the time when there were knights, magic, farmers, princesses, and generals. Manyunya sets off at the request of the Supreme Lord to save his princess. On the way you will find a whole dangerous adventure, you will come across colorful views, and characters with whom you can communicate and interact, as well as enemies that you will need to defeat at any cost, and save the princess, and complete the task. Interesting voice acting and story will immerse you in this world with your head!",
+        "gameplay": "To control the game, use your computer mouse. If you have a mobile device, use screen tapping. To complete the game, you need to press different buttons indicated on the screen in the game. To defeat the enemy, you need to quickly press the sight."
+    },
+    { 
+        "id": 27, 
+        "name": "Monster Escape",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Monster Escape&src=https://html5.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Monster Escape is a thrilling puzzle platformer where you rotate the entire level to help a little green monster grab the key and escape the dark dungeon. Each stage is packed with tricky obstacles — spikes, falling crates, and narrow passages that put your timing and planning skills to the test. The unique mechanic — rotate the world, find the path, unlock the door — creates plenty of satisfying moments as you advance.",
+        "gameplay": "Rotate the world using the on-screen buttons to shift gravity and open new paths, then guide the monster to collect the key and reach the locked door to complete the level. On PC, you can also click to the left or right of the monster to make it walk without rotating the stage, while on mobile, smooth touch controls ensure easy navigation. Watch out for spikes and falling boxes, plan your moves wisely, and enjoy the challenge. Good luck!"
+    },
+    { 
+        "id": 28, 
+        "name": "Charger City Driver",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Charger City Driver&src=https://html5.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Get ready to skid the wheels of a stunning muscle car through an expansive night city map! Customize and upgrade your muscle car with cool upgradables and become the best driver in the city. Take your dog with you in 4 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
+        "gameplay": "Car: Arrow Keys/W, A, S, D: Drive/Steer/Brake C: Change Camera F: Nitro Character: Arrow Keys/W,A,S,D: Move Mouse Orbit: Look Around."
+    },
+        { 
+        "id": 29, 
+        "name": "Hazmob FPS",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Hazmob FPS&src=https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hazmob FPS is an intense first-person shooter that blends tactical depth with fast-paced action. Players engage in strategic, team-based battles across diverse maps, utilizing customizable loadouts and a variety of game modes. With its dynamic gameplay mechanics, realistic graphics, and competitive ranked play, Hazmob FPS challenges players to master their skills, coordinate with teammates, and outwit opponents in a visually immersive and constantly evolving environment.",
+        "gameplay": "WASD = move Space = jump Left mouse / K = shoot Right mouse / L = aim P = leaderboard, pause, and settings G = pick up the gun C = crouch Shift = run 1, 2, 3 = switch weapons 4, 5, 6 = skills E = alternative skills Q = alternative skills"
+    },
+    { 
+        "id": 30, 
+        "name": "Snow Rider 3D",
+        "category": "Agility",
+        "thumbnail": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg", 
+        "url": "/assets/pages/player.html?title=Snow Rider 3D&src=https%3A%2F%2Fhtml5.gamedistribution.com%2F3b79a8537ebc414fb4f9672a9b8c68c8%2F%3Fgd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2F%7Bgame-path%7D&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Owned/Acquired by gamersplayhub@gmail.com. Would you like to ride on a sleigh? Then, no need to go anywhere. Because now, you can experience riding a sleigh for free anytime you want in Snow Ride 3D. Although you are not actually on a sleigh, you will feel like you’re actually riding one because the game is in 3D. Try to go as far as you can to get high score. You may also collect gifts to purchase sleigh.",
+        "gameplay": "Up arrow key or W - Jump Left arrow key or A - Steer Left Right arrow key or D - Steer Right"
+    },
+    { 
+        "id": 31, 
+        "name": "Formula Racers",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Formula Racers&src=https://html5.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Formula Racers is the ultimate HTML5 browser top-down arcade racing game - no download required! Race on any device across 10 thrilling tracks, tackle dynamic lap tracking and real-time placement, and earn coins to unlock and upgrade cars (engine, gearbox, steering, brakes). This online racing game features HD graphics, responsive design, immersive SFX & music - perfect for mobile & desktop gamers seeking fast-paced, addictive arcade action!",
+        "gameplay": "• Steer with touch or W-A-S-D/arrow keys, tap brake to drift around corners. • Finish in top positions to earn coins. • Spend coins between races to boost engine power, gearbox shifts, handling and braking—fine-tune your setup to dominate every circuit!"
+    },
+    { 
+        "id": 32, 
+        "name": "Traffic Cop 3D",
+        "category": "Simulation",
+        "thumbnail": "https://img.gamedistribution.com/fed5711667c840b3a394043324bf0def-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Traffic Cop 3D&src=https://html5.gamedistribution.com/fed5711667c840b3a394043324bf0def/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Traffic Cop 3D is a casual game where you play as a police officer enforcing the law of the road. Scan nearby drivers and use intel from the police database to decide whether you should pull them over, or let them go, all while progressing through the story and increasing your duties as a cop.",
+        "gameplay": "Use the left mouse button on desktop or touch on mobile to play the game."
+    },
+    { 
+        "id": 33, 
+        "name": "Summer Rider 3D",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Summer Rider 3D&src=https://html5.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hit the waves in Summer Rider 3D, a sun-soaked surf adventure inspired by high-speed endless runners. Glide over water on a surfboard or jet-ski, collect shimmering starfish, and push your reflexes to the limit as the speed cranks up. With a colorful summer theme and upbeat tropical soundtracks, the game offers endless fun for both solo and 2 player mode!",
+        "gameplay": "ARROW KEYS or WASD: Move left, right, or jump to navigate waves and obstacles. On MOBILE, tap left/right to steer, both sides to jump!"
+    },
+    { 
+        "id": 34, 
+        "name": "Obby Escape: Prison Rat Dance",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/0c621dfab60143809e321fa448476f04-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Obby Escape: Prison Rat Dance&src=https://html5.gamedistribution.com/0c621dfab60143809e321fa448476f04/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Obby Escape: Prison Rat Dance is an exhilarating adventure game that merges the thrill of intricate prison escape challenges with the dynamic agility required in parkour. Assume the role of a resourceful rat striving to escape the strict surveillance of a heavily fortified prison. Find your way through elaborate mazes and overcome diverse, challenging obstacles as you plot your daring prison escape.",
+        "gameplay": "Can you navigate the complex pathways, evade the guards, and secure your freedom? Join the action in Obby Escape: Prison Rat Dance and master the art of the prison break!"
+    },
+    { 
+        "id": 35, 
+        "name": "Brainrot Boing Boing Merge",
+        "category": "Merge",
+        "thumbnail": "https://img.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Brainrot Boing Boing Merge&src=https://html5.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to Brainrot Boing Boing Merge – a charming merge puzzle game where adorable creatures meet polished gameplay and juicy physics! Merge. Match. Maximize Satisfying Effects & Lively Details Unlockable Skins System Relaxing Yet Strategic If you love satisfying merges, juicy feedback, and charming characters, this game is for you. Play now and see what creature you’ll create next!",
+        "gameplay": "Click or Tap to merge!"
+    },
+    { 
+        "id": 36, 
+        "name": "MeatRider",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=MeatRider&src=https://html5.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to MeatRider — an intense action-packed game set in a post-apocalyptic world overrun by zombies. You find yourself right in the middle of the chaos, where your only goal is to survive at all costs. Choose one of the unique combat vehicles, each with its own special abilities and weapons, and get ready for dynamic battles across a zombie-infested desert landscape.",
+        "gameplay": "Choose a car, press the Start button and start crushing zombies! Management: WASD - car movement Moving the mouse - overview Left mouse button - shot The right mouse button is a sight Space bar - handbrake Esc or Tab - pause Recommendations: Use different cars for a variety of strategies. Try to shoot down groups of zombies to get bonus points."
+    },
+    { 
+        "id": 37, 
+        "name": "Ultra Realistic BlockCraft",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/484487c7d43b415c85db89d8e007c684-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Ultra Realistic BlockCraft&src=https://html5.gamedistribution.com/484487c7d43b415c85db89d8e007c684/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Help Steve in the ultra-realistic block world and make sure he reaches the portal. Remember, this realistic world is extremely challenging and monsters are roaming everywhere. You must collect all the diamonds. While collecting diamonds, don’t forget to open the chests you find along the way. Open the chests and crush all the monsters. Reach the portal at the end of the level safely to complete the stage. Remember, you only have one life and if it runs out you will lose everything you’ve earned.",
+        "gameplay": "*If your life runs out, your progress in the game will be erased, so you must play very carefully. *Use the “WASD” keys to play. *Jump on top of the monsters to crush them. *Find all the diamonds and chests and reach the end of the level."
+    },
+    { 
+        "id": 38, 
+        "name": "Max Crusher: Crazy Destruction and Car Crashes",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Max Crusher: Crazy Destruction and Car Crashes&src=https://html5.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Max Crusher: Crazy Destruction and Car Crashes is an exciting game in which the player has to become a real wrecking racer. There are many unique cars available in the game, each of which has its own characteristics and capabilities. From classic sports cars to massive monster trucks, you will have complete freedom to choose the vehicle for your crazy adventures.",
+        "gameplay": "Control: WASD - Driving. Shift - nitro. R - turn the car over. C - camera change. Esc - call MENU. T - Time dilation. Space - handbrake. Controls for mobile devices: Use the game interface on the screen."
+    },
+    { 
+        "id": 39, 
+        "name": "Catch Thief",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/919644af743a4a7a971738bbf2377e83-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Catch Thief&src=https://html5.gamedistribution.com/919644af743a4a7a971738bbf2377e83/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Catch Thief is an addictive puzzle game where you must outsmart a clever thief and stop his escape. Take control of the police, block every possible path and drive the criminal into a dead end. With each new level the challenge grows, requiring you to plan ahead, think strategically and act quickly. Bright cartoon graphics, fun scenarios and increasing difficulty make Catch Thief a perfect choice for fans of logic games who enjoy testing their skills, attention and reaction speed.",
+        "gameplay": "Tap or click on a police officer and then on the dot where you want him to move. Place your heroes wisely to block the thief’s escape routes. Simple controls, colorful visuals and dynamic gameplay make Catch Thief easy and fascinating. Enjoy the game and have fun!"
+    },
+    { 
+        "id": 40, 
+        "name": "Manyunya Saving the Princess",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Manyunya Saving the Princess&src=https://html5.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to the time when there were knights, magic, farmers, princesses, and generals. Manyunya sets off at the request of the Supreme Lord to save his princess. On the way you will find a whole dangerous adventure, you will come across colorful views, and characters with whom you can communicate and interact, as well as enemies that you will need to defeat at any cost, and save the princess, and complete the task. Interesting voice acting and story will immerse you in this world with your head!",
+        "gameplay": "To control the game, use your computer mouse. If you have a mobile device, use screen tapping. To complete the game, you need to press different buttons indicated on the screen in the game. To defeat the enemy, you need to quickly press the sight."
+    },
+    { 
+        "id": 41, 
+        "name": "Monster Escape",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Monster Escape&src=https://html5.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Monster Escape is a thrilling puzzle platformer where you rotate the entire level to help a little green monster grab the key and escape the dark dungeon. Each stage is packed with tricky obstacles — spikes, falling crates, and narrow passages that put your timing and planning skills to the test. The unique mechanic — rotate the world, find the path, unlock the door — creates plenty of satisfying moments as you advance.",
+        "gameplay": "Rotate the world using the on-screen buttons to shift gravity and open new paths, then guide the monster to collect the key and reach the locked door to complete the level. On PC, you can also click to the left or right of the monster to make it walk without rotating the stage, while on mobile, smooth touch controls ensure easy navigation. Watch out for spikes and falling boxes, plan your moves wisely, and enjoy the challenge. Good luck!"
+    },
+    { 
+        "id":42, 
+        "name": "Charger City Driver",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Charger City Driver&src=https://html5.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Get ready to skid the wheels of a stunning muscle car through an expansive night city map! Customize and upgrade your muscle car with cool upgradables and become the best driver in the city. Take your dog with you in 4 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
+        "gameplay": "Car: Arrow Keys/W, A, S, D: Drive/Steer/Brake C: Change Camera F: Nitro Character: Arrow Keys/W,A,S,D: Move Mouse Orbit: Look Around."
+    },
+        { 
+        "id": 43, 
+        "name": "Hazmob FPS",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Hazmob FPS&src=https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hazmob FPS is an intense first-person shooter that blends tactical depth with fast-paced action. Players engage in strategic, team-based battles across diverse maps, utilizing customizable loadouts and a variety of game modes. With its dynamic gameplay mechanics, realistic graphics, and competitive ranked play, Hazmob FPS challenges players to master their skills, coordinate with teammates, and outwit opponents in a visually immersive and constantly evolving environment.",
+        "gameplay": "WASD = move Space = jump Left mouse / K = shoot Right mouse / L = aim P = leaderboard, pause, and settings G = pick up the gun C = crouch Shift = run 1, 2, 3 = switch weapons 4, 5, 6 = skills E = alternative skills Q = alternative skills"
+    },
+    { 
+        "id": 44, 
+        "name": "Snow Rider 3D",
+        "category": "Agility",
+        "thumbnail": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg", 
+        "url": "/assets/pages/player.html?title=Snow Rider 3D&src=https%3A%2F%2Fhtml5.gamedistribution.com%2F3b79a8537ebc414fb4f9672a9b8c68c8%2F%3Fgd_sdk_referrer_url%3Dhttps%3A%2F%2Fwww.example.com%2Fgames%2F%7Bgame-path%7D&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Owned/Acquired by gamersplayhub@gmail.com. Would you like to ride on a sleigh? Then, no need to go anywhere. Because now, you can experience riding a sleigh for free anytime you want in Snow Ride 3D. Although you are not actually on a sleigh, you will feel like you’re actually riding one because the game is in 3D. Try to go as far as you can to get high score. You may also collect gifts to purchase sleigh.",
+        "gameplay": "Up arrow key or W - Jump Left arrow key or A - Steer Left Right arrow key or D - Steer Right"
+    },
+    { 
+        "id": 45, 
+        "name": "Formula Racers",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Formula Racers&src=https://html5.gamedistribution.com/0072a8afa16a480bb4fe52fbe59ea885/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Formula Racers is the ultimate HTML5 browser top-down arcade racing game - no download required! Race on any device across 10 thrilling tracks, tackle dynamic lap tracking and real-time placement, and earn coins to unlock and upgrade cars (engine, gearbox, steering, brakes). This online racing game features HD graphics, responsive design, immersive SFX & music - perfect for mobile & desktop gamers seeking fast-paced, addictive arcade action!",
+        "gameplay": "• Steer with touch or W-A-S-D/arrow keys, tap brake to drift around corners. • Finish in top positions to earn coins. • Spend coins between races to boost engine power, gearbox shifts, handling and braking—fine-tune your setup to dominate every circuit!"
+    },
+    { 
+        "id": 46, 
+        "name": "Traffic Cop 3D",
+        "category": "Simulation",
+        "thumbnail": "https://img.gamedistribution.com/fed5711667c840b3a394043324bf0def-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Traffic Cop 3D&src=https://html5.gamedistribution.com/fed5711667c840b3a394043324bf0def/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Traffic Cop 3D is a casual game where you play as a police officer enforcing the law of the road. Scan nearby drivers and use intel from the police database to decide whether you should pull them over, or let them go, all while progressing through the story and increasing your duties as a cop.",
+        "gameplay": "Use the left mouse button on desktop or touch on mobile to play the game."
+    },
+    { 
+        "id": 47, 
+        "name": "Summer Rider 3D",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Summer Rider 3D&src=https://html5.gamedistribution.com/3ff5df9f5d0248fd9dcd70e2cc253de5/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Hit the waves in Summer Rider 3D, a sun-soaked surf adventure inspired by high-speed endless runners. Glide over water on a surfboard or jet-ski, collect shimmering starfish, and push your reflexes to the limit as the speed cranks up. With a colorful summer theme and upbeat tropical soundtracks, the game offers endless fun for both solo and 2 player mode!",
+        "gameplay": "ARROW KEYS or WASD: Move left, right, or jump to navigate waves and obstacles. On MOBILE, tap left/right to steer, both sides to jump!"
+    },
+    { 
+        "id": 48, 
+        "name": "Obby Escape: Prison Rat Dance",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/0c621dfab60143809e321fa448476f04-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Obby Escape: Prison Rat Dance&src=https://html5.gamedistribution.com/0c621dfab60143809e321fa448476f04/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Obby Escape: Prison Rat Dance is an exhilarating adventure game that merges the thrill of intricate prison escape challenges with the dynamic agility required in parkour. Assume the role of a resourceful rat striving to escape the strict surveillance of a heavily fortified prison. Find your way through elaborate mazes and overcome diverse, challenging obstacles as you plot your daring prison escape.",
+        "gameplay": "Can you navigate the complex pathways, evade the guards, and secure your freedom? Join the action in Obby Escape: Prison Rat Dance and master the art of the prison break!"
+    },
+    { 
+        "id": 49, 
+        "name": "Brainrot Boing Boing Merge",
+        "category": "Merge",
+        "thumbnail": "https://img.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Brainrot Boing Boing Merge&src=https://html5.gamedistribution.com/aae36cf8b16e4de79bb4958778ac2462/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to Brainrot Boing Boing Merge – a charming merge puzzle game where adorable creatures meet polished gameplay and juicy physics! Merge. Match. Maximize Satisfying Effects & Lively Details Unlockable Skins System Relaxing Yet Strategic If you love satisfying merges, juicy feedback, and charming characters, this game is for you. Play now and see what creature you’ll create next!",
+        "gameplay": "Click or Tap to merge!"
+    },
+    { 
+        "id": 50, 
+        "name": "MeatRider",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=MeatRider&src=https://html5.gamedistribution.com/81d1ba7a25164cbfbb1c5add4b98e59e/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to MeatRider — an intense action-packed game set in a post-apocalyptic world overrun by zombies. You find yourself right in the middle of the chaos, where your only goal is to survive at all costs. Choose one of the unique combat vehicles, each with its own special abilities and weapons, and get ready for dynamic battles across a zombie-infested desert landscape.",
+        "gameplay": "Choose a car, press the Start button and start crushing zombies! Management: WASD - car movement Moving the mouse - overview Left mouse button - shot The right mouse button is a sight Space bar - handbrake Esc or Tab - pause Recommendations: Use different cars for a variety of strategies. Try to shoot down groups of zombies to get bonus points."
+    },
+    { 
+        "id": 51, 
+        "name": "Ultra Realistic BlockCraft",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/484487c7d43b415c85db89d8e007c684-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Ultra Realistic BlockCraft&src=https://html5.gamedistribution.com/484487c7d43b415c85db89d8e007c684/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Help Steve in the ultra-realistic block world and make sure he reaches the portal. Remember, this realistic world is extremely challenging and monsters are roaming everywhere. You must collect all the diamonds. While collecting diamonds, don’t forget to open the chests you find along the way. Open the chests and crush all the monsters. Reach the portal at the end of the level safely to complete the stage. Remember, you only have one life and if it runs out you will lose everything you’ve earned.",
+        "gameplay": "*If your life runs out, your progress in the game will be erased, so you must play very carefully. *Use the “WASD” keys to play. *Jump on top of the monsters to crush them. *Find all the diamonds and chests and reach the end of the level."
+    },
+    { 
+        "id": 52, 
+        "name": "Max Crusher: Crazy Destruction and Car Crashes",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Max Crusher: Crazy Destruction and Car Crashes&src=https://html5.gamedistribution.com/5e41c93bc2284e158cc5faa719aba03b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Max Crusher: Crazy Destruction and Car Crashes is an exciting game in which the player has to become a real wrecking racer. There are many unique cars available in the game, each of which has its own characteristics and capabilities. From classic sports cars to massive monster trucks, you will have complete freedom to choose the vehicle for your crazy adventures.",
+        "gameplay": "Control: WASD - Driving. Shift - nitro. R - turn the car over. C - camera change. Esc - call MENU. T - Time dilation. Space - handbrake. Controls for mobile devices: Use the game interface on the screen."
+    },
+    { 
+        "id": 53, 
+        "name": "Catch Thief",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/919644af743a4a7a971738bbf2377e83-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Catch Thief&src=https://html5.gamedistribution.com/919644af743a4a7a971738bbf2377e83/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Catch Thief is an addictive puzzle game where you must outsmart a clever thief and stop his escape. Take control of the police, block every possible path and drive the criminal into a dead end. With each new level the challenge grows, requiring you to plan ahead, think strategically and act quickly. Bright cartoon graphics, fun scenarios and increasing difficulty make Catch Thief a perfect choice for fans of logic games who enjoy testing their skills, attention and reaction speed.",
+        "gameplay": "Tap or click on a police officer and then on the dot where you want him to move. Place your heroes wisely to block the thief’s escape routes. Simple controls, colorful visuals and dynamic gameplay make Catch Thief easy and fascinating. Enjoy the game and have fun!"
+    },
+    { 
+        "id": 54, 
+        "name": "Manyunya Saving the Princess",
+        "category": "Adventure",
+        "thumbnail": "https://img.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Manyunya Saving the Princess&src=https://html5.gamedistribution.com/f58b7225d9014346b2a59f08c60700c7/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Welcome to the time when there were knights, magic, farmers, princesses, and generals. Manyunya sets off at the request of the Supreme Lord to save his princess. On the way you will find a whole dangerous adventure, you will come across colorful views, and characters with whom you can communicate and interact, as well as enemies that you will need to defeat at any cost, and save the princess, and complete the task. Interesting voice acting and story will immerse you in this world with your head!",
+        "gameplay": "To control the game, use your computer mouse. If you have a mobile device, use screen tapping. To complete the game, you need to press different buttons indicated on the screen in the game. To defeat the enemy, you need to quickly press the sight."
+    },
+    { 
+        "id": 55, 
+        "name": "Monster Escape",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Monster Escape&src=https://html5.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Monster Escape is a thrilling puzzle platformer where you rotate the entire level to help a little green monster grab the key and escape the dark dungeon. Each stage is packed with tricky obstacles — spikes, falling crates, and narrow passages that put your timing and planning skills to the test. The unique mechanic — rotate the world, find the path, unlock the door — creates plenty of satisfying moments as you advance.",
+        "gameplay": "Rotate the world using the on-screen buttons to shift gravity and open new paths, then guide the monster to collect the key and reach the locked door to complete the level. On PC, you can also click to the left or right of the monster to make it walk without rotating the stage, while on mobile, smooth touch controls ensure easy navigation. Watch out for spikes and falling boxes, plan your moves wisely, and enjoy the challenge. Good luck!"
+    },
+    { 
+        "id": 56, 
+        "name": "Charger City Driver",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Charger City Driver&src=https://html5.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "redirect",
+        "description":"Get ready to skid the wheels of a stunning muscle car through an expansive night city map! Customize and upgrade your muscle car with cool upgradables and become the best driver in the city. Take your dog with you in 4 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
+        "gameplay": "Car: Arrow Keys/W, A, S, D: Drive/Steer/Brake C: Change Camera F: Nitro Character: Arrow Keys/W,A,S,D: Move Mouse Orbit: Look Around."
     }
+   
+
 
 ]
