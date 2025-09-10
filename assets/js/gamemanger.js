@@ -18,6 +18,8 @@ fetch('/assets/JSON/games.json')
         const searchBar = document.querySelector('[data-func="search"]');
         searchBar.placeholder = `Search ${GAMES.length} games`;
 
+        // 注释掉旧的搜索功能，使用main.js中的新搜索功能
+        /*
         searchBar.addEventListener('input', (e) => {
             if (searchBar.value) {
                 var result = false;
@@ -36,25 +38,29 @@ fetch('/assets/JSON/games.json')
                 document.querySelector('.searchErr').classList.add('hidden');
             }
         });
+        */
 
         document.querySelector('.games').innerHTML = '';
 
+        // 注释掉旧的游戏渲染逻辑
+        /*
         GAMES.forEach(game => {
             const gameEl = document.createElement('div');
             gameEl.classList = 'game';
             gameEl.title = game.name;
             gameEl.innerHTML = `<img src="${game.thumbnail}"/><p>${game.name}</p>`;
             document.querySelector('.games').appendChild(gameEl);
-
+        
             gameEl.querySelector('img').onerror = (e) => {
                 registerError(`Could not load splash image for ${e.target.parentElement.title}`);
                 e.target.parentElement.classList.add('failed');
                 e.target.src = '/assets/img/logo.png';
             };
-
+        
             gameEl.addEventListener('click', (e) => openGame(game.id));
         });
-
+        */
+        
         searchBar.focus();
     })
     .catch(e => registerError('Could not load games'));
