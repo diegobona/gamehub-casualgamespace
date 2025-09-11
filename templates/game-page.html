@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{GAME_NAME}} - Play Free Online Game | CasualGameSpace</title>
+    <meta name="description" content="{{GAME_DESCRIPTION}}">
+    <meta name="keywords" content="{{GAME_NAME}}, {{GAME_CATEGORY}}, free online game, browser game">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{GAME_NAME}} - Free Online Game">
+    <meta property="og:description" content="{{GAME_DESCRIPTION}}">
+    <meta property="og:image" content="{{GAME_THUMBNAIL}}">
+    <meta property="og:url" content="{{GAME_URL}}">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "{{GAME_NAME}}",
+        "description": "{{GAME_DESCRIPTION}}",
+        "image": "{{GAME_THUMBNAIL}}",
+        "genre": "{{GAME_CATEGORY}}",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game"
+    }
+    </script>
+    
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <!-- 游戏页面内容 -->
+    <nav class="breadcrumb">
+        <a href="/">Home</a> > 
+        <a href="/games/">Games</a> > 
+        <a href="/games/category/{{CATEGORY_SLUG}}/">{{GAME_CATEGORY}}</a> > 
+        <span>{{GAME_NAME}}</span>
+    </nav>
+    
+    <main>
+        <h1>{{GAME_NAME}}</h1>
+        <div class="game-container">
+            <iframe src="{{GAME_URL}}" title="{{GAME_NAME}}"></iframe>
+        </div>
+        
+        <section class="game-info">
+            <h2>About {{GAME_NAME}}</h2>
+            <p>{{GAME_DESCRIPTION}}</p>
+            
+            <h3>How to Play</h3>
+            <p>{{GAME_GAMEPLAY}}</p>
+            
+            <div class="game-meta">
+                <span class="category">Category: <a href="/games/category/{{CATEGORY_SLUG}}/">{{GAME_CATEGORY}}</a></span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

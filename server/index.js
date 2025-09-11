@@ -100,8 +100,16 @@ server.on('request', (req, res) => {
         res.setHeader('content-type', 'text/html');
         res.end(fs.readFileSync(path.join(__dirname, '../', '404.html')));
     } else if (!config.mirror.enabled || !req.path.startsWith(config.mirror.config.path)) {
-        // 根路径直接返回游戏列表页（app.html）
+        // 根路径直接返回游戏列表页（index.html）
         if (req.method === 'GET' && (req.path === '/' || req.path === '/index.html' || req.path === '/index')) {
+            const appFile = path.join(__dirname, '../', 'index.html');
+            res.setHeader('content-type', mime.getType(appFile));
+            res.end(fs.readFileSync(appFile));
+            return;
+        }
+        
+        // 新增：处理游戏分类路径，都返回 index.html
+        if (req.method === 'GET' && /^\/(all|Action|Puzzle|Racing|Adventure|Arcade)$/.test(req.path)) {
             const appFile = path.join(__dirname, '../', 'index.html');
             res.setHeader('content-type', mime.getType(appFile));
             res.end(fs.readFileSync(appFile));

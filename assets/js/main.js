@@ -287,9 +287,26 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             allGames = data;
             currentFilteredGames = allGames;
-            renderGamesWithPagination(); // 使用分页渲染
-            // 默认激活"All Games"分类
-            document.querySelector('[data-category="all"]').classList.add('active');
+            
+            // 根据URL路径自动过滤游戏分类
+            const currentPath = window.location.pathname;
+            let categoryFromPath = 'all';
+            
+            if (currentPath === '/Action') categoryFromPath = 'Action';
+            else if (currentPath === '/Puzzle') categoryFromPath = 'Puzzle';
+            else if (currentPath === '/Racing') categoryFromPath = 'Racing';
+            else if (currentPath === '/Adventure') categoryFromPath = 'Adventure';
+            else if (currentPath === '/Arcade') categoryFromPath = 'Arcade';
+            else if (currentPath === '/all') categoryFromPath = 'all';
+            
+            // 应用分类过滤
+            if (categoryFromPath !== 'all') {
+                filterGames(categoryFromPath);
+            } else {
+                renderGamesWithPagination(); // 使用分页渲染
+                // 默认激活"All Games"分类
+                document.querySelector('[data-category="all"]').classList.add('active');
+            }
         })
         .catch(error => {
             console.error('Error loading games:', error);
