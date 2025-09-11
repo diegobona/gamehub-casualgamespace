@@ -184,68 +184,67 @@
   </div>
 
   <script>
-  // 检查是否通过新的URL格式访问
-  let urlParams;
-  let currentGame = null; // 添加当前游戏数据存储
+  // 修改URL参数处理逻辑
+  const urlParams = new URLSearchParams(window.location.search);
+  let currentGame = null;
   
-  if (window.location.search) {
-      // 传统方式：通过URL参数
-      urlParams = new URLSearchParams(window.location.search);
-      initializePage();
+  // 检查是否是新的路径格式（如 /snowrider3d）
+  if (!urlParams.get('title') && !urlParams.get('src')) {
+  const gamePath = window.location.pathname.substring(1); // 移除开头的 '/'
+  console.log('Game path from URL:', gamePath);
+  
+  // 从games.json加载游戏数据并匹配
+  fetch('/assets/JSON/games.json')
+  .then(response => response.json())
+  .then(games => {
+  console.log('Loaded games:', games.length);
+  
+  // 生成slug的函数（与服务器端保持一致）
+  function generateGameSlug(gameName) {
+  return gameName
+  .toLowerCase()
+  .replace(/[^a-z0-9\s]/g, '')
+  .replace(/\s+/g, '')
+  .trim();
+  }
+  
+  // 查找匹配的游戏
+  const matchedGame = games.find(game => {
+  const slug = generateGameSlug(game.name);
+  console.log('Comparing:', slug, 'with', gamePath);
+  return slug === gamePath;
+  });
+  
+  if (matchedGame) {
+  console.log('Matched game:', matchedGame);
+  currentGame = matchedGame;
+  
+  // 创建虚拟的URLSearchParams
+  const gameUrl = new URL(matchedGame.url, window.location.origin);
+  const title = gameUrl.searchParams.get('title') || matchedGame.name;
+  const src = gameUrl.searchParams.get('src') || matchedGame.url;
+  
+  // 更新URLSearchParams
+  urlParams.set('title', title);
+  urlParams.set('src', src);
+  
+  // 执行页面初始化
+  initializePage();
   } else {
-      // 新方式：通过路径名查找游戏
-      const gamePath = window.location.pathname.substring(1); // 移除开头的 '/'
-      console.log('Game path from URL:', gamePath); // 调试信息
-      
-      // 这里需要从games.json加载数据来匹配游戏
-      fetch('/assets/JSON/games.json')
-          .then(response => response.json())
-          .then(games => {
-              console.log('Loaded games:', games.length); // 调试信息
-              
-              const matchedGame = games.find(game => {
-                  const slug = game.name
-                      .toLowerCase()
-                      .replace(/[^a-z0-9\s]/g, '')
-                      .replace(/\s+/g, '')
-                      .trim();
-                  console.log(`Comparing '${slug}' with '${gamePath}'`); // 调试信息
-                  return slug === gamePath;
-              });
-              
-              console.log('Matched game:', matchedGame); // 调试信息
-              
-              if (matchedGame) {
-                  currentGame = matchedGame; // 保存完整的游戏数据
-                  console.log('Current game data:', currentGame); // 调试信息
-                  
-                  const gameUrl = new URL(matchedGame.url, window.location.origin);
-                  const title = gameUrl.searchParams.get('title') || matchedGame.name;
-                  const src = gameUrl.searchParams.get('src') || '';
-                  
-                  console.log('Title:', title, 'Src:', src); // 调试信息
-                  
-                  // 创建虚拟的URLSearchParams
-                  urlParams = new URLSearchParams(`title=${encodeURIComponent(title)}&src=${encodeURIComponent(src)}`);
-                  
-                  // 继续执行原有的页面逻辑
-                  initializePage();
-              } else {
-                  console.error('Game not found for path:', gamePath); // 调试信息
-                  // 游戏未找到，显示错误
-                  document.getElementById('heroTitle').textContent = 'Game Not Found';
-                  document.getElementById('gameDescription').textContent = 'The requested game could not be found.';
-                  document.getElementById('gameGameplay').textContent = 'Please check the URL and try again.';
-              }
-          })
-          .catch(error => {
-              console.error('Error loading games data:', error);
-              document.getElementById('heroTitle').textContent = 'Error Loading Game';
-              document.getElementById('gameDescription').textContent = 'Failed to load game data.';
-              document.getElementById('gameGameplay').textContent = 'Please try again later.';
-          });
-      // 删除这个非法的return语句
-      // return; // 等待异步加载完成
+  console.log('No matching game found for:', gamePath);
+  document.getElementById('heroTitle').textContent = 'Game Not Found';
+  document.getElementById('gameDescription').textContent = 'The requested game could not be found.';
+  }
+  })
+  .catch(error => {
+  console.error('Error loading games data:', error);
+  document.getElementById('heroTitle').textContent = 'Error Loading Game';
+  document.getElementById('gameDescription').textContent = 'Failed to load game data.';
+  document.getElementById('gameGameplay').textContent = 'Please try again later.';
+  });
+  } else {
+  // 传统的URL参数方式
+  initializePage();
   }
   
   function initializePage() {

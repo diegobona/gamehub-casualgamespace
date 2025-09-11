@@ -1,0 +1,14 @@
+# 分类页面
+/all /index.html 200
+/Action /index.html 200
+/Puzzle /index.html 200
+/Racing /index.html 200
+/Adventure /index.html 200
+/Arcade /index.html 200
+/Shooter /index.html 200
+/Agility /index.html 200
+/Simulation /index.html 200
+/Casual /index.html 200
+
+# 游戏页面
+/* /assets/pages/player.html 200
