@@ -1,3 +1,6 @@
+# 根路径指向首页
+/ /index.html 200
+
 # 分类页面
 /all /index.html 200
 /Action /index.html 200
@@ -10,5 +13,5 @@
 /Simulation /index.html 200
 /Casual /index.html 200
 
-# 游戏页面
-/* /assets/pages/player.html 200
+# 游戏页面（排除已定义的路径）
+/:gamename /assets/pages/player.html 200
