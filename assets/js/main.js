@@ -127,6 +127,9 @@ function renderGames(games) {
             if (game.use === 'redirect') {
                 // 生成新的URL格式：/游戏名称
                 const gameSlug = generateGameSlug(game.name);
+                // 使用 history.pushState 来更新URL而不刷新页面
+                history.pushState(null, null, `/${gameSlug}`);
+                // 然后跳转到游戏页面
                 window.location.href = `/${gameSlug}`;
             }
         };
@@ -292,6 +295,21 @@ function searchGames(query) {
 
 // 页面加载时初始化
 document.addEventListener('DOMContentLoaded', function() {
+    // 绑定分类卡片点击事件
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止默认链接行为
+            const category = this.getAttribute('data-category');
+            
+            // 更新URL
+            const newPath = category === 'all' ? '/all' : `/${category}`;
+            history.pushState(null, null, newPath);
+            
+            // 过滤游戏
+            filterGames(category);
+        });
+    });
+    
     // 加载游戏数据
     fetch('/assets/JSON/games.json')
         .then(response => response.json())
