@@ -184,152 +184,206 @@
   </div>
 
   <script>
-    (function() {
-      const usp = new URLSearchParams(location.search);
-      const src = usp.get('src'); // 需 URL 编码
-      const title = usp.get('title') || 'Game Player';
-      const ar = (usp.get('ar') || '16:9').toLowerCase(); // 16:9 | 4:3 | 9:16
-      const fs = usp.get('fs') === '1'; // 是否展示全屏按钮
-      const rn = usp.get('rn') === '1'; // 是否强制 noreferrer
-
-      // 标题
-      document.title = title + ' - Game Player';
-      document.getElementById('title').textContent = title;
-
-      // 宽高比
-      function ratioFrom(ar) {
-        const map = { '16:9': 56.25, '4:3': 75, '9:16': (16/9)*100 };
-        if (map[ar]) return map[ar];
-        const m = ar.match(/^(\d+)\s*:\s*(\d+)$/);
-        if (m) return (+m[2] / +m[1]) * 100;
-        return 56.25;
+  // 检查是否通过新的URL格式访问
+  let urlParams;
+  let currentGame = null; // 添加当前游戏数据存储
+  
+  if (window.location.search) {
+      // 传统方式：通过URL参数
+      urlParams = new URLSearchParams(window.location.search);
+      initializePage();
+  } else {
+      // 新方式：通过路径名查找游戏
+      const gamePath = window.location.pathname.substring(1); // 移除开头的 '/'
+      console.log('Game path from URL:', gamePath); // 调试信息
+      
+      // 这里需要从games.json加载数据来匹配游戏
+      fetch('/assets/JSON/games.json')
+          .then(response => response.json())
+          .then(games => {
+              console.log('Loaded games:', games.length); // 调试信息
+              
+              const matchedGame = games.find(game => {
+                  const slug = game.name
+                      .toLowerCase()
+                      .replace(/[^a-z0-9\s]/g, '')
+                      .replace(/\s+/g, '')
+                      .trim();
+                  console.log(`Comparing '${slug}' with '${gamePath}'`); // 调试信息
+                  return slug === gamePath;
+              });
+              
+              console.log('Matched game:', matchedGame); // 调试信息
+              
+              if (matchedGame) {
+                  currentGame = matchedGame; // 保存完整的游戏数据
+                  console.log('Current game data:', currentGame); // 调试信息
+                  
+                  const gameUrl = new URL(matchedGame.url, window.location.origin);
+                  const title = gameUrl.searchParams.get('title') || matchedGame.name;
+                  const src = gameUrl.searchParams.get('src') || '';
+                  
+                  console.log('Title:', title, 'Src:', src); // 调试信息
+                  
+                  // 创建虚拟的URLSearchParams
+                  urlParams = new URLSearchParams(`title=${encodeURIComponent(title)}&src=${encodeURIComponent(src)}`);
+                  
+                  // 继续执行原有的页面逻辑
+                  initializePage();
+              } else {
+                  console.error('Game not found for path:', gamePath); // 调试信息
+                  // 游戏未找到，显示错误
+                  document.getElementById('heroTitle').textContent = 'Game Not Found';
+                  document.getElementById('gameDescription').textContent = 'The requested game could not be found.';
+                  document.getElementById('gameGameplay').textContent = 'Please check the URL and try again.';
+              }
+          })
+          .catch(error => {
+              console.error('Error loading games data:', error);
+              document.getElementById('heroTitle').textContent = 'Error Loading Game';
+              document.getElementById('gameDescription').textContent = 'Failed to load game data.';
+              document.getElementById('gameGameplay').textContent = 'Please try again later.';
+          });
+      // 删除这个非法的return语句
+      // return; // 等待异步加载完成
+  }
+  
+  function initializePage() {
+      const title = urlParams.get('title');
+      const src = urlParams.get('src');
+      
+      // 更新页面标题和游戏标题
+      if (title) {
+          document.title = title + ' - Game Player';
+          document.getElementById('title').textContent = title;
+          document.getElementById('heroTitle').textContent = title;
       }
-      const playerEl = document.getElementById('playerWrap');
-      playerEl.style.setProperty('--ratio', ratioFrom(ar) + '%');
-
-      // iframe 与按钮
-      const iframe = document.getElementById('frame');
-      const openBtn = document.getElementById('openBtn');
-      const fsBtn = document.getElementById('fsBtn');
-      const playBtn = document.getElementById('playBtn');
-
-      function showError(msg) {
-        document.getElementById('hint').innerHTML = '<div class="error">' + msg + '</div>';
-      }
-
-      // 顶部“打开/全屏”按钮
-      if (src) {
-        openBtn.href = src;
-        if (rn) openBtn.rel = 'noopener noreferrer';
-      }
-
-      if (fs) {
-        fsBtn.style.display = '';
-        fsBtn.addEventListener('click', async () => {
-          const el = playerEl;
-          if (!document.fullscreenElement) { try { await el.requestFullscreen(); } catch (e) { console.warn('全屏失败', e); } }
-          else { document.exitFullscreen?.(); }
-        });
-      }
-
-      // 返回逻辑：固定返回首页
-      document.getElementById('backBtn').addEventListener('click', () => {
-          location.href = '/index.html';
-      });
-
-      // 新增：辅助函数，用于规范化 URL（仅保留 path + search）
-      function normalizeUrl(u) {
-          try {
-              const x = new URL(u, location.origin);
-              return x.pathname + x.search;
-          } catch (e) {
-              return u;
+      
+      // 如果有完整的游戏数据，使用它来填充页面信息
+      if (currentGame) {
+          // 更新游戏封面
+          if (currentGame.thumbnail) {
+              document.getElementById('heroCover').src = currentGame.thumbnail;
+              document.getElementById('heroCover').alt = currentGame.name;
+          }
+          
+          // 更新游戏分类信息
+          if (currentGame.category) {
+              document.getElementById('heroSub').textContent = currentGame.category + ' Game';
+          }
+          
+          // 更新游戏描述
+          if (currentGame.description && currentGame.description !== 'NO DATA') {
+              document.getElementById('gameDescription').textContent = currentGame.description;
+          } else {
+              document.getElementById('gameDescription').textContent = 'No description available for this game.';
+          }
+          
+          // 更新游戏玩法说明
+          if (currentGame.gameplay && currentGame.gameplay !== 'NO DATA') {
+              document.getElementById('gameGameplay').textContent = currentGame.gameplay;
+          } else {
+              document.getElementById('gameGameplay').textContent = 'No gameplay instructions available.';
+          }
+      } else {
+          // 如果没有完整游戏数据，尝试从URL参数获取基本信息
+          if (title) {
+              document.getElementById('gameDescription').textContent = `Play ${title} - An exciting online game.`;
+              document.getElementById('gameGameplay').textContent = 'Click "Play Now" to start the game and enjoy!';
           }
       }
-
-      // 从 games.json 获取当前游戏封面，构建“推荐”
-      async function loadDataAndRender() {
-          try {
-              const res = await fetch('/assets/JSON/games.json', { cache: 'no-store' });
-              const games = await res.json();
-
-              // 猜测当前条目（优先用 url 的 src 参数匹配）
-              let current = null;
-              for (const g of games) {
-                  try {
-                      const u = new URL(g.url, location.origin);
-                      const gsrc = u.searchParams.get('src');
-                      if (gsrc && src && decodeURIComponent(gsrc) === src) { current = g; break; }
-                  } catch {}
-              }
-
-              // 填充 hero 信息
-              document.getElementById('heroTitle').textContent = title;
-              if (current && current.thumbnail) {
-                  document.getElementById('heroCover').src = current.thumbnail;
-              }
-              document.getElementById('heroSub').textContent = (current && current.publisher) ? current.publisher : '';
-
-              // 填充游戏信息：description -> 游戏介绍，gameplay -> 操作说明（新增）
-              if (current) {
-                  document.getElementById('gameDescription').textContent = current.description || 'NO DATA';
-                  document.getElementById('gameGameplay').textContent = current.gameplay || 'NO DATA';
-              }
-
-              // 推荐列表（仅排除“当前这条完整 URL”，随机取 6 个）
-              const curNorm = normalizeUrl(location.href);
-              const candidates = games.filter(g => {
-                  if (!g || !g.url) return false;
-                  return normalizeUrl(g.url) !== curNorm;
-              });
-
-              for (let i = candidates.length - 1; i > 0; i--) {
-                  const j = Math.floor(Math.random() * (i + 1));
-                  [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
-              }
-              const list = candidates.slice(0, 6);
-
-              const grid = document.getElementById('recoGrid');
-              grid.innerHTML = '';
-              list.forEach(item => {
-                  const a = document.createElement('a');
-                  a.className = 'reco-card';
-                  a.href = item.url || '#';
-                  a.innerHTML =
-                    '<img class="reco-thumb" src="' + (item.thumbnail || '/assets/img/logo.png') + '" alt="">' +
-                    '<div class="reco-meta">' +
-                      '<div class="reco-name">' + (item.name || 'Untitled') + '</div>' +
-                      '<div class="reco-pub">' + (item.publisher || '') + '</div>' +
-                    '</div>';
-                  grid.appendChild(a);
-              });
-              if (!list.length) grid.innerHTML = '<div class="hint">No Recommendation</div>';
-      } catch (e) {
-        console.warn('数据加载失败', e);
-        showError('推荐模块加载失败，请稍后重试');
+      
+      // 设置播放按钮和其他交互逻辑
+      const playBtn = document.getElementById('playBtn');
+      const playerWrap = document.getElementById('playerWrap');
+      const hero = document.getElementById('hero');
+      const frame = document.getElementById('frame');
+      const openBtn = document.getElementById('openBtn');
+      const backBtn = document.getElementById('backBtn');
+      
+      // 播放按钮点击事件
+      playBtn.onclick = () => {
+          if (src) {
+              frame.src = src;
+              playerWrap.style.display = 'block';
+              hero.style.display = 'none';
+              openBtn.href = src;
+              document.getElementById('fsBtn').style.display = 'inline-block';
+          } else {
+              alert('Game source not available');
+          }
+      };
+      
+      // 返回按钮
+      backBtn.onclick = () => {
+          window.location.href = '/';
+      };
+      
+      // 全屏按钮
+      const fsBtn = document.getElementById('fsBtn');
+      fsBtn.onclick = () => {
+          if (frame.requestFullscreen) {
+              frame.requestFullscreen();
+          }
+      };
+      
+      // 设置打开链接
+      if (src) {
+          openBtn.href = src;
       }
-    }
-
-    // 点击 Play Now：显示 iframe 播放器
-    playBtn.addEventListener('click', () => {
-      if (!src) {
-        showError('缺少 src 参数。示例：?title=Demo&src=' + encodeURIComponent('https://example.com/embed.html') + '&ar=16:9&fs=1');
-        return;
-      }
-      document.getElementById('hero').style.display = 'none';
-      playerEl.style.display = '';
-      // 移除这行：document.getElementById('gameInfo').style.display = ''; 
-      if (!iframe.src || iframe.src === 'about:blank') iframe.src = src;
-    });
-
-    // 页面初始化
-    loadDataAndRender();
-
-    // 若希望直接进入播放状态，可在 URL 加入 play=1
-    if (usp.get('play') === '1' && src) {
-      playBtn.click();
-    }
-})();
-</script>
+      
+      // 加载推荐游戏
+      loadRecommendedGames();
+  }
+  
+  // 加载推荐游戏
+  function loadRecommendedGames() {
+      fetch('/assets/JSON/games.json')
+          .then(response => response.json())
+          .then(games => {
+              const recoGrid = document.getElementById('recoGrid');
+              const currentCategory = currentGame ? currentGame.category : null;
+              
+              // 筛选推荐游戏（同类别或随机）
+              let recommendedGames = games.filter(game => 
+                  currentGame ? game.id !== currentGame.id : true
+              );
+              
+              if (currentCategory) {
+                  const sameCategory = recommendedGames.filter(game => game.category === currentCategory);
+                  if (sameCategory.length >= 4) {
+                      recommendedGames = sameCategory;
+                  }
+              }
+              
+              // 随机选择4个游戏
+              recommendedGames = recommendedGames.sort(() => 0.5 - Math.random()).slice(0, 4);
+              
+              recoGrid.innerHTML = '';
+              recommendedGames.forEach(game => {
+                  const gameSlug = game.name
+                      .toLowerCase()
+                      .replace(/[^a-z0-9\s]/g, '')
+                      .replace(/\s+/g, '')
+                      .trim();
+                  
+                  const card = document.createElement('a');
+                  card.className = 'reco-card';
+                  card.href = `/${gameSlug}`;
+                  card.innerHTML = `
+                      <img class="reco-thumb" src="${game.thumbnail}" alt="${game.name}">
+                      <div class="reco-meta">
+                          <div class="reco-name">${game.name}</div>
+                          <div class="reco-pub">${game.category}</div>
+                      </div>
+                  `;
+                  recoGrid.appendChild(card);
+              });
+          })
+          .catch(error => {
+              console.error('Error loading recommended games:', error);
+          });
+  }
+  </script>
 </body>
 </html>

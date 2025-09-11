@@ -103,6 +103,15 @@ function renderGamesWithPagination() {
 }
 
 // 渲染游戏列表函数
+// 生成URL友好的游戏名称
+function generateGameSlug(gameName) {
+    return gameName
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '') // 移除特殊字符
+        .replace(/\s+/g, '') // 移除空格
+        .trim();
+}
+
 function renderGames(games) {
     const gamesContainer = document.querySelector('.games');
     gamesContainer.innerHTML = '';
@@ -116,7 +125,9 @@ function renderGames(games) {
         `;
         gameElement.onclick = () => {
             if (game.use === 'redirect') {
-                window.location.href = game.url;
+                // 生成新的URL格式：/游戏名称
+                const gameSlug = generateGameSlug(game.name);
+                window.location.href = `/${gameSlug}`;
             }
         };
         gamesContainer.appendChild(gameElement);

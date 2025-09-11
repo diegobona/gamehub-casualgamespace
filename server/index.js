@@ -55,6 +55,23 @@ const json = (res, obj, status = 200) => {
     res.end(JSON.stringify(obj));
 };
 
+// 生成URL友好的游戏名称（与前端保持一致）
+function generateGameSlug(gameName) {
+    return gameName
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '') // 移除特殊字符
+        .replace(/\s+/g, '') // 移除空格
+        .trim();
+}
+
+// 加载游戏数据
+let gamesData = [];
+try {
+    gamesData = JSON.parse(fs.readFileSync(path.join(__dirname, '../assets/JSON/games.json')));
+} catch (error) {
+    console.error('Failed to load games.json:', error);
+}
+
 server.on('request', (req, res) => {
     req.path = new URL('http://localhost' + req.url).pathname;
     var ignoredPath;
@@ -108,12 +125,44 @@ server.on('request', (req, res) => {
             return;
         }
         
-        // 新增：处理游戏分类路径，都返回 index.html
-        if (req.method === 'GET' && /^\/(all|Action|Puzzle|Racing|Adventure|Arcade)$/.test(req.path)) {
+        // 处理游戏分类路径
+        if (req.method === 'GET' && /^\/(all|Action|Puzzle|Racing|Adventure|Arcade|Shooter|Agility|Simulation|Casual)$/.test(req.path)) {
             const appFile = path.join(__dirname, '../', 'index.html');
             res.setHeader('content-type', mime.getType(appFile));
             res.end(fs.readFileSync(appFile));
             return;
+        }
+        
+        // 新增：处理游戏名称路径，返回对应的游戏页面
+        if (req.method === 'GET' && req.path.startsWith('/') && req.path.length > 1) {
+            const gameSlug = req.path.substring(1); // 移除开头的 '/'
+            
+            // 查找匹配的游戏
+            const matchedGame = gamesData.find(game => {
+                const slug = generateGameSlug(game.name);
+                return slug === gameSlug;
+            });
+            
+            if (matchedGame) {
+                // 返回游戏页面，并传递游戏信息
+                const playerFile = path.join(__dirname, '../assets/pages/player.html');
+                let playerContent = fs.readFileSync(playerFile, 'utf8');
+                
+                // 在URL中添加游戏参数
+                const gameUrl = new URL(matchedGame.url, 'http://localhost');
+                const title = gameUrl.searchParams.get('title') || matchedGame.name;
+                const src = gameUrl.searchParams.get('src') || '';
+                
+                // 修改页面URL参数
+                playerContent = playerContent.replace(
+                    /const urlParams = new URLSearchParams\(window\.location\.search\);/,
+                    `const urlParams = new URLSearchParams('title=${encodeURIComponent(title)}&src=${encodeURIComponent(src)}');`
+                );
+                
+                res.setHeader('content-type', 'text/html');
+                res.end(playerContent);
+                return;
+            }
         }
 
         const file = pathToFile(req.path, path.join(__dirname, '../'));
