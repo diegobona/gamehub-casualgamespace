@@ -132,11 +132,19 @@
         <!-- 添加分页控件 -->
         <div class="pagination-container"></div>
         
-        <div class="gameFrame hidden"></div>
+        <!-- 页面主体中靠上位置 -->
+        <!-- 旧节点：请删除这一行 -->
+        <!-- <div class="gameFrame hidden"></div> -->
+        
+        <!-- 保留下面这个详情容器（你已经有了） -->
+        <section id="game-player" class="hidden">
+            <h2 id="game-title"></h2>
+            <div class="gameFrame"></div>
+        </section>
 
         <footer>
             <div class="title">
-                <h1>CasualGameSpace</h1><img src="/assets/img/logo.png">
+                <h1>CasualGameSpace</h1><img src="assets/img/logo.png">
             </div>
 
             <!-- <div class="socials">
@@ -177,4 +185,155 @@
     <!-- 注释掉 profile.js 的引用 -->
     <!-- <script src="assets/js/profile.js" type="module"></script> -->
 </body>
-</html>
+
+    <script>
+    // 生成游戏 slug：小写 + 去非字母数字 + 去空白
+    function generateGameSlug(name) {
+        return String(name || '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '')
+            .trim();
+    }
+
+    // 统一站内导航：始终使用 hash(#/xxx) 路由，避免任何服务端依赖
+    function navigateTo(newUrl, event) {
+        if (event && typeof event.preventDefault === 'function') event.preventDefault();
+        const slug = String(newUrl || '').replace(/^#?\/?/, ''); // 去掉前导 / 或 #
+        location.hash = `#/${slug}`;
+    }
+
+    // 全局拦截站内链接（对外链、新窗口、下载不拦截），改写为 hash 路由
+    document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href]');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href) return;
+        if (href.startsWith('#')) return; // 已经是锚点/哈希
+        if (a.target === '_blank' || a.hasAttribute('download')) return;
+        const url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        e.preventDefault();
+        const path = url.pathname.replace(/^\/+/, '');
+        location.hash = `#/${path}`;
+    });
+
+    // 动态收集所有分类（从 window.allGames 提取）
+    function getAllCategories() {
+        const games = Array.isArray(window.allGames) ? window.allGames : [];
+        const set = new Set();
+        for (const g of games) {
+            if (!g) continue;
+            if (Array.isArray(g.category)) g.category.forEach(c => c && set.add(c));
+            else if (g.category) set.add(g.category);
+        }
+        return Array.from(set);
+    }
+
+    // 将路径解析为分类名（忽略大小写）
+    function resolveCategoryFromPath(path) {
+        const name = decodeURIComponent(String(path || '').replace(/^\//, ''));
+        const cats = getAllCategories();
+        return cats.find(c => c.toLowerCase() === name.toLowerCase());
+    }
+
+    function handleRoute() {
+        // 本地静态环境可用 hash 作兜底；部署后使用 pathname（干净路径）
+        const path = location.hash.startsWith('#/') ? location.hash.slice(1) : location.pathname;
+
+        // 隐藏区域
+        const gamesEl = document.querySelector('.games');
+        const playerEl = document.getElementById('game-player');
+        if (gamesEl) gamesEl.classList.add('hidden');
+        if (playerEl) playerEl.classList.add('hidden');
+
+        // 首页
+        if (path === '/' || path === '') {
+            if (gamesEl) gamesEl.classList.remove('hidden');
+            document.title = 'CasualGameSpace';
+            return;
+        }
+
+        // 分类页（优先匹配）
+        const resolvedCategory = resolveCategoryFromPath(path);
+        if (resolvedCategory) {
+            if (gamesEl) gamesEl.classList.remove('hidden');
+            if (typeof window.filterGames === 'function') {
+                window.filterGames(resolvedCategory);
+            }
+            document.title = `Category - ${resolvedCategory} - CasualGameSpace`;
+            return;
+        }
+
+        // 游戏详情页
+        const gameName = decodeURIComponent(String(path || '').replace(/^\//, ''));
+        loadGameByName(gameName);
+    }
+
+    function loadGameByName(gameName) {
+        // 等待 window.allGames 注入
+        if (!Array.isArray(window.allGames) || window.allGames.length === 0) {
+            setTimeout(() => loadGameByName(gameName), 100);
+            return;
+        }
+
+        // 查找游戏（支持 slug 或原始名称）
+        const game = window.allGames.find(g => {
+            const gameSlug = generateGameSlug(g?.name);
+            return gameSlug === gameName || g?.name === gameName;
+        });
+
+        if (game) {
+            const gamePlayer = document.getElementById('game-player');
+            const gameTitle = document.getElementById('game-title');
+            // 修改：只选 #game-player 内部的 .gameFrame，避免命中错误节点
+            const gameFrame = document.querySelector('#game-player .gameFrame');
+
+            if (gamePlayer) gamePlayer.classList.remove('hidden');
+            if (gameTitle) gameTitle.textContent = game.name;
+            document.title = `${game.name} - CasualGameSpace`;
+
+            if (gameFrame) {
+                // 清空旧内容，使用 DOM API 创建 iframe，避免字符串插值错误
+                gameFrame.innerHTML = '';
+                if (game.use === 'redirect') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = game.url; // 不会出现 ${game.url} 字面量问题
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '80vh';
+                    iframe.style.border = '0';
+                    gameFrame.appendChild(iframe);
+                }
+            }
+        } else {
+            navigateTo('/');
+        }
+    }
+
+    // 前进/后退（保留 popstate 以兼容历史代码），新增 hashchange 以支持纯前端 hash 路由
+    window.addEventListener('popstate', handleRoute);
+    window.addEventListener('hashchange', handleRoute);
+
+    // DOMContentLoaded：等数据就绪后触发首轮路由
+    document.addEventListener('DOMContentLoaded', () => {
+        const app = document.getElementById('app');
+        if (app) app.classList.remove('hidden');
+
+        const waitDataReady = () => {
+            if (Array.isArray(window.allGames) && window.allGames.length > 0) {
+                handleRoute();
+            } else {
+                setTimeout(waitDataReady, 100);
+            }
+        };
+        waitDataReady();
+    });
+
+    // 暴露到全局（供其它脚本使用）
+    window.navigateTo = navigateTo;
+    window.handleRoute = handleRoute;
+    window.generateGameSlug = generateGameSlug;
+    </script>
+</body>

@@ -13,10 +13,10 @@ class api_ {
      * 
      * @returns {Promise.<boolean, Error>}
      */
-    // validSession = () => {
-    //     // 纯前端场景：固定为未登录，避免触发网络请求
-    //     return Promise.resolve(false);
-    // };
+    validSession = async () => {
+        // 纯前端场景：固定为未登录，避免触发网络请求
+        return false;
+    };
 
     /**
      * 

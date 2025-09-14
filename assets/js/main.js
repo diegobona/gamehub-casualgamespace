@@ -103,23 +103,41 @@ function renderGamesWithPagination() {
 }
 
 // 渲染游戏列表函数
-function renderGames(games) {
+function renderGames(gamesToShow) {
     const gamesContainer = document.querySelector('.games');
     gamesContainer.innerHTML = '';
     
-    games.forEach(game => {
+    gamesToShow.forEach((game) => {
         const gameElement = document.createElement('div');
         gameElement.className = 'game';
         gameElement.innerHTML = `
             <img src="${game.thumbnail}" alt="${game.name}" onerror="this.parentElement.classList.add('failed')">
             <p>${game.name}</p>
         `;
-        gameElement.onclick = () => {
-            if (game.use === 'redirect') {
+        gamesContainer.appendChild(gameElement);
+
+        // 统一点击逻辑：优先使用前端路由；否则回退到直接跳转
+        gameElement.addEventListener('click', (e) => {
+            e.preventDefault();
+            const useRouter =
+                typeof window.generateGameSlug === 'function' &&
+                (typeof window.navigateTo === 'function' || typeof window.handleRoute === 'function');
+
+            if (useRouter) {
+                const slug = window.generateGameSlug
+                    ? window.generateGameSlug(game.name)
+                    : game.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '').trim();
+
+                if (window.navigateTo) {
+                    window.navigateTo(`/${slug}`);
+                } else {
+                    history.pushState(null, '', `/${slug}`);
+                    if (window.handleRoute) window.handleRoute();
+                }
+            } else if (game.use === 'redirect') {
                 window.location.href = game.url;
             }
-        };
-        gamesContainer.appendChild(gameElement);
+        });
     });
 }
 
@@ -127,7 +145,10 @@ function renderGames(games) {
 function renderPagination() {
     const totalPages = Math.ceil(currentFilteredGames.length / gamesPerPage);
     const paginationContainer = document.querySelector('.pagination-container');
-    
+
+    // 防空：当页面没有分页容器时直接返回，避免抛错导致“Error loading games”
+    if (!paginationContainer) return;
+
     if (totalPages <= 1) {
         paginationContainer.style.display = 'none';
         return;
@@ -280,20 +301,35 @@ function searchGames(query) {
 }
 
 // 页面加载时初始化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // 加载游戏数据
-    fetch('/assets/JSON/games.json')
-        .then(response => response.json())
-        .then(data => {
-            allGames = data;
-            currentFilteredGames = allGames;
-            renderGamesWithPagination(); // 使用分页渲染
-            // 默认激活"All Games"分类
-            document.querySelector('[data-category="all"]').classList.add('active');
-        })
-        .catch(error => {
-            console.error('Error loading games:', error);
-        });
+    // 在模块顶层或首次使用之前放置一个通用的 JSON 拉取助手（相对路径优先，绝对路径兜底）
+    async function fetchJsonWithFallback(relPath, options) {
+        const candidates = [relPath, '/' + relPath.replace(/^\/+/, '')];
+        for (const url of candidates) {
+            try {
+                const res = await fetch(url, options);
+                if (res.ok) return res;
+            } catch (err) {
+                // 忽略并尝试下一个候选
+            }
+        }
+        throw new Error('Failed to fetch: ' + relPath);
+    }
+
+    try {
+        const res = await fetchJsonWithFallback('assets/JSON/games.json', { cache: 'no-store' });
+        const data = await res.json();
+        allGames = data;
+        currentFilteredGames = allGames;
+        window.allGames = allGames; // 暴露给全局路由脚本使用
+        renderGamesWithPagination(); // 使用分页渲染
+        // 默认激活 "All Games" 分类
+        const allCat = document.querySelector('[data-category="all"]');
+        if (allCat) allCat.classList.add('active');
+    } catch (error) {
+        console.error('Error loading games:', error);
+    }
     
     // 绑定搜索功能
     const searchInput = document.querySelector('[data-func="search"]');

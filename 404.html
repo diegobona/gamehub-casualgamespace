@@ -21,6 +21,16 @@
         <p>The page you tried to access could not be found. <a href="/">Home</a></p>
     </div>
 
+    <script>
+        (function () {
+            // 将当前 404 的路径重写为 hash 路由，并跳转到根页面让 SPA 接管
+            var path = (location.pathname || '').replace(/^\//, '');
+            if (path) {
+                var hashUrl = '/#/' + path + (location.search || '');
+                location.replace(hashUrl);
+            }
+        })();
+    </script>
     <script type="module">
         import analytics from '/assets/js/analytics.js';
 

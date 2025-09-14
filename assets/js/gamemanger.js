@@ -10,7 +10,17 @@ window.onscroll = () => {
 
 // 纯前端：从本地 JSON 读取游戏列表并缓存
 let GAMES = [];
-fetch('/assets/JSON/games.json')
+async function fetchJsonWithFallback(relPath, options) {
+    const candidates = [relPath, '/' + relPath.replace(/^\/+/, '')];
+    for (const url of candidates) {
+        try {
+            const res = await fetch(url, options);
+            if (res.ok) return res;
+        } catch (err) {}
+    }
+    throw new Error('Failed to fetch: ' + relPath);
+}
+fetchJsonWithFallback('assets/JSON/games.json')
     .then(res => res.json())
     .then(games => {
         GAMES = games || [];

@@ -196,6 +196,18 @@
       document.title = title + ' - Game Player';
       document.getElementById('title').textContent = title;
 
+      // 新增：页面初始强制显示基础信息，避免空白页
+      const heroEl = document.getElementById('hero');
+      const infoEl = document.getElementById('gameInfo');
+      const heroCoverEl = document.getElementById('heroCover');
+      const descEl = document.getElementById('gameDescription');
+      const gameplayEl = document.getElementById('gameGameplay');
+      heroEl.style.display = '';               // 确保详情卡可见
+      infoEl.style.display = '';               // 确保信息区可见
+      if (!heroCoverEl.src) heroCoverEl.src = '/assets/img/logo.png';
+      if (!descEl.textContent) descEl.textContent = 'Loading...';
+      if (!gameplayEl.textContent) gameplayEl.textContent = 'Loading...';
+
       // 宽高比
       function ratioFrom(ar) {
         const map = { '16:9': 56.25, '4:3': 75, '9:16': (16/9)*100 };
@@ -247,10 +259,30 @@
           }
       }
 
+      // 如果环境中没有可用的 fetchJsonWithFallback，则为 player.html 提供一个轻量实现（挂到 window 上）
+      if (typeof window.fetchJsonWithFallback !== 'function') {
+        window.fetchJsonWithFallback = async function(relPath, options) {
+          const tryFetch = async (url) => {
+            try {
+              const res = await fetch(url, options);
+              if (res.ok) return res;
+            } catch (_) {}
+            return null;
+          };
+          const abs = relPath.startsWith('/') ? relPath : '/' + relPath.replace(/^(\.\/)?/, '');
+          let res = await tryFetch(relPath);
+          if (!res) res = await tryFetch(abs);
+          if (res) return res;
+          throw new Error(`Failed to load JSON from ${relPath} or ${abs}`);
+        };
+      }
+      const fetchJsonWithFallback = window.fetchJsonWithFallback;
+
       // 从 games.json 获取当前游戏封面，构建“推荐”
       async function loadDataAndRender() {
           try {
-              const res = await fetch('/assets/JSON/games.json', { cache: 'no-store' });
+              // 使用绝对路径，避免相对路径 404
+              const res = await fetchJsonWithFallback('/assets/JSON/games.json', { cache: 'no-store' });
               const games = await res.json();
 
               // 猜测当前条目（优先用 url 的 src 参数匹配）
@@ -263,18 +295,16 @@
                   } catch {}
               }
 
-              // 填充 hero 信息
+              // 填充 hero 信息（即使 current 为空，也保留基本信息）
               document.getElementById('heroTitle').textContent = title;
               if (current && current.thumbnail) {
                   document.getElementById('heroCover').src = current.thumbnail;
               }
               document.getElementById('heroSub').textContent = (current && current.publisher) ? current.publisher : '';
 
-              // 填充游戏信息：description -> 游戏介绍，gameplay -> 操作说明（新增）
-              if (current) {
-                  document.getElementById('gameDescription').textContent = current.description || 'NO DATA';
-                  document.getElementById('gameGameplay').textContent = current.gameplay || 'NO DATA';
-              }
+              // 填充游戏信息
+              document.getElementById('gameDescription').textContent = (current && current.description) ? current.description : (document.getElementById('gameDescription').textContent || 'NO DATA');
+              document.getElementById('gameGameplay').textContent = (current && current.gameplay) ? current.gameplay : (document.getElementById('gameGameplay').textContent || 'NO DATA');
 
               // 推荐列表（仅排除“当前这条完整 URL”，随机取 6 个）
               const curNorm = normalizeUrl(location.href);
@@ -317,9 +347,11 @@
         return;
       }
       document.getElementById('hero').style.display = 'none';
-      playerEl.style.display = '';
-      // 移除这行：document.getElementById('gameInfo').style.display = ''; 
+      playerEl.style.display = 'block'; // 明确设为 block，避免某些环境空字符串导致不显示
+      // document.getElementById('gameInfo').style.display = ''; // 信息区默认就显示，可保留
       if (!iframe.src || iframe.src === 'about:blank') iframe.src = src;
+      // 可选：滚动到播放器位置
+      playerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     // 页面初始化
