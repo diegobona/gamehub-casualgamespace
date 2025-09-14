@@ -138,10 +138,26 @@
         <!-- <div class="gameFrame hidden"></div> -->
         
         <!-- 保留下面这个详情容器（你已经有了） -->
+        <!-- #game-player 区域 -->
         <section id="game-player" class="hidden">
-            <h2 id="game-title"></h2>
             <div class="gameFrame"></div>
-        </section>
+            <h2 id="game-title"></h2>
+            <!-- 外部信息块（不在 iframe 内） -->
+            <div id="detail-info" class="box" style="margin-top: 1rem;">
+                <div class="content">
+                    <h3 class="title is-5">DESCRIPTION</h3>
+                    <p id="detailDescription">NO DATA</p>
+                    <h3 class="title is-5" style="margin-top: 1rem;">INSTRUCTIONS</h3>
+                    <p id="detailInstructions">NO DATA</p>
+                </div>
+            </div>
+            
+            <div id="detail-reco" class="box" style="margin-top: 1rem;">
+                <div class="title is-6">Recommend Games</div>
+                <div id="detailRecoGrid" class="columns is-multiline"></div>
+            </div>
+            // ... existing code ...
+}
 
         <footer>
             <div class="title">
@@ -323,9 +339,12 @@
 
         if (game) {
             const gamePlayer = document.getElementById('game-player');
-            const gameTitle = document.getElementById('game-title');
-            // 只使用详情容器里的 .gameFrame，避免误选到页面上其他同名节点
             const gameFrame = document.querySelector('#game-player .gameFrame');
+            // 修复：在首次使用前定义 gameTitle（节点可能不存在）
+            const gameTitle = document.querySelector('#game-player .gameTitle');
+            const detailDesc = document.getElementById('detailDescription');
+            const detailInstr = document.getElementById('detailInstructions');
+            const detailRecoGrid = document.getElementById('detailRecoGrid');
 
             if (gamePlayer) gamePlayer.classList.remove('hidden');
             if (gameTitle) gameTitle.textContent = game.name;
@@ -333,15 +352,94 @@
 
             if (gameFrame) {
                 gameFrame.innerHTML = '';
-                if (game.use === 'redirect') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = game.url;
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.allowFullscreen = true;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '80vh';
-                    iframe.style.border = '0';
-                    gameFrame.appendChild(iframe);
+
+                // 如果 game.url 指向 player.html，则抽取其中的 src 作为真实的游戏地址
+                let finalSrc = game.url || '';
+                try {
+                    const urlObj = new URL(finalSrc, window.location.origin);
+                    const pathname = urlObj.pathname || '';
+                    if (/player\.html$/i.test(pathname) || pathname.includes('/assets/pages/player.html')) {
+                        const srcParam = urlObj.searchParams.get('src');
+                        if (srcParam) {
+                            finalSrc = srcParam; // 直接使用真实游戏地址（不再加载 player.html）
+                        }
+                    }
+                } catch (e) {
+                    // 忽略解析异常
+                }
+
+                const iframe = document.createElement('iframe');
+                iframe.src = finalSrc;
+                // 确保外层 iframe 没有 sandbox，避免本页沙箱导致的 localStorage 报错
+                iframe.removeAttribute('sandbox');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'autoplay; fullscreen; gamepad; accelerometer; magnetometer; gyroscope; xr-spatial-tracking; midi; encrypted-media; clipboard-read; clipboard-write');
+                iframe.allowFullscreen = true;
+                iframe.style.width = '100%';
+                iframe.style.height = '80vh';
+                iframe.style.border = '0';
+                gameFrame.appendChild(iframe);
+            }
+            // 外部 DESCRIPTION / INSTRUCTIONS（不写入 iframe）
+            if (detailDesc) detailDesc.textContent = (game && game.description) ? game.description : 'NO DATA';
+            if (detailInstr) detailInstr.textContent = (game && (game.instructions || game.gameplay)) ? (game.instructions || game.gameplay) : 'NO DATA';
+            // 外部 Recommend Games（不写入 iframe）
+            if (detailRecoGrid) {
+                const fill = (list) => {
+                    detailRecoGrid.innerHTML = '';
+                    list
+                        .filter(g => g && g.name && g.name !== game.name)
+                        .slice(0, 8)
+                        .forEach(g => {
+                            const col = document.createElement('div');
+                            col.className = 'column is-3';
+
+                            const card = document.createElement('a');
+                            card.href = '/' + encodeURIComponent(g.name);
+                            card.className = 'box';
+                            card.style.display = 'block';
+
+                            const img = document.createElement('img');
+                            img.src = g.thumbnail || g.thumb || g.image || '/assets/img/logo.png';
+                            img.alt = g.name;
+                            img.style.width = '100%';
+                            img.style.borderRadius = '8px';
+
+                            const name = document.createElement('div');
+                            name.className = 'has-text-weight-semibold';
+                            name.style.marginTop = '8px';
+                            name.textContent = g.name;
+
+                            card.appendChild(img);
+                            card.appendChild(name);
+
+                            // SPA 导航优先
+                            card.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if (typeof window.navigateTo === 'function') {
+                                    window.navigateTo('/' + encodeURIComponent(g.name));
+                                } else {
+                                    location.href = '/' + encodeURIComponent(g.name);
+                                }
+                            });
+
+                            col.appendChild(card);
+                            detailRecoGrid.appendChild(col);
+                        });
+                };
+
+                const globalList =
+                    (window.allGames || window.games || window.gamesData || window.GAMES || [])
+                    .filter(Boolean);
+
+                if (globalList && globalList.length) {
+                    fill(globalList);
+                } else {
+                    fetch('/assets/JSON/games.json')
+                        .then(r => r.json())
+                        .then(arr => Array.isArray(arr) ? arr : [])
+                        .then(fill)
+                        .catch(() => {});
                 }
             }
         } else {
