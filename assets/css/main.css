@@ -1148,3 +1148,64 @@ input.input.is-link.is-rounded[data-attr='username'] {
         font-size: 12px;
     }
 }
+
+/* --- Game Player 双栏布局 --- */
+#game-player #player-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px; /* 左主列自适应 + 右侧固定宽 */
+    gap: 16px;
+    align-items: start;
+}
+@media (max-width: 1024px) {
+    #game-player #player-layout {
+        grid-template-columns: 1fr; /* 窄屏时垂直堆叠 */
+    }
+}
+
+/* 让侧栏在桌面端视觉上固定在右侧并不遮挡主体 */
+#player-sidebar #detail-reco {
+    position: sticky;
+    top: 72px; /* 顶部导航高度可按需微调 */
+}
+
+/* 推荐侧栏样式 */
+#player-sidebar #detail-reco #detailRecoGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#player-sidebar #detail-reco .reco-card {
+    padding: 8px;
+}
+#player-sidebar #detail-reco .reco-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+#player-sidebar #detail-reco .reco-name {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+/* --- Game Player 作用域内的 iframe 尺寸控制，防止铺满整屏 --- */
+#game-player #player-main { 
+    min-width: 0;         /* 修复 grid 子项收缩问题 */
+    overflow: hidden;     /* 防止内部内容“撑出”到右侧栏 */
+}
+
+#game-player .gameFrame {
+    width: 100%;          /* 仅占左列宽度 */
+    height: auto;         /* 覆盖全局 .gameFrame { height:100vh } */
+    position: relative;
+}
+
+#game-player .gameFrame iframe {
+    display: block;
+    width: 100%;          /* 跟随左列宽度 */
+    height: 80vh;         /* 自行按需调整可视高度 */
+    border: 0;
+    max-width: 100%;
+}

@@ -20,60 +20,57 @@ async function fetchJsonWithFallback(relPath, options) {
     }
     throw new Error('Failed to fetch: ' + relPath);
 }
+
 fetchJsonWithFallback('assets/JSON/games.json')
     .then(res => res.json())
     .then(games => {
         GAMES = games || [];
+        window.GAMES = GAMES; // 暴露给全局
 
         const searchBar = document.querySelector('[data-func="search"]');
-        searchBar.placeholder = `Search ${GAMES.length} games`;
+        searchBar.placeholder = `搜索 ${GAMES.length} 个游戏`;
 
-        // 注释掉旧的搜索功能，使用main.js中的新搜索功能
-        /*
+        // 渲染游戏列表
+        renderGames(GAMES);
+
+        // 搜索功能
         searchBar.addEventListener('input', (e) => {
-            if (searchBar.value) {
-                var result = false;
-
-                document.querySelectorAll('.game').forEach(game => {
-                    if (game.title.toLowerCase().includes(searchBar.value.toLowerCase())) {
-                        result = true;
-                        game.classList.remove('hidden');
-                    } else game.classList.add('hidden');
-                });
-
-                if (result) document.querySelector('.searchErr').classList.add('hidden');
-                else document.querySelector('.searchErr').classList.remove('hidden');
-            } else {
-                document.querySelectorAll('.game').forEach(game => game.classList.remove('hidden'));
-                document.querySelector('.searchErr').classList.add('hidden');
-            }
+            const query = e.target.value.toLowerCase();
+            const filtered = GAMES.filter(game => 
+                game.name.toLowerCase().includes(query) ||
+                (game.category && game.category.toLowerCase().includes(query))
+            );
+            renderGames(filtered);
         });
-        */
 
-        document.querySelector('.games').innerHTML = '';
-
-        // 注释掉旧的游戏渲染逻辑
-        /*
-        GAMES.forEach(game => {
-            const gameEl = document.createElement('div');
-            gameEl.classList = 'game';
-            gameEl.title = game.name;
-            gameEl.innerHTML = `<img src="${game.thumbnail}"/><p>${game.name}</p>`;
-            document.querySelector('.games').appendChild(gameEl);
-        
-            gameEl.querySelector('img').onerror = (e) => {
-                registerError(`Could not load splash image for ${e.target.parentElement.title}`);
-                e.target.parentElement.classList.add('failed');
-                e.target.src = '/assets/img/logo.png';
-            };
-        
-            gameEl.addEventListener('click', (e) => openGame(game.id));
-        });
-        */
-        
         searchBar.focus();
     })
     .catch(e => registerError('Could not load games'));
+
+// 渲染游戏列表
+function renderGames(games) {
+    const gamesContainer = document.querySelector('.games');
+    gamesContainer.innerHTML = '';
+
+    games.forEach(game => {
+        const gameEl = document.createElement('div');
+        gameEl.classList = 'game';
+        gameEl.title = game.name;
+        gameEl.innerHTML = `
+            <img src="${game.thumbnail}" alt="${game.name}"/>
+            <p>${game.name}</p>
+        `;
+        gamesContainer.appendChild(gameEl);
+
+        gameEl.querySelector('img').onerror = (e) => {
+            registerError(`Could not load splash image for ${e.target.parentElement.title}`);
+            e.target.parentElement.classList.add('failed');
+            e.target.src = '/assets/img/logo.png';
+        };
+
+        gameEl.addEventListener('click', (e) => openGame(game.id));
+    });
+}
 
 // 用本地内存数据打开游戏
 const openGame = (id) => {
@@ -83,12 +80,19 @@ const openGame = (id) => {
         return;
     }
 
+    // 使用新的路由系统跳转到游戏详情页
+    if (window.navigateToGame) {
+        window.navigateToGame(game.name);
+        return;
+    }
+
     // 如果是跳转模式（用于访问 demo-gd-embed.html 等独立页面），直接跳转
     if (game.use === 'redirect') {
         window.location.href = game.url;
         return;
     }
 
+    // 旧版兼容代码（如果新路由系统未加载）
     const gameFrame = document.querySelector('.gameFrame');
     const gameDatabase = document.querySelector('.games');
 
@@ -142,26 +146,20 @@ const openGame = (id) => {
             });
         }
 
-        frame.querySelector('.logo').addEventListener('click', (e) => closeGame());
-        frame.querySelector('#back').addEventListener('click', (e) => closeGame());
+        frame.querySelector('#back').addEventListener('click', (e) => {
+            gameFrame.classList.add('hidden');
+            gameDatabase.classList.remove('hidden');
+            document.querySelector('.database_nav').classList.remove('hidden');
+
+            nav.classList.remove('hidden');
+            document.body.classList.remove('noscroll');
+            document.documentElement.classList.remove('noscroll');
+
+            gameEl.remove();
+        });
     };
 };
 
-const closeGame = () => {
-    const gameFrame = document.querySelector('.gameFrame');
-    const gameDatabase = document.querySelector('.games');
+// 暴露给全局
+window.openGame = openGame;
 
-    nav.classList.remove('hidden');
-    document.body.classList.remove('noscroll');
-    document.documentElement.classList.remove('noscroll');
-
-    gameFrame.classList.add('hidden');
-    gameDatabase.classList.remove('hidden');
-
-    document.querySelector('.innerGame').remove();
-    document.querySelector('.database_nav').classList.remove('hidden');
-
-    gameDatabase.scrollIntoView();
-};
-
-window.onresize = () => document.querySelector('.gameFrame').scrollIntoView();

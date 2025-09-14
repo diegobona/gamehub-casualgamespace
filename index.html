@@ -1,474 +1,379 @@
 <!DOCTYPE html>
-<html lang="en" class="noscroll">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
-    <title>CasualGameSpace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/bulma.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <style>
+        /* 游戏详情页样式 */
+        .game-detail {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .game-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .game-thumbnail {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .game-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .game-category {
+            background: #007bff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .play-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .play-button:hover {
+            background: #218838;
+        }
+        
+        .play-button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+            background: #f0f0f0;
+        }
+        
+        .game-description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .back-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        .back-button:hover {
+            background: #5a6268;
+        }
+        
+        .recommended-games {
+            margin-top: 40px;
+        }
+        
+        .recommended-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .recommended-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .recommended-item:hover {
+            transform: scale(1.05);
+            background: #f8f9fa;
+        }
+        
+        .recommended-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .recommended-item p {
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="app" class="hidden">
-        <div class="navbar is-link is-fixed-top">
-            <div class="container">
-                <div class="navbar-brand is-dark">
-                    <a class="heroIcon" href="#">
-                        <img src="assets/img/logo.png" alt="Logo">
-                    </a>
-                    <a class="navTitle" href="#">CasualGameSpace</a>
-
-                    <span class="navbar-burger" data-target="navbarMenuHeroC">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-
-                <div id="navbarMenuHeroC" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item is-active" href="#">
-                            Home
-                        </a>
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <!-- <p id="username" class="navbar-item" data-action="open_profile">Loading...</p> -->
-                            <!-- <span class="avatar-small" data-action="open_profile"></span> -->
-
-                            <!-- <div class="navbar-dropdown">
-                                <a data-action="open_profile" class="navbar-item is-dropdown">
-                                    Profile
-                                </a>
-                                <a href="#settings" class="navbar-item is-dropdown">
-                                    Settings
-                                </a>
-                                <hr class="navbar-divider">
-                                <a href="/logout" class="navbar-item is-dropdown">
-                                    Logout
-                                </a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
+    <!-- 主页内容 -->
+    <div id="homepage">
+        <!-- 导航栏 -->
+        <div class="navbar">
+            <div class="navbar-brand">
+                <img src="/assets/img/logo.png" alt="GameHub" style="height: 40px;">
+                <span style="margin-left: 10px; font-size: 1.5em; font-weight: bold;">GameHub</span>
             </div>
         </div>
 
-        <div class="hero is-link is-halfheight">
+        <!-- Hero 区域 -->
+        <div class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <div class="game-categories">
-                        <h2 class="category-title">Game Categories</h2>
-                        <div class="categories-grid">
-                            <div class="category-card" data-category="all" onclick="filterGames('all')">
-                                <div class="category-icon">🎮</div>
-                                <div class="category-name">All Games</div>
-                            </div>
-                            <div class="category-card" data-category="Action" onclick="filterGames('Action')">
-                                <div class="category-icon">⚔️</div>
-                                <div class="category-name">Action</div>
-                            </div>
-                            <div class="category-card" data-category="Puzzle" onclick="filterGames('Puzzle')">
-                                <div class="category-icon">🧩</div>
-                                <div class="category-name">Puzzle</div>
-                            </div>
-                            <div class="category-card" data-category="Racing" onclick="filterGames('Racing')">
-                                <div class="category-icon">🏎️</div>
-                                <div class="category-name">Racing</div>
-                            </div>
-                            <div class="category-card" data-category="Adventure" onclick="filterGames('Adventure')">
-                                <div class="category-icon">🗺️</div>
-                                <div class="category-name">Adventure</div>
-                            </div>
-                            <div class="category-card" data-category="Arcade" onclick="filterGames('Arcade')">
-                                <div class="category-icon">🕹️</div>
-                                <div class="category-name">Arcade</div>
-                            </div>
-                            <div class="category-card" data-category="Strategy" onclick="filterGames('Strategy')">
-                                <div class="category-icon">🧠</div>
-                                <div class="category-name">Strategy</div>
-                            </div>
-                        </div>
+                    <h1 class="title is-1">GameHub</h1>
+                    <h2 class="subtitle">发现并游玩精彩游戏</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- 搜索区域 -->
+        <div class="database_nav">
+            <div class="container">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="text" placeholder="搜索游戏..." data-func="search">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="database_nav">
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-                <input class="input is-link is-rounded searchBar" data-func="search" placeholder="Search">
-            </div>
-
-            <div class="control has-icons-left sort">
-                <div class="select is-link is-rounded sortSelect">
-                    <select>
-                        <option selected>Default</option>
-                        <option disabled>Game Type</option>
-                        <option disabled>A-Z</option>
-                        <option disabled>Z-A</option>
-                    </select>
-                </div>
-
-                <span class="icon is-left">
-                    <i class="fa-solid fa-arrow-up-short-wide"></i>
-                </span>
+        <!-- 游戏列表 -->
+        <div class="container">
+            <div class="games" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
+                <!-- 游戏将在这里动态加载 -->
             </div>
         </div>
 
-        <!-- 搜索错误提示 -->
-        <div class="searchErr hidden">
-            <h1>¯\(°_o)/¯</h1>
-            <br>
-            <p>Oops, we couldn't find the game you were looking for. </p>
+        <!-- 游戏框架（用于旧版兼容） -->
+        <div class="gameFrame hidden">
+            <!-- 这里会动态插入游戏iframe -->
         </div>
-
-        <div class="games"></div>
-        
-        <!-- 添加分页控件 -->
-        <div class="pagination-container"></div>
-        
-        <!-- 页面主体中靠上位置 -->
-        <!-- 旧节点：请删除这一行 -->
-        <!-- <div class="gameFrame hidden"></div> -->
-        
-        <!-- 保留下面这个详情容器（你已经有了） -->
-        <!-- #game-player 区域 -->
-        <section id="game-player" class="hidden">
-            <div class="gameFrame"></div>
-            <h2 id="game-title"></h2>
-            <!-- 外部信息块（不在 iframe 内） -->
-            <div id="detail-info" class="box" style="margin-top: 1rem;">
-                <div class="content">
-                    <h3 class="title is-5">DESCRIPTION</h3>
-                    <p id="detailDescription">NO DATA</p>
-                    <h3 class="title is-5" style="margin-top: 1rem;">INSTRUCTIONS</h3>
-                    <p id="detailInstructions">NO DATA</p>
-                </div>
-            </div>
-            
-            <div id="detail-reco" class="box" style="margin-top: 1rem;">
-                <div class="title is-6">Recommend Games</div>
-                <div id="detailRecoGrid" class="columns is-multiline"></div>
-            </div>
-            // ... existing code ...
-}
-
-        <footer>
-            <div class="title">
-                <h1>CasualGameSpace</h1><img src="assets/img/logo.png">
-            </div>
-
-            <!-- <div class="socials">
-                <a href="https://discord.gg/RXBbxQ4wuJ" target="_blank" rel="noopener noreferrer"
-                    title="EmberNetwork Discord">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-
-                <a href="https://github.com/EmberNetwork/GameHub" target="_blank" rel="noopener noreferrer"
-                    title="Our Github">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-
-                <a href="mailto:support@gamehub.dev" target="_blank" title="Contact Email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href="http://status.embernet.work/status/gamehub" target="_blank" rel="noopener noreferrer"
-                    title="Server Status">
-                    <i class="fa-solid fa-square-rss"></i>
-                </a>
-            </div> -->
-
-            <br>
-
-            <p>©2025 CasualGameSpace. All rights reserved.</p>
-        </footer>
     </div>
 
-    <div id="loader">
-        <div></div>
-        <div></div>
-        <div></div>
+    <!-- 游戏详情页 -->
+    <div id="game-detail" class="game-detail">
+        <button class="back-button" onclick="goHome()">← 返回游戏列表</button>
+        
+        <div class="game-header">
+            <img id="detail-thumbnail" class="game-thumbnail" src="" alt="">
+            <div class="game-info">
+                <h1 id="detail-title">游戏标题</h1>
+                <span id="detail-category" class="game-category">分类</span>
+                <p id="detail-description-short">游戏简介...</p>
+                <button class="play-button" onclick="playGame()">🎮 开始游戏</button>
+            </div>
+        </div>
+        
+        <iframe id="game-iframe" class="game-frame" src=""></iframe>
+        
+        <div class="game-description">
+            <h3>游戏说明</h3>
+            <p id="detail-description-full">详细游戏说明...</p>
+        </div>
+        
+        <div class="recommended-games">
+            <h3>推荐游戏</h3>
+            <div id="recommended-grid" class="recommended-grid">
+                <!-- 推荐游戏将在这里动态生成 -->
+            </div>
+        </div>
     </div>
 
-    <script src="assets/js/main.js" type="module"></script>
-    <script src="assets/js/gamemanger.js" type="module"></script>
-    <!-- 注释掉 profile.js 的引用 -->
-    <!-- <script src="assets/js/profile.js" type="module"></script> -->
-</body>
+    <!-- 加载现有的JS文件 -->
+    <script type="module" src="/assets/js/gamemanger.js"></script>
+    <script type="module" src="/assets/js/notification.js"></script>
 
     <script>
-    // 生成游戏 slug：小写 + 去非字母数字 + 去空白
-    function generateGameSlug(name) {
-        return String(name || '')
-            .toLowerCase()
-            .replace(/[^a-z0-9\s]/g, '')
-            .replace(/\s+/g, '')
-            .trim();
-    }
+        // 全局变量
+        let allGames = [];
+        let currentGame = null;
 
-    // 统一站内导航：始终使用 hash(#/xxx) 路由，避免任何服务端依赖
-    function navigateTo(newUrl, event) {
-        if (event && typeof event.preventDefault === 'function') event.preventDefault();
-        const slug = String(newUrl || '').replace(/^#?\/?/, ''); // 去掉前导 / 或 #
-        location.hash = `#/${slug}`;
-    }
-
-    // 全局拦截站内链接（对外链、新窗口、下载不拦截），改写为 hash 路由
-    document.addEventListener('click', (e) => {
-        const a = e.target.closest('a[href]');
-        if (!a) return;
-        const href = a.getAttribute('href');
-        if (!href) return;
-        if (href.startsWith('#')) return; // 已经是锚点/哈希
-        if (a.target === '_blank' || a.hasAttribute('download')) return;
-        const url = new URL(href, window.location.href);
-        if (url.origin !== window.location.origin) return;
-        e.preventDefault();
-        const path = url.pathname.replace(/^\/+/, '');
-        location.hash = `#/${path}`;
-    });
-
-    // 动态收集所有分类（从 window.allGames 提取）
-    function getAllCategories() {
-        const games = Array.isArray(window.allGames) ? window.allGames : [];
-        const set = new Set();
-        for (const g of games) {
-            if (!g) continue;
-            if (Array.isArray(g.category)) g.category.forEach(c => c && set.add(c));
-            else if (g.category) set.add(g.category);
-        }
-        return Array.from(set);
-    }
-
-    // 将路径解析为分类名（忽略大小写）
-    function resolveCategoryFromPath(path) {
-        const name = decodeURIComponent(String(path || '').replace(/^\//, ''));
-        const cats = getAllCategories();
-        return cats.find(c => c.toLowerCase() === name.toLowerCase());
-    }
-
-    function handleRoute() {
-        // 本地静态环境可用 hash 作兜底；部署后使用 pathname（干净路径）
-        const path = location.hash.startsWith('#/') ? location.hash.slice(1) : location.pathname;
-    
-        // 隐藏区域（默认全部先隐藏）
-        const gamesEl = document.querySelector('.games');
-        const playerEl = document.getElementById('game-player');
-        const categoriesEl = document.querySelector('.game-categories'); // 分类卡片容器
-        const searchBoxEl = document.querySelector('.search');           // 搜索框容器
-        // 新增：下拉筛选与分页容器
-        const sortEl = document.querySelector('.sort');
-        const sortSelectEl = document.querySelector('.sortSelect');
-        const paginationEl = document.querySelector('.pagination-container');
-        // 新增：整个 hero 区块（外层容器）
-        const heroEl = document.querySelector('.hero');
-        
-        if (gamesEl) gamesEl.classList.add('hidden');
-        if (playerEl) playerEl.classList.add('hidden');
-        if (categoriesEl) categoriesEl.classList.add('hidden');
-        if (searchBoxEl) searchBoxEl.classList.add('hidden');
-        if (sortEl) sortEl.classList.add('hidden');
-        if (sortSelectEl) sortSelectEl.classList.add('hidden');
-        if (paginationEl) paginationEl.classList.add('hidden');
-        // 新增：默认也隐藏 hero，避免占位
-        if (heroEl) heroEl.classList.add('hidden');
-    
-        // 首页
-        if (path === '/' || path === '') {
-            if (gamesEl) gamesEl.classList.remove('hidden');
-            if (categoriesEl) categoriesEl.classList.remove('hidden');
-            if (searchBoxEl) searchBoxEl.classList.remove('hidden');
-            if (sortEl) sortEl.classList.remove('hidden');
-            if (sortSelectEl) sortSelectEl.classList.remove('hidden');
-            if (paginationEl) paginationEl.classList.remove('hidden');
-            // 新增：首页显示 hero
-            if (heroEl) heroEl.classList.remove('hidden');
-    
-            document.title = 'CasualGameSpace';
-            return;
-        }
-    
-        // 分类页（优先匹配）
-        const resolvedCategory = resolveCategoryFromPath(path);
-        if (resolvedCategory) {
-            if (gamesEl) gamesEl.classList.remove('hidden');
-            if (categoriesEl) categoriesEl.classList.remove('hidden');
-            if (searchBoxEl) searchBoxEl.classList.remove('hidden');
-            if (sortEl) sortEl.classList.remove('hidden');
-            if (sortSelectEl) sortSelectEl.classList.remove('hidden');
-            if (paginationEl) paginationEl.classList.remove('hidden');
-            // 新增：分类页显示 hero
-            if (heroEl) heroEl.classList.remove('hidden');
-    
-            if (typeof window.filterGames === 'function') {
-                window.filterGames(resolvedCategory);
-            }
-            document.title = `Category - ${resolvedCategory} - CasualGameSpace`;
-            return;
-        }
-    
-        // 游戏详情页（分类卡片、搜索框、筛选、分页、hero 都保持隐藏）
-        const gameName = decodeURIComponent(String(path || '').replace(/^\//, ''));
-        window.isDetailView = true;
-        if (paginationEl) {
-            paginationEl.style.display = 'none';
-            paginationEl.innerHTML = '';
-        }
-        loadGameByName(gameName);
-    }
-
-    function loadGameByName(gameName) {
-        // 等待 window.allGames 注入
-        if (!Array.isArray(window.allGames) || window.allGames.length === 0) {
-            setTimeout(() => loadGameByName(gameName), 100);
-            return;
+        // 简单的slug生成函数
+        function generateSlug(name) {
+            return name.toLowerCase()
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '')
+                .trim();
         }
 
-        // 查找游戏（支持 slug 或原始名称）
-        const game = window.allGames.find(g => {
-            const gameSlug = generateGameSlug(g?.name);
-            return gameSlug === gameName || g?.name === gameName;
-        });
-
-        if (game) {
-            const gamePlayer = document.getElementById('game-player');
-            const gameFrame = document.querySelector('#game-player .gameFrame');
-            // 修复：在首次使用前定义 gameTitle（节点可能不存在）
-            const gameTitle = document.querySelector('#game-player .gameTitle');
-            const detailDesc = document.getElementById('detailDescription');
-            const detailInstr = document.getElementById('detailInstructions');
-            const detailRecoGrid = document.getElementById('detailRecoGrid');
-
-            if (gamePlayer) gamePlayer.classList.remove('hidden');
-            if (gameTitle) gameTitle.textContent = game.name;
-            document.title = `${game.name} - CasualGameSpace`;
-
-            if (gameFrame) {
-                gameFrame.innerHTML = '';
-
-                // 如果 game.url 指向 player.html，则抽取其中的 src 作为真实的游戏地址
-                let finalSrc = game.url || '';
-                try {
-                    const urlObj = new URL(finalSrc, window.location.origin);
-                    const pathname = urlObj.pathname || '';
-                    if (/player\.html$/i.test(pathname) || pathname.includes('/assets/pages/player.html')) {
-                        const srcParam = urlObj.searchParams.get('src');
-                        if (srcParam) {
-                            finalSrc = srcParam; // 直接使用真实游戏地址（不再加载 player.html）
-                        }
-                    }
-                } catch (e) {
-                    // 忽略解析异常
-                }
-
-                const iframe = document.createElement('iframe');
-                iframe.src = finalSrc;
-                // 确保外层 iframe 没有 sandbox，避免本页沙箱导致的 localStorage 报错
-                iframe.removeAttribute('sandbox');
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'autoplay; fullscreen; gamepad; accelerometer; magnetometer; gyroscope; xr-spatial-tracking; midi; encrypted-media; clipboard-read; clipboard-write');
-                iframe.allowFullscreen = true;
-                iframe.style.width = '100%';
-                iframe.style.height = '80vh';
-                iframe.style.border = '0';
-                gameFrame.appendChild(iframe);
-            }
-            // 外部 DESCRIPTION / INSTRUCTIONS（不写入 iframe）
-            if (detailDesc) detailDesc.textContent = (game && game.description) ? game.description : 'NO DATA';
-            if (detailInstr) detailInstr.textContent = (game && (game.instructions || game.gameplay)) ? (game.instructions || game.gameplay) : 'NO DATA';
-            // 外部 Recommend Games（不写入 iframe）
-            if (detailRecoGrid) {
-                const fill = (list) => {
-                    detailRecoGrid.innerHTML = '';
-                    list
-                        .filter(g => g && g.name && g.name !== game.name)
-                        .slice(0, 8)
-                        .forEach(g => {
-                            const col = document.createElement('div');
-                            col.className = 'column is-3';
-
-                            const card = document.createElement('a');
-                            card.href = '/' + encodeURIComponent(g.name);
-                            card.className = 'box';
-                            card.style.display = 'block';
-
-                            const img = document.createElement('img');
-                            img.src = g.thumbnail || g.thumb || g.image || '/assets/img/logo.png';
-                            img.alt = g.name;
-                            img.style.width = '100%';
-                            img.style.borderRadius = '8px';
-
-                            const name = document.createElement('div');
-                            name.className = 'has-text-weight-semibold';
-                            name.style.marginTop = '8px';
-                            name.textContent = g.name;
-
-                            card.appendChild(img);
-                            card.appendChild(name);
-
-                            // SPA 导航优先
-                            card.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                if (typeof window.navigateTo === 'function') {
-                                    window.navigateTo('/' + encodeURIComponent(g.name));
-                                } else {
-                                    location.href = '/' + encodeURIComponent(g.name);
-                                }
-                            });
-
-                            col.appendChild(card);
-                            detailRecoGrid.appendChild(col);
-                        });
-                };
-
-                const globalList =
-                    (window.allGames || window.games || window.gamesData || window.GAMES || [])
-                    .filter(Boolean);
-
-                if (globalList && globalList.length) {
-                    fill(globalList);
-                } else {
-                    fetch('/assets/JSON/games.json')
-                        .then(r => r.json())
-                        .then(arr => Array.isArray(arr) ? arr : [])
-                        .then(fill)
-                        .catch(() => {});
-                }
-            }
-        } else {
-            navigateTo('/');
-        }
-    }
-
-    // 前进/后退（保留 popstate 以兼容历史代码），新增 hashchange 以支持纯前端 hash 路由
-    window.addEventListener('popstate', handleRoute);
-    window.addEventListener('hashchange', handleRoute);
-
-    // DOMContentLoaded：等数据就绪后触发首轮路由
-    document.addEventListener('DOMContentLoaded', () => {
-        const app = document.getElementById('app');
-        if (app) app.classList.remove('hidden');
-
-        const waitDataReady = () => {
-            if (Array.isArray(window.allGames) && window.allGames.length > 0) {
-                handleRoute();
+        // 路由处理
+        function handleRoute() {
+            const hash = window.location.hash.slice(1); // 移除 #
+            
+            if (hash.startsWith('/')) {
+                const gameName = hash.slice(1); // 移除 /
+                showGameDetail(gameName);
             } else {
-                setTimeout(waitDataReady, 100);
+                showHomepage();
+            }
+        }
+
+        // 显示主页
+        function showHomepage() {
+            document.getElementById('homepage').style.display = 'block';
+            document.getElementById('game-detail').style.display = 'none';
+            document.getElementById('game-iframe').style.display = 'none';
+            document.title = 'GameHub';
+        }
+
+        // 显示游戏详情页
+        function showGameDetail(gameSlug) {
+            // 等待游戏数据加载
+            if (!window.GAMES || !window.GAMES.length) {
+                setTimeout(() => showGameDetail(gameSlug), 100);
+                return;
+            }
+
+            // 查找游戏
+            const game = window.GAMES.find(g => {
+                const slug = generateSlug(g.name);
+                return slug === gameSlug || g.name.toLowerCase() === gameSlug.toLowerCase();
+            });
+
+            if (!game) {
+                console.error('游戏未找到:', gameSlug);
+                goHome();
+                return;
+            }
+
+            currentGame = game;
+            
+            // 更新页面内容
+            document.getElementById('detail-title').textContent = game.name;
+            document.getElementById('detail-thumbnail').src = game.thumbnail || '/assets/img/logo.png';
+            document.getElementById('detail-category').textContent = game.category || '游戏';
+            document.getElementById('detail-description-short').textContent = game.description || '暂无描述';
+            document.getElementById('detail-description-full').textContent = game.instructions || game.description || '暂无详细说明';
+            
+            // 显示详情页，隐藏主页
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('game-detail').style.display = 'block';
+            
+            // 更新页面标题
+            document.title = `${game.name} - GameHub`;
+            
+            // 生成推荐游戏
+            generateRecommendedGames();
+        }
+
+        // 开始游戏
+        function playGame() {
+            if (!currentGame) return;
+            
+            const iframe = document.getElementById('game-iframe');
+            let gameUrl = currentGame.url;
+            
+            // 处理不同类型的游戏URL
+            if (currentGame.use === 'redirect') {
+                // 对于redirect类型，提取实际的游戏URL
+                if (gameUrl.includes('player.html?')) {
+                    // 从player.html URL中提取src参数
+                    const urlParams = new URLSearchParams(gameUrl.split('?')[1]);
+                    const srcUrl = urlParams.get('src');
+                    if (srcUrl) {
+                        gameUrl = decodeURIComponent(srcUrl);
+                    }
+                }
+            }
+            
+            // 设置iframe
+            iframe.src = gameUrl;
+            iframe.style.display = 'block';
+            iframe.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 生成推荐游戏
+        function generateRecommendedGames() {
+            const grid = document.getElementById('recommended-grid');
+            grid.innerHTML = '';
+            
+            if (!window.GAMES) return;
+            
+            // 获取同分类的其他游戏
+            let recommended = window.GAMES.filter(g => 
+                g.category === currentGame.category && g.id !== currentGame.id
+            ).slice(0, 6);
+            
+            if (recommended.length < 6) {
+                const others = window.GAMES.filter(g => 
+                    g.id !== currentGame.id && !recommended.includes(g)
+                ).slice(0, 6 - recommended.length);
+                recommended = [...recommended, ...others];
+            }
+            
+            recommended.forEach(game => {
+                const item = document.createElement('div');
+                item.className = 'recommended-item';
+                item.innerHTML = `
+                    <img src="${game.thumbnail || '/assets/img/logo.png'}" alt="${game.name}">
+                    <p>${game.name}</p>
+                `;
+                item.onclick = () => navigateToGame(game.name);
+                grid.appendChild(item);
+            });
+        }
+
+        // 导航到游戏
+        function navigateToGame(gameName) {
+            const slug = generateSlug(gameName);
+            window.location.hash = `#/${slug}`;
+        }
+
+        // 返回主页
+        function goHome() {
+            window.location.hash = '';
+        }
+
+        // 重写游戏点击事件（覆盖gamemanger.js中的openGame函数）
+        window.openGame = function(id) {
+            if (!window.GAMES) return;
+            const game = window.GAMES.find(g => g.id === id);
+            if (game) {
+                navigateToGame(game.name);
             }
         };
-        waitDataReady();
-    });
 
-    // 暴露到全局（供其它脚本使用）
-    window.navigateTo = navigateTo;
-    window.handleRoute = handleRoute;
-    window.generateGameSlug = generateGameSlug;
+        // 事件监听
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', () => {
+            // 等待gamemanger.js加载完成后处理路由
+            setTimeout(handleRoute, 500);
+        });
+
+        // 暴露全局函数
+        window.navigateToGame = navigateToGame;
+        window.generateSlug = generateSlug;
     </script>
 </body>
+</html>
