@@ -145,9 +145,14 @@ function renderGames(gamesToShow) {
 function renderPagination() {
     const totalPages = Math.ceil(currentFilteredGames.length / gamesPerPage);
     const paginationContainer = document.querySelector('.pagination-container');
-
-    // 防空：当页面没有分页容器时直接返回，避免抛错导致“Error loading games”
     if (!paginationContainer) return;
+
+    // 使用路由设置的全局标记，详情页时强制隐藏并停止渲染
+    if (window.isDetailView) {
+        paginationContainer.style.display = 'none';
+        paginationContainer.innerHTML = '';
+        return;
+    }
 
     if (totalPages <= 1) {
         paginationContainer.style.display = 'none';

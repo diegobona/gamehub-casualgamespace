@@ -121,6 +121,7 @@
             </div>
         </div>
 
+        <!-- 搜索错误提示 -->
         <div class="searchErr hidden">
             <h1>¯\(°_o)/¯</h1>
             <br>
@@ -240,33 +241,70 @@
     function handleRoute() {
         // 本地静态环境可用 hash 作兜底；部署后使用 pathname（干净路径）
         const path = location.hash.startsWith('#/') ? location.hash.slice(1) : location.pathname;
-
-        // 隐藏区域
+    
+        // 隐藏区域（默认全部先隐藏）
         const gamesEl = document.querySelector('.games');
         const playerEl = document.getElementById('game-player');
+        const categoriesEl = document.querySelector('.game-categories'); // 分类卡片容器
+        const searchBoxEl = document.querySelector('.search');           // 搜索框容器
+        // 新增：下拉筛选与分页容器
+        const sortEl = document.querySelector('.sort');
+        const sortSelectEl = document.querySelector('.sortSelect');
+        const paginationEl = document.querySelector('.pagination-container');
+        // 新增：整个 hero 区块（外层容器）
+        const heroEl = document.querySelector('.hero');
+        
         if (gamesEl) gamesEl.classList.add('hidden');
         if (playerEl) playerEl.classList.add('hidden');
-
+        if (categoriesEl) categoriesEl.classList.add('hidden');
+        if (searchBoxEl) searchBoxEl.classList.add('hidden');
+        if (sortEl) sortEl.classList.add('hidden');
+        if (sortSelectEl) sortSelectEl.classList.add('hidden');
+        if (paginationEl) paginationEl.classList.add('hidden');
+        // 新增：默认也隐藏 hero，避免占位
+        if (heroEl) heroEl.classList.add('hidden');
+    
         // 首页
         if (path === '/' || path === '') {
             if (gamesEl) gamesEl.classList.remove('hidden');
+            if (categoriesEl) categoriesEl.classList.remove('hidden');
+            if (searchBoxEl) searchBoxEl.classList.remove('hidden');
+            if (sortEl) sortEl.classList.remove('hidden');
+            if (sortSelectEl) sortSelectEl.classList.remove('hidden');
+            if (paginationEl) paginationEl.classList.remove('hidden');
+            // 新增：首页显示 hero
+            if (heroEl) heroEl.classList.remove('hidden');
+    
             document.title = 'CasualGameSpace';
             return;
         }
-
+    
         // 分类页（优先匹配）
         const resolvedCategory = resolveCategoryFromPath(path);
         if (resolvedCategory) {
             if (gamesEl) gamesEl.classList.remove('hidden');
+            if (categoriesEl) categoriesEl.classList.remove('hidden');
+            if (searchBoxEl) searchBoxEl.classList.remove('hidden');
+            if (sortEl) sortEl.classList.remove('hidden');
+            if (sortSelectEl) sortSelectEl.classList.remove('hidden');
+            if (paginationEl) paginationEl.classList.remove('hidden');
+            // 新增：分类页显示 hero
+            if (heroEl) heroEl.classList.remove('hidden');
+    
             if (typeof window.filterGames === 'function') {
                 window.filterGames(resolvedCategory);
             }
             document.title = `Category - ${resolvedCategory} - CasualGameSpace`;
             return;
         }
-
-        // 游戏详情页
+    
+        // 游戏详情页（分类卡片、搜索框、筛选、分页、hero 都保持隐藏）
         const gameName = decodeURIComponent(String(path || '').replace(/^\//, ''));
+        window.isDetailView = true;
+        if (paginationEl) {
+            paginationEl.style.display = 'none';
+            paginationEl.innerHTML = '';
+        }
         loadGameByName(gameName);
     }
 
@@ -286,7 +324,7 @@
         if (game) {
             const gamePlayer = document.getElementById('game-player');
             const gameTitle = document.getElementById('game-title');
-            // 修改：只选 #game-player 内部的 .gameFrame，避免命中错误节点
+            // 只使用详情容器里的 .gameFrame，避免误选到页面上其他同名节点
             const gameFrame = document.querySelector('#game-player .gameFrame');
 
             if (gamePlayer) gamePlayer.classList.remove('hidden');
@@ -294,11 +332,10 @@
             document.title = `${game.name} - CasualGameSpace`;
 
             if (gameFrame) {
-                // 清空旧内容，使用 DOM API 创建 iframe，避免字符串插值错误
                 gameFrame.innerHTML = '';
                 if (game.use === 'redirect') {
                     const iframe = document.createElement('iframe');
-                    iframe.src = game.url; // 不会出现 ${game.url} 字面量问题
+                    iframe.src = game.url;
                     iframe.setAttribute('frameborder', '0');
                     iframe.allowFullscreen = true;
                     iframe.style.width = '100%';
