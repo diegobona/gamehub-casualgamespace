@@ -36,7 +36,24 @@ fetchJsonWithFallback('assets/JSON/games.json')
         // 搜索功能
         searchBar.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
-            const filtered = GAMES.filter(game => 
+
+            // 获取当前的分类过滤器
+            const currentCategory = window.getCurrentCategory ? window.getCurrentCategory() : 'all';
+
+            // 先根据分类过滤，再根据搜索词过滤
+            let baseGames = GAMES;
+            if (currentCategory && currentCategory !== 'all') {
+                baseGames = GAMES.filter(game => {
+                    if (!game.category) return false;
+                    const gameCategory = game.category.toLowerCase();
+                    const targetCategory = currentCategory.toLowerCase();
+                    return gameCategory === targetCategory ||
+                           gameCategory.includes(targetCategory) ||
+                           targetCategory.includes(gameCategory);
+                });
+            }
+
+            const filtered = baseGames.filter(game =>
                 game.name.toLowerCase().includes(query) ||
                 (game.category && game.category.toLowerCase().includes(query))
             );
@@ -45,7 +62,7 @@ fetchJsonWithFallback('assets/JSON/games.json')
 
         searchBar.focus();
     })
-    .catch(e => registerError('Could not load games'));
+    .catch(() => registerError('Could not load games'));
 
 // 渲染游戏列表
 function renderGames(games) {
@@ -68,7 +85,7 @@ function renderGames(games) {
             e.target.src = '/assets/img/logo.png';
         };
 
-        gameEl.addEventListener('click', (e) => openGame(game.id));
+        gameEl.addEventListener('click', () => openGame(game.id));
     });
 }
 
@@ -127,7 +144,7 @@ const openGame = (id) => {
         }, 1000);
         frame.querySelector('.gameTitle').innerText = game.name;
 
-        frame.querySelector('[data-attr="fullscreen"]').addEventListener('click', (e) => frame.querySelector('.mainGame').requestFullscreen());
+        frame.querySelector('[data-attr="fullscreen"]').addEventListener('click', () => frame.querySelector('.mainGame').requestFullscreen());
 
         // 推荐位：取与当前不同的前几项
         const recomendations = GAMES.filter(g => g.id !== id).slice(0, 6);
@@ -140,13 +157,13 @@ const openGame = (id) => {
                 e.target.src = '/assets/img/logo.png';
             };
 
-            recomendedGames[i].addEventListener('click', (e) => {
+            recomendedGames[i].addEventListener('click', () => {
                 document.querySelector('.innerGame').remove();
                 openGame(recomendations[i].id);
             });
         }
 
-        frame.querySelector('#back').addEventListener('click', (e) => {
+        frame.querySelector('#back').addEventListener('click', () => {
             gameFrame.classList.add('hidden');
             gameDatabase.classList.remove('hidden');
             document.querySelector('.database_nav').classList.remove('hidden');
