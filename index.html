@@ -191,7 +191,7 @@
                 <h1 id="detail-title">游戏标题</h1>
                 <span id="detail-category" class="game-category">分类</span>
                 <p id="detail-description-short">游戏简介...</p>
-                <button class="play-button" onclick="playGame()">🎮 开始游戏</button>
+                <!-- <button class="play-button" onclick="playGame()">🎮 开始游戏</button> -->
             </div>
         </div>
         
@@ -279,6 +279,11 @@
             // 显示详情页，隐藏主页
             document.getElementById('homepage').style.display = 'none';
             document.getElementById('game-detail').style.display = 'block';
+
+            // 直接加载游戏
+            const iframe = document.getElementById('game-iframe');
+            iframe.src = game.url;
+            iframe.style.display = 'block';
             
             // 更新页面标题
             document.title = `${game.name} - GameHub`;

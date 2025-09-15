@@ -4,7 +4,7 @@
         "name": "Hazmob FPS",
         "category": "Shooter",
         "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
-        "url": "https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}", 
+        "url": "https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
         "use": "iframe",
         "description": "一款刺激的第一人称射击游戏",
         "instructions": "使用WASD移动，鼠标瞄准射击，消灭所有敌人！"
