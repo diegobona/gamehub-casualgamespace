@@ -1,1 +1,5 @@
-/*    /index.html   200
+# SPA路由重定向规则
+/game/* /index.html 200
+/category/* /index.html 200
+/assets/* /assets/:splat 200
+/* /index.html 200

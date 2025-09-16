@@ -8,7 +8,8 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const server = http.createServer();
 
 server.on('request', (req, res) => {
-    const pathname = new URL('http://localhost' + req.url).pathname;
+    const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+    const pathname = url.pathname;
     
     // 处理根路径和SPA路由（包括游戏和分类页面）
     if (pathname === '/' || 
