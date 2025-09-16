@@ -4,7 +4,7 @@
         "name": "Hazmob FPS",
         "category": "Shooter",
         "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
-        "url": "https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "url": "https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.gamedistribution.com/games/hazmob-fps&ar=16:9&fs=1", 
         "use": "iframe",
         "description": "一款刺激的第一人称射击游戏",
         "instructions": "使用WASD移动，鼠标瞄准射击，消灭所有敌人！"
@@ -14,7 +14,7 @@
         "name": "Snow Rider 3D",
         "category": "Racing",
         "thumbnail": "https://img.gamedistribution.com/d6ce0e8e5b8e4c8f9a2b3c4d5e6f7a8b-512x512.jpg", 
-        "url": "https://html5.gamedistribution.com/d6ce0e8e5b8e4c8f9a2b3c4d5e6f7a8b/", 
+        "url": "https://html5.gamedistribution.com/d6ce0e8e5b8e4c8f9a2b3c4d5e6f7a8b/?gd_sdk_referrer_url=https://www.gamedistribution.com/games/snow-rider-3d&ar=16:9&fs=1", 
         "use": "iframe",
         "description": "在雪山上驾驶雪橇的3D竞速游戏",
         "instructions": "使用方向键或WASD控制雪橇，避开障碍物，收集金币！"
