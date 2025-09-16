@@ -365,25 +365,33 @@
         // 暴露renderGames到全局
         window.renderGames = renderGames;
 
-        // 路由处理
+        // 改进的路由处理 - 替换原来的 handleRoute 函数
         function handleRoute() {
             const path = window.location.pathname;
-
-            // 处理分类页面路由 (如 /shooter, /racing)
-            if (path !== '/' && path !== '/index.html') {
-                const category = path.slice(1); // 移除开头的 /
+            
+            // 游戏详情页路由: /game/game-slug
+            if (path.startsWith('/game/')) {
+                const gameSlug = path.replace('/game/', '');
+                showGameDetail(gameSlug);
+                return;
+            }
+            
+            // 分类页面路由: /category/category-name
+            if (path.startsWith('/category/')) {
+                const category = path.replace('/category/', '');
                 showCategoryPage(category);
                 return;
             }
-
-            // 处理游戏详情页路由 (使用hash)
-            const hash = window.location.hash.slice(1); // 移除 #
-            if (hash.startsWith('/')) {
-                const gameName = hash.slice(1); // 移除 /
-                showGameDetail(gameName);
-            } else {
-                showHomepage();
+            
+            // 兼容旧的分类路由: /shooter, /racing 等
+            if (path !== '/' && path !== '/index.html' && !path.includes('.')) {
+                const category = path.slice(1);
+                showCategoryPage(category);
+                return;
             }
+            
+            // 默认主页路由
+            showHomepage();
         }
 
         // 显示主页
@@ -501,18 +509,13 @@
             });
         }
 
-        // 导航到分类页面
-        function navigateToCategory(category) {
-            console.log('导航到分类:', category);
-            
+         // 导航到分类页面 - 替换原来的 navigateToCategory 函数
+         function navigateToCategory(category) {
             if (category === 'all') {
-                // 返回主页
                 window.history.pushState(null, '', '/');
                 showHomepage();
             } else {
-                // 导航到分类页面
-                const categoryPath = `/${category.toLowerCase()}`;
-                console.log('更新URL到:', categoryPath);
+                const categoryPath = `/category/${category.toLowerCase()}`;
                 window.history.pushState(null, '', categoryPath);
                 showCategoryPage(category);
             }
@@ -640,9 +643,9 @@
         // 导航到游戏
         function navigateToGame(gameName) {
             const slug = generateSlug(gameName);
-            // 清除分类路径，只保留游戏hash
-            window.history.pushState(null, '', '/');
-            window.location.hash = `#/${slug}`;
+            const gamePath = `/game/${slug}`;
+            window.history.pushState(null, '', gamePath);
+            showGameDetail(slug);
         }
 
         // 重写游戏点击事件（覆盖gamemanger.js中的openGame函数）
@@ -656,9 +659,7 @@
 
         // 返回主页
         function goHome() {
-            // 清除hash和分类路径
             window.history.pushState(null, '', '/');
-            window.location.hash = '';
             showHomepage();
         }
 

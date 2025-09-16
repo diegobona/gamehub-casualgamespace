@@ -10,8 +10,12 @@ const server = http.createServer();
 server.on('request', (req, res) => {
     const pathname = new URL('http://localhost' + req.url).pathname;
     
-    // 处理根路径和SPA路由
-    if (pathname === '/' || pathname === '/index.html' || (!pathname.includes('.') && !pathname.startsWith('/assets'))) {
+    // 处理根路径和SPA路由（包括游戏和分类页面）
+    if (pathname === '/' || 
+        pathname === '/index.html' || 
+        pathname.startsWith('/game/') ||
+        pathname.startsWith('/category/') ||
+        (!pathname.includes('.') && !pathname.startsWith('/assets'))) {
         const indexFile = path.join(__dirname, '../index.html');
         res.setHeader('content-type', 'text/html');
         res.end(fs.readFileSync(indexFile));
