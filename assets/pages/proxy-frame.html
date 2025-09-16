@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>Game Proxy</title>
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; }
+        iframe { width: 100%; height: 100vh; border: none; }
+    </style>
+</head>
+<body>
+    <iframe id="game" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock"></iframe>
+    
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const gameUrl = params.get('url');
+        
+        if (gameUrl) {
+            // 使用公共CORS代理
+            const proxyUrls = [
+                `https://api.allorigins.win/raw?url=${encodeURIComponent(gameUrl)}`,
+                `https://cors-anywhere.herokuapp.com/${gameUrl}`,
+                `https://thingproxy.freeboard.io/fetch/${gameUrl}`
+            ];
+            
+            const iframe = document.getElementById('game');
+            let currentProxy = 0;
+            
+            function tryNextProxy() {
+                if (currentProxy < proxyUrls.length) {
+                    iframe.src = proxyUrls[currentProxy];
+                    currentProxy++;
+                } else {
+                    // 所有代理都失败，尝试直接加载
+                    iframe.src = gameUrl;
+                }
+            }
+            
+            iframe.onerror = tryNextProxy;
+            iframe.onload = () => {
+                console.log('Game loaded via proxy');
+            };
+            
+            tryNextProxy();
+        }
+    </script>
+</body>
+</html>

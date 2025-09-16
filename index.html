@@ -546,19 +546,14 @@
         }
 
         // 显示游戏详情页
-        function showGameDetail(gameSlug) {
-            // 等待游戏数据加载
+        // 修改showGameDetail函数使用代理
+               function showGameDetail(gameSlug) {
             if (!window.GAMES || !window.GAMES.length) {
                 setTimeout(() => showGameDetail(gameSlug), 100);
                 return;
             }
 
-            // 查找游戏
-            const game = window.GAMES.find(g => {
-                const slug = generateSlug(g.name);
-                return slug === gameSlug || g.name.toLowerCase() === gameSlug.toLowerCase();
-            });
-
+            const game = window.GAMES.find(g => generateSlug(g.name) === gameSlug);
             if (!game) {
                 console.error('游戏未找到:', gameSlug);
                 goHome();
@@ -567,44 +562,27 @@
 
             currentGame = game;
             
-            // 更新页面内容
-            if (document.getElementById('detail-title')) {
-                document.getElementById('detail-title').textContent = game.name;
-                document.getElementById('detail-thumbnail').src = game.thumbnail || '/assets/img/logo.png';
-                document.getElementById('detail-category').textContent = game.category || '游戏';
-                document.getElementById('detail-description-short').textContent = game.description || '暂无描述';
-                document.getElementById('detail-description-full').textContent = game.instructions || game.description || '暂无详细说明';
-                
-                // 显示详情页，隐藏主页
-                document.getElementById('homepage').style.display = 'none';
-                document.getElementById('game-detail').style.display = 'block';
-                
-                // 直接加载游戏
-                const iframe = document.getElementById('game-iframe');
-                if (iframe) {
-                    let gameUrl = game.url;
-                    
-                    // 处理不同类型的游戏URL
-                    if (game.use === 'redirect') {
-                        if (gameUrl.includes('player.html?')) {
-                            const urlParams = new URLSearchParams(gameUrl.split('?')[1]);
-                            const srcUrl = urlParams.get('src');
-                            if (srcUrl) {
-                                gameUrl = decodeURIComponent(srcUrl);
-                            }
-                        }
-                    }
-                    
-                    iframe.src = gameUrl;
-                    iframe.style.display = 'block';
-                }
-                
-                // 更新页面标题
-                document.title = `${game.name} - GameHub`;
-                
-                // 生成推荐游戏
-                generateRecommendedGames();
+            // 显示详情页
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('game-detail').style.display = 'block';
+            
+            // 更新游戏信息
+            document.getElementById('detail-title').textContent = game.name;
+            document.getElementById('detail-thumbnail').src = game.thumbnail || '/assets/img/logo.png';
+            document.getElementById('detail-category').textContent = game.category || '游戏';
+            document.getElementById('detail-description-short').textContent = game.description || '暂无描述';
+            document.getElementById('detail-description-full').textContent = game.instructions || game.description || '暂无详细说明';
+            
+            // 使用代理加载游戏
+            const iframe = document.getElementById('game-iframe');
+            if (iframe) {
+                const proxyUrl = `/assets/pages/proxy-frame.html?url=${encodeURIComponent(game.url)}`;
+                iframe.src = proxyUrl;
+                iframe.style.display = 'block';
             }
+            
+            document.title = `${game.name} - GameHub`;
+            generateRecommendedGames();
         }
 
         // 生成推荐游戏
