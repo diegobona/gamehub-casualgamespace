@@ -21,6 +21,57 @@ async function fetchJsonWithFallback(relPath, options) {
     throw new Error('Failed to fetch: ' + relPath);
 }
 
+// 添加分类数据和渲染函数
+const CATEGORIES = [
+    { id: 'all', name: '全部', icon: '🎮' },
+    { id: 'shooter', name: '射击', icon: '🔫' },
+    { id: 'racing', name: '竞速', icon: '🏎️' },
+    { id: 'puzzle', name: '益智', icon: '🧩' },
+    { id: 'adventure', name: '冒险', icon: '🗺️' },
+    { id: 'action', name: '动作', icon: '⚡' },
+    { id: 'sports', name: '体育', icon: '⚽' },
+    { id: 'strategy', name: '策略', icon: '🎯' }
+];
+
+// 渲染分类卡片
+function renderCategories() {
+    const categoriesContainer = document.getElementById('categories');
+    if (!categoriesContainer) return;
+    
+    categoriesContainer.innerHTML = '';
+    
+    CATEGORIES.forEach(category => {
+        const categoryEl = document.createElement('div');
+        categoryEl.className = 'category-card';
+        categoryEl.dataset.category = category.id;
+        
+        if (category.id === 'all') {
+            categoryEl.classList.add('active');
+        }
+        
+        categoryEl.innerHTML = `
+            <span class="category-icon">${category.icon}</span>
+            <div class="category-name">${category.name}</div>
+        `;
+        
+        categoryEl.addEventListener('click', () => {
+            // 移除所有active状态
+            document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
+            // 添加当前active状态
+            categoryEl.classList.add('active');
+            
+            // 调用分类筛选
+            if (window.navigateToCategory) {
+                window.navigateToCategory(category.id);
+            } else {
+                filterGamesByCategory(category.id);
+            }
+        });
+        
+        categoriesContainer.appendChild(categoryEl);
+    });
+}
+
 fetchJsonWithFallback('assets/JSON/games.json')
     .then(res => res.json())
     .then(games => {
@@ -28,64 +79,64 @@ fetchJsonWithFallback('assets/JSON/games.json')
         window.GAMES = GAMES; // 暴露给全局
 
         const searchBar = document.querySelector('[data-func="search"]');
-        searchBar.placeholder = `搜索 ${GAMES.length} 个游戏`;
+        if (searchBar) {
+            searchBar.placeholder = `搜索 ${GAMES.length} 个游戏`;
+        }
 
+        // 渲染分类卡片
+        renderCategories();
+        
         // 渲染游戏列表
         renderGames(GAMES);
 
         // 搜索功能
-        searchBar.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
+        if (searchBar) {
+            searchBar.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const currentCategory = getCurrentCategory();
+                
+                let baseGames = GAMES;
+                if (currentCategory && currentCategory !== 'all') {
+                    baseGames = GAMES.filter(game => {
+                        if (!game.category) return false;
+                        const gameCategory = game.category.toLowerCase();
+                        const targetCategory = currentCategory.toLowerCase();
+                        return gameCategory === targetCategory;
+                    });
+                }
 
-            // 获取当前的分类过滤器
-            const currentCategory = window.getCurrentCategory ? window.getCurrentCategory() : 'all';
+                const filtered = baseGames.filter(game =>
+                    game.name.toLowerCase().includes(query) ||
+                    (game.category && game.category.toLowerCase().includes(query))
+                );
+                renderGames(filtered);
+            });
+        }
 
-            // 先根据分类过滤，再根据搜索词过滤
-            let baseGames = GAMES;
-            if (currentCategory && currentCategory !== 'all') {
-                baseGames = GAMES.filter(game => {
-                    if (!game.category) return false;
-                    const gameCategory = game.category.toLowerCase();
-                    const targetCategory = currentCategory.toLowerCase();
-                    return gameCategory === targetCategory ||
-                           gameCategory.includes(targetCategory) ||
-                           targetCategory.includes(gameCategory);
-                });
-            }
-
-            const filtered = baseGames.filter(game =>
-                game.name.toLowerCase().includes(query) ||
-                (game.category && game.category.toLowerCase().includes(query))
-            );
-            renderGames(filtered);
-        });
-
-        searchBar.focus();
+        if (searchBar) searchBar.focus();
     })
     .catch(() => registerError('Could not load games'));
 
 // 渲染游戏列表
 function renderGames(games) {
-    const gamesContainer = document.querySelector('.games');
+    const gamesContainer = document.getElementById('games');
+    if (!gamesContainer) return;
+    
     gamesContainer.innerHTML = '';
-
+    
     games.forEach(game => {
         const gameEl = document.createElement('div');
-        gameEl.classList = 'game';
-        gameEl.title = game.name;
+        gameEl.className = 'game';
+        gameEl.onclick = () => showGameDetail(generateSlug(game.name));
+        
         gameEl.innerHTML = `
-            <img src="${game.thumbnail}" alt="${game.name}"/>
-            <p>${game.name}</p>
+            <img src="${game.thumbnail}" alt="${game.name}" loading="lazy">
+            <div class="game-info">
+                <h3 class="game-title">${game.name}</h3>
+            </div>
         `;
+        
         gamesContainer.appendChild(gameEl);
-
-        gameEl.querySelector('img').onerror = (e) => {
-            registerError(`Could not load splash image for ${e.target.parentElement.title}`);
-            e.target.parentElement.classList.add('failed');
-            e.target.src = '/assets/img/logo.png';
-        };
-
-        gameEl.addEventListener('click', () => openGame(game.id));
     });
 }
 
@@ -179,4 +230,30 @@ const openGame = (id) => {
 
 // 暴露给全局
 window.openGame = openGame;
+
+// 获取当前选中的分类
+function getCurrentCategory() {
+    const activeCard = document.querySelector('.category-card.active');
+    return activeCard ? activeCard.dataset.category : 'all';
+}
+
+// 分类筛选功能
+function filterGamesByCategory(category) {
+    if (!window.GAMES) return;
+
+    let filteredGames;
+    if (category === 'all') {
+        filteredGames = window.GAMES;
+    } else {
+        filteredGames = window.GAMES.filter(game => {
+            if (!game.category) return false;
+            const gameCategory = game.category.toLowerCase();
+            const targetCategory = category.toLowerCase();
+            return gameCategory === targetCategory;
+        });
+    }
+    
+    renderGames(filteredGames);
+}
+
 

@@ -582,168 +582,98 @@ input.input.is-link.is-rounded[data-attr='username'] {
 
 .heroTitle {
     font-family: montserrat-black;
-    font-size: 100px;
+    font-size: 80px;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.616);
 }
 
-/* 游戏分类样式 */
+/* 游戏分类样式 - 统一版本 */
 .game-categories {
+    background: linear-gradient(135deg, #667eea 0%, #ba4ba2 100%);
+    padding: 0remm 0;
+    margin: 0;
     width: 100%;
-    max-width: 1400px;
+    box-sizing: border-box;
+}
+
+.game-categories .container {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 10px;
-    margin-bottom: -30px;
+    padding: 0;
 }
 
 .category-title {
-    font-family: 'Montserrat-Black';
-    font-size: 36px;
+    text-align: center;
     color: white;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.616);
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .categories-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 0 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .category-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    border-radius: 8px;
-    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 100px;
-    max-width: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
 }
 
 .category-card:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px) scale(1.02);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-card.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .category-icon {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 8px;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .category-name {
-    font-family: 'Montserrat-Black';
-    font-size: 14px;
-    color: white;
-    margin: 0;
-    line-height: 1.2;
-}
-
-/* 分类卡片激活状态 */
-.category-card.active {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.category-card.active .category-icon {
-    transform: scale(1.1);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* 响应式设计 */
-@media (max-width: 1200px) {
-    .categories-grid {
-        gap: 10px;
-    }
-    
-    .category-card {
-        padding: 10px 14px;
-        min-width: 90px;
-        max-width: 110px;
-    }
-    
-    .category-icon {
-        font-size: 18px;
-        margin-bottom: 6px;
-    }
-    
-    .category-name {
-        font-size: 13px;
-    }
-}
-
 @media (max-width: 768px) {
-    .category-title {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-    
     .categories-grid {
-        gap: 8px;
-        padding: 0 15px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+        padding: 0 1rem;
     }
     
     .category-card {
-        padding: 8px 12px;
-        min-width: 80px;
-        max-width: 100px;
-        border-radius: 6px;
-    }
-    
-    .category-icon {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-    
-    .category-name {
-        font-size: 12px;
-    }
-    
-    .hero.is-halfheight {
-        min-height: 40vh !important;
-    }
-    
-    .game-categories {
-        margin-bottom: -20px;
-    }
-    
-    .database_nav {
-        padding: 8px 15px;
-        margin-top: -35px;
-    }
-    
-    .games {
-        margin-top: -20px;
+        padding: 1rem 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .categories-grid {
-        gap: 4px;
-    }
-    
-    .category-card {
-        padding: 5px 3px;
-        min-height: 40px;
-    }
-    
-    .category-icon {
-        font-size: 10px;
-        margin-bottom: 2px;
-    }
-    
-    .category-name {
-        font-size: 9px;
+        padding: 0 0.5rem;
+        gap: 0.5rem;
     }
 }
 .navTitle {
@@ -1208,4 +1138,254 @@ input.input.is-link.is-rounded[data-attr='username'] {
     height: 80vh;         /* 自行按需调整可视高度 */
     border: 0;
     max-width: 100%;
+}
+
+/* 现代化首页样式优化 */
+
+/* 导航栏优化 */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand img {
+    border-radius: 8px;
+    margin-right: 12px;
+}
+
+/* Hero区域优化 */
+.hero.is-halfheight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero.is-halfheight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/img/background.jpeg') center/cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-body {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    /* padding: 0px; */
+}
+
+.hero.is-halfheight .hero-body {
+    padding: 0px;
+}
+
+.heroTitle {
+    font-family: 'Montserrat-Black';
+    font-size: clamp(3rem, 8vw, 4rem);
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 搜索栏优化 */
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    color: #333;
+}
+
+.search-box input::placeholder {
+    color: #666;
+}
+
+.search-box i {
+    color: #667eea;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+
+.category-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+}
+
+.category-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-card.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.category-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 游戏网格优化 */
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.game:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.game img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game:hover img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.game-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 页面背景 */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+    
+    .category-card {
+        padding: 1rem 0.5rem;
+    }
+    
+    .games {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
 }

@@ -132,13 +132,6 @@
             color: #333;
         }
 
-        /* 游戏分类样式 */
-        .game-categories {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px 0;
-            margin-bottom: 0;
-        }
-        
         .category-title {
             text-align: center;
             color: white;
@@ -232,73 +225,41 @@
         </div>
 
         <!-- Hero 区域 -->
-        <div class="hero">
+        <section class="hero is-halfheight">
             <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title is-1">GameHub</h1>
-                    <h2 class="subtitle">发现并游玩精彩游戏</h2>
+                <div class="container">
+                    <h1 class="heroTitle">GameHub</h1>
+                    <p class="hero-subtitle">发现并享受最棒的免费在线游戏</p>
+                    
+                    <!-- 搜索栏 -->
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" data-func="search" placeholder="搜索游戏..." onkeyup="searchGames()">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 游戏分类区域 -->
-        <div class="game-categories">
+        <!-- 游戏分类 -->
+        <section class="game-categories">
             <div class="container">
                 <h2 class="category-title">游戏分类</h2>
-                <div class="categories-grid">
-                    <div class="category-card" data-category="all">
-                        <div class="category-icon">🎮</div>
-                        <div class="category-name">全部游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Shooter">
-                        <div class="category-icon">🔫</div>
-                        <div class="category-name">射击游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Racing">
-                        <div class="category-icon">🏎️</div>
-                        <div class="category-name">竞速游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Puzzle">
-                        <div class="category-icon">🧩</div>
-                        <div class="category-name">益智游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Adventure">
-                        <div class="category-icon">🗺️</div>
-                        <div class="category-name">冒险游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Action">
-                        <div class="category-icon">⚡</div>
-                        <div class="category-name">动作游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Sports">
-                        <div class="category-icon">⚽</div>
-                        <div class="category-name">体育游戏</div>
-                    </div>
-                    <div class="category-card" data-category="Strategy">
-                        <div class="category-icon">🧠</div>
-                        <div class="category-name">策略游戏</div>
-                    </div>
+                <div class="categories-grid" id="categories">
+                    <!-- 分类将通过JavaScript动态生成 -->
                 </div>
             </div>
-        </div>
-
-        <!-- 搜索区域 -->
-        <div class="database_nav">
-            <div class="container">
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" placeholder="搜索游戏..." data-func="search">
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
         <!-- 游戏列表 -->
-        <div class="container">
-            <div class="games" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
-                <!-- 游戏将在这里动态加载 -->
+        <section class="section">
+            <div class="container">
+                <div class="games" id="games">
+                    <!-- 游戏将通过JavaScript动态生成 -->
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- 游戏框架（用于旧版兼容） -->
         <div class="gameFrame hidden">
