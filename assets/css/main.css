@@ -703,19 +703,19 @@ input.input.is-link.is-rounded[data-attr='username'] {
     background: var(--bg-color);
 }
 
-.games {
+/* .games {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: -30px;
     padding-top: 5px;
-}
+} */
 
-.game {
+/* .game {
     display: inline-block;
     vertical-align: middle;
-    margin: 10px;
+    margin: 0px;
     position: relative;
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.616);
@@ -728,7 +728,7 @@ input.input.is-link.is-rounded[data-attr='username'] {
     height: 200px;
     cursor: pointer;
     padding: 10px;
-}
+} */
 
 .game.failed img {
     padding: 10px;
@@ -1270,8 +1270,8 @@ input.input.is-link.is-rounded[data-attr='username'] {
 .games {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
-    padding: 3rem 2rem;
+    gap: 0.5rem !important;
+    padding: 1rem 2rem 3rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -1321,6 +1321,17 @@ body {
     min-height: 100vh;
 }
 
+/* 游戏列表section样式调整 */
+.games-section {
+    padding-top: 5px !important;  /* 只影响游戏列表section */
+}
+
+@media screen and (min-width: 1024px) {
+    .games-section {
+        padding-top: 5px !important;
+    }
+}
+
 /* 响应式优化 */
 @media (max-width: 768px) {
     .heroTitle {
@@ -1333,7 +1344,7 @@ body {
     
     .games {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 1.5rem;
+        gap: 0.25rem !important;
         padding: 2rem 1rem;
     }
 }
