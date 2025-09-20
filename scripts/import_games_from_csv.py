@@ -151,6 +151,7 @@ def main():
     parser.add_argument("--csv", default="游戏信息表.csv", help="CSV 文件路径（默认：游戏信息表.csv）")
     parser.add_argument("--json", default=str(Path("assets/JSON/games.json")), help="目标 JSON 路径（默认：assets/JSON/games.json）")
     parser.add_argument("--encoding", default=None, help="CSV 文件编码（默认自动检测/回退；可选：utf-8, gb18030, cp936 等）")
+    parser.add_argument("--start-id", type=int, default=None, help="新插入数据的起始 id（必须大于当前最大 id）。不指定则为现有最大 id + 1")
     args = parser.parse_args()
 
     csv_path = Path(args.csv).resolve()
@@ -160,6 +161,16 @@ def main():
     print(f"[start] 读取 CSV：{csv_path}")
     existing, existing_names, max_id = load_existing_games(json_path)
     print(f"[info] 现有游戏数量：{len(existing)}，当前最大 id：{max_id}")
+
+    # 决定新增记录的起始 ID
+    if args.start_id is not None:
+        if args.start_id <= max_id:
+            print(f"[error] 指定的 --start-id({args.start_id}) 必须大于当前最大 id({max_id})。")
+            sys.exit(1)
+        next_id = args.start_id
+    else:
+        next_id = max_id + 1
+    print(f"[info] 新增数据起始 id：{next_id}")
 
     added = 0
     skipped_dup = 0
@@ -183,12 +194,12 @@ def main():
             continue
 
         # 构造对象并追加
-        max_id += 1
-        game = build_game_obj(max_id, row)
+        game = build_game_obj(next_id, row)
         existing.append(game)
         seen_in_csv.add(nm)
         added += 1
-        print(f"[add] id={max_id}  name={game['name']}")
+        print(f"[add] id={game['id']}  name={game['name']}")
+        next_id += 1
 
     # 写回 JSON
     try:
