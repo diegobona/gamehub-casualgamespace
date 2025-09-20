@@ -212,6 +212,116 @@
                 /* margin-bottom: 25px; */
             }
         }
+
+        /* 加载状态指示器样式 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .loading-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+        }
+
+        /* 错误状态样式 */
+        .error-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .error-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .error-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            border-left: 5px solid #dc3545;
+        }
+
+        .error-icon {
+            font-size: 48px;
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+
+        .error-text {
+            font-size: 16px;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+
+        .error-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .error-button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -293,6 +403,23 @@
             <div id="recommended-grid" class="recommended-grid">
                 <!-- 推荐游戏将在这里动态生成 -->
             </div>
+        </div>
+    </div>
+
+    <!-- 加载状态指示器 -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p id="loading-text" class="loading-text">正在加载...</p>
+        </div>
+    </div>
+
+    <!-- 错误状态指示器 -->
+    <div id="error-overlay" class="error-overlay">
+        <div class="error-content">
+            <div class="error-icon">⚠️</div>
+            <p id="error-text" class="error-text">发生错误</p>
+            <button id="error-button" class="error-button" onclick="hideErrorState()">确定</button>
         </div>
     </div>
 
@@ -399,9 +526,9 @@
         }
 
         // 显示分类页面
-        function showCategoryPage(category) {
+        async function showCategoryPage(category) {
             console.log('显示分类页面:', category);
-            
+
             document.getElementById('homepage').style.display = 'block';
             if (document.getElementById('game-detail')) {
                 document.getElementById('game-detail').style.display = 'none';
@@ -410,10 +537,19 @@
                 document.getElementById('game-iframe').style.display = 'none';
             }
 
-            // 等待游戏数据加载
-            if (!window.GAMES || !window.GAMES.length) {
-                console.log('等待游戏数据加载...');
-                setTimeout(() => showCategoryPage(category), 100);
+            try {
+                // 显示加载状态
+                showLoadingState('正在加载游戏列表...');
+
+                // 等待游戏数据加载完成
+                await window.getGamesData();
+
+                // 隐藏加载状态
+                hideLoadingState();
+            } catch (error) {
+                console.error('加载游戏数据失败:', error);
+                hideLoadingState();
+                showErrorState('加载游戏数据失败，请刷新页面重试');
                 return;
             }
 
@@ -526,17 +662,31 @@
         }
 
         // 显示游戏详情页
-        // 修改showGameDetail函数，优化iframe属性
-        function showGameDetail(gameSlug) {
-            if (!window.GAMES || !window.GAMES.length) {
-                setTimeout(() => showGameDetail(gameSlug), 100);
-                return;
-            }
+        // 修改showGameDetail函数，使用Promise-based加载机制
+        async function showGameDetail(gameSlug) {
+            let game = null;
 
-            const game = window.GAMES.find(g => generateSlug(g.name) === gameSlug);
-            if (!game) {
-                console.error('游戏未找到:', gameSlug);
-                goHome();
+            try {
+                // 显示加载状态
+                showLoadingState('正在加载游戏详情...');
+
+                // 等待游戏数据加载完成
+                const games = await window.getGamesData();
+
+                // 隐藏加载状态
+                hideLoadingState();
+
+                game = games.find(g => generateSlug(g.name) === gameSlug);
+                if (!game) {
+                    console.error('游戏未找到:', gameSlug);
+                    showErrorState(`游戏 "${gameSlug}" 未找到`);
+                    setTimeout(() => goHome(), 3000);
+                    return;
+                }
+            } catch (error) {
+                console.error('加载游戏数据失败:', error);
+                hideLoadingState();
+                showErrorState('加载游戏数据失败，请刷新页面重试');
                 return;
             }
 
@@ -658,17 +808,57 @@
         // 事件监听
         window.addEventListener('hashchange', handleRoute);
         window.addEventListener('popstate', handleRoute); // 支持浏览器前进后退
-        
+
         window.addEventListener('load', () => {
             console.log('页面加载完成，开始初始化...');
-            
+
             // 等待gamemanger.js加载完成后处理路由和初始化分类筛选
-            setTimeout(() => {
-                console.log('开始处理路由和初始化分类筛选');
-                handleRoute();
-                initCategoryFilter();
-            }, 1000); // 增加等待时间确保所有资源加载完成
+            const initializeApp = () => {
+                if (window.getGamesData) {
+                    console.log('开始处理路由和初始化分类筛选');
+                    handleRoute();
+                    initCategoryFilter();
+                } else {
+                    console.log('等待游戏数据加载器初始化...');
+                    setTimeout(initializeApp, 100);
+                }
+            };
+
+            setTimeout(initializeApp, 500);
         });
+
+        // 加载状态管理函数
+        function showLoadingState(message = '正在加载...') {
+            const overlay = document.getElementById('loading-overlay');
+            const text = document.getElementById('loading-text');
+            if (overlay && text) {
+                text.textContent = message;
+                overlay.classList.add('show');
+            }
+        }
+
+        function hideLoadingState() {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.classList.remove('show');
+            }
+        }
+
+        function showErrorState(message = '发生错误') {
+            const overlay = document.getElementById('error-overlay');
+            const text = document.getElementById('error-text');
+            if (overlay && text) {
+                text.textContent = message;
+                overlay.classList.add('show');
+            }
+        }
+
+        function hideErrorState() {
+            const overlay = document.getElementById('error-overlay');
+            if (overlay) {
+                overlay.classList.remove('show');
+            }
+        }
 
         // 暴露全局函数
         window.navigateToGame = navigateToGame;
@@ -676,6 +866,10 @@
         window.handleRoute = handleRoute;
         window.showCategoryPage = showCategoryPage;
         window.filterGamesByCategory = filterGamesByCategory;
+        window.showLoadingState = showLoadingState;
+        window.hideLoadingState = hideLoadingState;
+        window.showErrorState = showErrorState;
+        window.hideErrorState = hideErrorState;
     </script>
 </body>
 </html>

@@ -10,8 +10,31 @@ window.onscroll = () => {
 
 // 纯前端：从本地 JSON 读取游戏列表并缓存
 let GAMES = [];
+
+// 创建游戏数据加载Promise，用于管理异步加载状态
+let gamesLoadPromise = null;
+let gamesLoadResolve = null;
+let gamesLoadReject = null;
+
+// 初始化游戏数据加载Promise
+function initGamesLoadPromise() {
+    if (!gamesLoadPromise) {
+        gamesLoadPromise = new Promise((resolve, reject) => {
+            gamesLoadResolve = resolve;
+            gamesLoadReject = reject;
+        });
+    }
+    return gamesLoadPromise;
+}
+
+// 获取游戏数据的Promise
+function getGamesData() {
+    return gamesLoadPromise || initGamesLoadPromise();
+}
+
 async function fetchJsonWithFallback(relPath, options) {
-    const candidates = [relPath, '/' + relPath.replace(/^\/+/, '')];
+    const clean = relPath.replace(/^\/+/, '');
+    const candidates = ['/' + clean, relPath]; // prefer absolute first
     for (const url of candidates) {
         try {
             const res = await fetch(url, options);
@@ -72,11 +95,19 @@ function renderCategories() {
     });
 }
 
+// 初始化游戏数据加载Promise
+initGamesLoadPromise();
+
 fetchJsonWithFallback('assets/JSON/games.json')
     .then(res => res.json())
     .then(games => {
         GAMES = games || [];
         window.GAMES = GAMES; // 暴露给全局
+
+        // 解析Promise，通知所有等待的组件
+        if (gamesLoadResolve) {
+            gamesLoadResolve(GAMES);
+        }
 
         const searchBar = document.querySelector('[data-func="search"]');
         if (searchBar) {
@@ -85,7 +116,7 @@ fetchJsonWithFallback('assets/JSON/games.json')
 
         // 渲染分类卡片
         renderCategories();
-        
+
         // 渲染游戏列表
         renderGames(GAMES);
 
@@ -115,7 +146,13 @@ fetchJsonWithFallback('assets/JSON/games.json')
 
         if (searchBar) searchBar.focus();
     })
-    .catch(() => registerError('Could not load games'));
+    .catch(error => {
+        console.error('Failed to load games:', error);
+        if (gamesLoadReject) {
+            gamesLoadReject(error);
+        }
+        registerError('Could not load games');
+    });
 
 // 渲染游戏列表
 function renderGames(games) {
@@ -230,6 +267,7 @@ const openGame = (id) => {
 
 // 暴露给全局
 window.openGame = openGame;
+window.getGamesData = getGamesData;
 
 // 获取当前选中的分类
 function getCurrentCategory() {
