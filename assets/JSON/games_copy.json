@@ -1,0 +1,76 @@
+[
+    { 
+        "id": 1, 
+        "name": "Hazmob FPS",
+        "category": "Shooter",
+        "thumbnail": "https://img.gamedistribution.com/623baec23d504c83acab0b5250859ba8-512x512.jpg", 
+        "url": "https://html5.gamedistribution.com/623baec23d504c83acab0b5250859ba8/?gd_sdk_referrer_url=https://www.gamedistribution.com/games/hazmob-fps&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description": "一款刺激的第一人称射击游戏",
+        "instructions": "使用WASD移动，鼠标瞄准射击，消灭所有敌人！"
+    },
+    { 
+        "id": 2, 
+        "name": "Traffic Tap Puzzle",
+        "category": "Casual",
+        "thumbnail": "https://img.gamedistribution.com/7837dbfeadba4ea784444131650fb8f6-512x512.jpg", 
+        "url": "https://html5.gamedistribution.com/7837dbfeadba4ea784444131650fb8f6/?gd_sdk_referrer_url=https://gamedistribution.com/games/traffic-tap-puzzle&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description": "Traffic Tap Puzzle is a challenging puzzle game where players must control traffic at intersections by tapping on cars to start or stop them. The goal is to avoid collisions while ensuring a smooth flow of vehicles. As the levels progress, traffic becomes more complex, requiring strategic timing and quick decision-making. With engaging mechanics and increasing difficulty, the game tests your reflexes and planning skills.",
+        "instructions": "Tap on a car to make it move or stop. Time your taps carefully to prevent crashes. Let all cars pass safely to complete the level. The difficulty increases with more cars and faster movement. Plan ahead and react quickly to manage traffic efficiently."
+        
+    },
+    { 
+        "id": 3, 
+        "name": "Vex Hyper Dash",
+        "category": "Agility",
+        "thumbnail": "https://img.gamedistribution.com/169c01c96fb5407680dfea26391d01d2-512x512.jpg", 
+        "url": "https://html5.gamedistribution.com/169c01c96fb5407680dfea26391d01d2/?gd_sdk_referrer_url=https://gamedistribution.com/games/vex-hyper-dash&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description":"Get ready for a fast-paced challenge in this brand-new Vex spin-off: Vex Hyper Dash! Inspired by the legendary Geometry Dash. Your goal is simple: survive as long as possible. Jump from platform to platform, time your moves perfectly, and avoid the countless dangers that stand in your way. One wrong move, one mistimed jump, and it’s game over. Vex Hyper Dash puts your reflexes and precision to the ultimate test. Can you master the flow and set a new high score?",
+        "instructions": "Jump: Arrow keys, Spacebar, or Mouse click Dash: K or Shift (customizable in settings) In the settings, you can move the dash button to the left or right side of the screen, making it comfortable for both left- and right-handed players."
+    },
+    { 
+        "id": 4, 
+        "name": "Crazy Stunts 3D",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/7003f00653b24b0686c8d448eca7083b-512x512.jpg", 
+        "url": "https://html5.gamedistribution.com/7003f00653b24b0686c8d448eca7083b/?gd_sdk_referrer_url=https://gamedistribution.com/games/crazy-stunts-3d&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description":"Get behind the wheel and conquer extreme tracks! Jump from ramps, compete with players, complete modes and unlock new cars!",
+        "instructions": "The goal of the game is to complete levels, overcoming difficult tracks with ramps and obstacles, earn in-game currency and unlock new cars. Different modes may have their own tasks: drive carefully to the finish line, perform tricks or ride freely in the sandbox. Mobile controls: touch / swipe. Desktop controls: WASD/Arrows for movement, Space for handbrake."
+    },
+    { 
+        "id": 5, 
+        "name": "My Arcade Center",
+        "category": "Simulation",
+        "thumbnail": "https://img.gamedistribution.com/6012e9d47c4f4342825c3583e2bb95e2-512x512.jpg", 
+        "url": "https://html5.gamedistribution.com/6012e9d47c4f4342825c3583e2bb95e2/?gd_sdk_referrer_url=https://gamedistribution.com/games/my-arcade-center&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description":"In My Arcade Center, play a fun arcade simulation. You build, manage, and grow your very own retro game empire. From humble beginnings to becoming an idle tycoon. You’re in control of it all! Buy a few machines and gradually expand your arcade center. Upgrade your games, attract more visitors, and keep the arcade buzzing with activity. Hire staff and enjoy the perfect mix of idle gameplay and management simulation - continuous production of Ultraman to give customers perfect service.",
+        "instructions": "Mouse click or tap to play."
+    },
+    { 
+        "id": 6, 
+        "name": "Monster Escape",
+        "category": "Puzzle",
+        "thumbnail": "https://img.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b-512x512.jpg", 
+        "url": "/assets/pages/player.html?title=Monster Escape&src=https://html5.gamedistribution.com/f93cf32a51c84a39b7d8e8cd1a75ea3b/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description":"Monster Escape is a thrilling puzzle platformer where you rotate the entire level to help a little green monster grab the key and escape the dark dungeon. Each stage is packed with tricky obstacles — spikes, falling crates, and narrow passages that put your timing and planning skills to the test. The unique mechanic — rotate the world, find the path, unlock the door — creates plenty of satisfying moments as you advance.",
+        "instructions": "Rotate the world using the on-screen buttons to shift gravity and open new paths, then guide the monster to collect the key and reach the locked door to complete the level. On PC, you can also click to the left or right of the monster to make it walk without rotating the stage, while on mobile, smooth touch controls ensure easy navigation. Watch out for spikes and falling boxes, plan your moves wisely, and enjoy the challenge. Good luck!"
+    },
+    { 
+        "id": 7, 
+        "name": "Charger City Driver",
+        "category": "Racing & Driving",
+        "thumbnail": "https://img.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4-512x512.jpg", 
+        "url": "https://play.gamepix.com/veggie-friends/embed?sid=1&ar=16:9&fs=1", 
+        "use": "iframe",
+        "description":"Get ready to skid the wheels of a stunning muscle car through an expansive night city map! Customize and upgrade your muscle car with cool upgradables and become the best driver in the city. Take your dog with you in 4 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
+        "instructions": "Car: Arrow Keys/W, A, S, D: Drive/Steer/Brake C: Change Camera F: Nitro Character: Arrow Keys/W,A,S,D: Move Mouse Orbit: Look Around."
+    }
+   
+
+
+]
