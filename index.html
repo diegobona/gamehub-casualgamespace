@@ -7,20 +7,20 @@
     <meta name="description" content="CasualGameSpace提供超过50款免费在线游戏，包括射击游戏、竞速游戏、益智游戏等。无需下载，即点即玩，享受最佳游戏体验。">
     <meta name="keywords" content="免费游戏,在线游戏,射击游戏,竞速游戏,益智游戏,HTML5游戏">
     <meta name="author" content="CasualGameSpace">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="CasualGameSpace - 免费在线游戏平台">
     <meta property="og:description" content="超过50款免费在线游戏，即点即玩">
     <meta property="og:image" content="https://casualgamespace.com/assets/img/logo.png">
     <meta property="og:url" content="https://casualgamespace.com">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CasualGameSpace - 免费在线游戏平台">
     <meta name="twitter:description" content="超过1000款免费在线游戏，即点即玩">
     <meta name="twitter:image" content="https://casualgamespace.com/assets/img/logo.png">
-    
+
     <link rel="canonical" href="https://casualgamespace.com">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/bulma.css">
@@ -35,26 +35,26 @@
             background: white;
             min-height: 100vh;
         }
-        
+
         .game-header {
             display: flex;
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .game-thumbnail {
             width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
         }
-        
+
         .game-info h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             color: #333;
         }
-        
+
         .game-category {
             background: #007bff;
             color: white;
@@ -63,7 +63,7 @@
             display: inline-block;
             margin-bottom: 15px;
         }
-        
+
         .game-frame {
             width: 100%;
             height: 600px;
@@ -73,14 +73,14 @@
             display: none;
             background: #f0f0f0;
         }
-        
+
         .game-description {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
         }
-        
+
         .back-button {
             background: #6c757d;
             color: white;
@@ -90,22 +90,22 @@
             cursor: pointer;
             margin-bottom: 20px;
         }
-        
+
         .back-button:hover {
             background: #5a6268;
         }
-        
+
         .recommended-games {
             margin-top: 40px;
         }
-        
+
         .recommended-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 1px;  /* 从15px改为5px */
             margin-top: 20px;
         }
-        
+
         .recommended-item {
             text-align: center;
             cursor: pointer;
@@ -113,19 +113,19 @@
             border-radius: 10px;
             transition: transform 0.2s;
         }
-        
+
         .recommended-item:hover {
             transform: scale(1.05);
             background: #f8f9fa;
         }
-        
+
         .recommended-item img {
             width: 100%;
             height: 120px;
             object-fit: cover;
             border-radius: 8px;
         }
-        
+
         .recommended-item p {
             margin-top: 8px;
             font-size: 0.9em;
@@ -140,7 +140,7 @@
             font-weight: bold;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
@@ -149,7 +149,7 @@
             margin: 0 auto 20px auto;
             padding: 10px 20px;
         }
-        
+
         .category-card {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
@@ -161,52 +161,52 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .category-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.25);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-        
+
         .category-card.active {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
-        
+
         .category-icon {
             font-size: 1.25em;
             margin-bottom: 2px;
             display: block;
         }
-        
+
         .category-name {
             color: white;
             font-weight: bold;
             font-size: 1em;
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
-        
+
         @media (max-width: 768px) {
             .categories-grid {
                 grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
                 gap: 8px;
                 margin-bottom: 30px;
             }
-            
+
             .category-card {
                 padding: 8px 5px;
             }
-            
+
             .category-icon {
                 font-size: 1em;
                 margin-bottom: 2px;
             }
-            
+
             .category-name {
                 font-size: 1em;
             }
-            
+
             .category-title {
                 font-size: 2em;
                 /* margin-bottom: 25px; */
@@ -322,7 +322,26 @@
         .error-button:hover {
             background: #0056b3;
         }
+        /* 防闪烁：默认隐藏主页与详情容器，由路由类控制显示 */
+        #homepage, #game-detail { display: none; }
+        .route-home #homepage { display: block; }
+        .route-category #homepage { display: block; }
+        /* 注意：route-game 首帧不自动显示 #game-detail，等 JS 准备就绪后再显示，避免占位内容闪现 */
+
     </style>
+    <script>
+        // 在首次绘制前确定路由类型，避免刷新时主页闪现
+        (function(){
+            try {
+                var p = location.pathname || '/';
+                var cls = 'route-home';
+                if (p.startsWith('/game/')) cls = 'route-game';
+                else if (p.startsWith('/category/') || (p !== '/' && !p.includes('.'))) cls = 'route-category';
+                document.documentElement.classList.add(cls);
+            } catch (e) {}
+        })();
+    </script>
+
 </head>
 <body>
     <!-- 主页内容 -->
@@ -341,7 +360,7 @@
                 <div class="container">
                     <h1 class="heroTitle">GameHub</h1>
                     <p class="hero-subtitle">发现并享受最棒的免费在线游戏</p>
-                    
+
                     <!-- 搜索栏 -->
                     <div class="search-container">
                         <div class="search-box">
@@ -381,7 +400,7 @@
     <!-- 游戏详情页 -->
     <div id="game-detail" class="game-detail">
         <button class="back-button" onclick="goHome()">← 返回游戏列表</button>
-        
+
         <div class="game-header">
             <img id="detail-thumbnail" class="game-thumbnail" src="" alt="">
             <div class="game-info">
@@ -390,14 +409,14 @@
                 <p id="detail-description-short">游戏简介...</p>
             </div>
         </div>
-        
+
         <iframe id="game-iframe" class="game-frame" src=""></iframe>
-        
+
         <div class="game-description">
             <h3>游戏说明</h3>
             <p id="detail-description-full">详细游戏说明...</p>
         </div>
-        
+
         <div class="recommended-games">
             <h3>推荐游戏</h3>
             <div id="recommended-grid" class="recommended-grid">
@@ -444,7 +463,7 @@
         function renderGames(games) {
             const gamesContainer = document.querySelector('.games');
             if (!gamesContainer) return;
-            
+
             gamesContainer.innerHTML = '';
 
             games.forEach(game => {
@@ -473,36 +492,47 @@
         window.renderGames = renderGames;
 
         // 改进的路由处理 - 替换原来的 handleRoute 函数
+        // 设置根元素路由类，配合 CSS 控制初始可见性，防止刷新闪烁
+        function setRouteClass(route) {
+            const root = document.documentElement;
+            root.classList.remove('route-home','route-game','route-category');
+            if (route) root.classList.add(route);
+        }
+
         function handleRoute() {
             const path = window.location.pathname;
-            
+
             // 游戏详情页路由: /game/game-slug
             if (path.startsWith('/game/')) {
+
+
                 const gameSlug = path.replace('/game/', '');
                 showGameDetail(gameSlug);
                 return;
             }
-            
+
             // 分类页面路由: /category/category-name
             if (path.startsWith('/category/')) {
                 const category = path.replace('/category/', '');
                 showCategoryPage(category);
                 return;
             }
-            
+
             // 兼容旧的分类路由: /shooter, /racing 等
             if (path !== '/' && path !== '/index.html' && !path.includes('.')) {
                 const category = path.slice(1);
                 showCategoryPage(category);
                 return;
             }
-            
+
             // 默认主页路由
             showHomepage();
         }
 
         // 显示主页
         function showHomepage() {
+            setRouteClass('route-home');
+
             document.getElementById('homepage').style.display = 'block';
             if (document.getElementById('game-detail')) {
                 document.getElementById('game-detail').style.display = 'none';
@@ -528,6 +558,8 @@
         // 显示分类页面
         async function showCategoryPage(category) {
             console.log('显示分类页面:', category);
+
+            setRouteClass('route-category');
 
             document.getElementById('homepage').style.display = 'block';
             if (document.getElementById('game-detail')) {
@@ -587,7 +619,7 @@
         // 分类筛选功能
         function filterGamesByCategory(category) {
             console.log('筛选分类:', category, '游戏总数:', window.GAMES?.length);
-            
+
             if (!window.GAMES) return;
 
             let filteredGames;
@@ -604,7 +636,7 @@
             }
 
             console.log('筛选结果:', filteredGames.length, '个游戏');
-            
+
             // 渲染游戏
             renderGames(filteredGames);
             updateSearchPlaceholder(category, filteredGames.length);
@@ -647,11 +679,11 @@
                 searchBar.placeholder = `搜索游戏`;
             }
         }
-        
+
         function getCategoryName(category) {
             const categoryMap = {
                 'shooter': '射击',
-                'racing': '竞速', 
+                'racing': '竞速',
                 'puzzle': '益智',
                 'adventure': '冒险',
                 'action': '动作',
@@ -666,15 +698,34 @@
         async function showGameDetail(gameSlug) {
             let game = null;
 
+            setRouteClass('route-game');
+
+            // 进入详情页：隐藏主页与详情主体，仅显示加载层，避免占位内容闪现
+            const homeEl = document.getElementById('homepage');
+            const detailEl = document.getElementById('game-detail');
+            const iframeEl = document.getElementById('game-iframe');
+            if (homeEl) homeEl.style.display = 'none';
+            if (detailEl) detailEl.style.display = 'none';
+            if (iframeEl) iframeEl.style.display = 'none';
+
             try {
                 // 显示加载状态
                 showLoadingState('正在加载游戏详情...');
 
+                // 等待 getGamesData 挂载
+                let getter = window.getGamesData;
+                if (typeof getter !== 'function') {
+                    const start = Date.now();
+                    while (typeof window.getGamesData !== 'function' && Date.now() - start < 10000) {
+                        await new Promise(r => setTimeout(r, 50));
+                    }
+                    getter = window.getGamesData;
+                }
+                if (typeof getter !== 'function') {
+                    throw new Error('getGamesData not available');
+                }
                 // 等待游戏数据加载完成
-                const games = await window.getGamesData();
-
-                // 隐藏加载状态
-                hideLoadingState();
+                const games = await getter();
 
                 game = games.find(g => generateSlug(g.name) === gameSlug);
                 if (!game) {
@@ -691,29 +742,29 @@
             }
 
             currentGame = game;
-            
-            // 显示详情页
+
+            // 显示详情页容器准备：先保持隐藏，待数据/DOM就绪后再展示
             document.getElementById('homepage').style.display = 'none';
-            document.getElementById('game-detail').style.display = 'block';
-            
+            document.getElementById('game-detail').style.display = 'none';
+
             // 更新游戏信息
             document.getElementById('detail-title').textContent = game.name;
             document.getElementById('detail-thumbnail').src = game.thumbnail || '/assets/img/logo.png';
             document.getElementById('detail-category').textContent = game.category || '游戏';
             document.getElementById('detail-description-short').textContent = game.description || '暂无描述';
             document.getElementById('detail-description-full').textContent = game.instructions || game.description || '暂无详细说明';
-            
+
             // 重新创建iframe以确保属性生效
             const oldIframe = document.getElementById('game-iframe');
             if (oldIframe) {
                 oldIframe.remove();
             }
-            
+
             // 创建新的iframe
             const iframe = document.createElement('iframe');
             iframe.id = 'game-iframe';
             iframe.className = 'game-frame';
-            
+
             // 设置关键属性
             iframe.setAttribute('src', game.url);
             iframe.setAttribute('referrerpolicy', 'no-referrer');
@@ -725,27 +776,31 @@
             iframe.style.height = '600px';
             iframe.style.border = 'none';
             iframe.style.display = 'block';
-            
+
             // 添加到页面
             const gameDetailElement = document.getElementById('game-detail');
             const insertPoint = gameDetailElement.querySelector('.game-description');
             if (insertPoint) {
                 insertPoint.parentNode.insertBefore(iframe, insertPoint);
             }
-            
+
             // 监听加载事件
             iframe.onload = () => {
                 console.log('游戏iframe加载完成');
             };
-            
+
             iframe.onerror = () => {
                 console.error('游戏iframe加载失败');
             };
-            
+
             document.title = `${game.name} - GameHub`;
             generateRecommendedGames();
+
+            // 所有关键DOM已就绪：揭盖详情，隐藏加载层
+            document.getElementById('game-detail').style.display = 'block';
+            hideLoadingState();
         }
-        
+
 
 
 
@@ -753,23 +808,23 @@
         function generateRecommendedGames() {
             const grid = document.getElementById('recommended-grid');
             if (!grid || !currentGame) return;
-            
+
             grid.innerHTML = '';
-            
+
             if (!window.GAMES) return;
-            
+
             // 获取同分类的其他游戏
-            let recommended = window.GAMES.filter(g => 
+            let recommended = window.GAMES.filter(g =>
                 g.category === currentGame.category && g.id !== currentGame.id
             ).slice(0, 6);
-            
+
             if (recommended.length < 6) {
-                const others = window.GAMES.filter(g => 
+                const others = window.GAMES.filter(g =>
                     g.id !== currentGame.id && !recommended.includes(g)
                 ).slice(0, 6 - recommended.length);
                 recommended = [...recommended, ...others];
             }
-            
+
             recommended.forEach(game => {
                 const item = document.createElement('div');
                 item.className = 'recommended-item';
@@ -812,19 +867,19 @@
         window.addEventListener('load', () => {
             console.log('页面加载完成，开始初始化...');
 
-            // 等待gamemanger.js加载完成后处理路由和初始化分类筛选
-            const initializeApp = () => {
-                if (window.getGamesData) {
-                    console.log('开始处理路由和初始化分类筛选');
-                    handleRoute();
-                    initCategoryFilter();
-                } else {
-                    console.log('等待游戏数据加载器初始化...');
-                    setTimeout(initializeApp, 100);
-                }
-            };
+            const path = window.location.pathname || '';
+            if (path.startsWith('/game/')) {
+                // 刷新在游戏详情页：立即进入详情加载流程，避免先显示首页
+                const slug = path.replace('/game/', '');
+                showGameDetail(slug);
+                // 可选：分类筛选对详情页非必需，但初始化不影响
+                initCategoryFilter();
+                return;
+            }
 
-            setTimeout(initializeApp, 500);
+            // 其他情况按常规处理
+            handleRoute();
+            initCategoryFilter();
         });
 
         // 加载状态管理函数

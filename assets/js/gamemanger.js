@@ -1,12 +1,24 @@
 import { registerError } from './notification.js';
 
 const nav = document.querySelector('.navbar');
-const searchContainer = document.querySelector('.database_nav');
 
-window.onscroll = () => {
-    if (window.pageYOffset > document.querySelector('.hero').offsetHeight) searchContainer.classList.add('shadowed');
-    else searchContainer.classList.remove('shadowed');
-};
+// 安全的滚动处理：仅当所需元素存在时才操作；兼容SPA不同路由页面
+function handleScrollShadow() {
+    const hero = document.querySelector('.hero');
+    // 兼容旧类名 .database_nav 和现有的 .search-container
+    const container = document.querySelector('.database_nav') || document.querySelector('.search-container');
+    if (!hero || !container) return;
+    const threshold = hero.offsetHeight || 0;
+    if (window.pageYOffset > threshold) {
+        container.classList.add('shadowed');
+    } else {
+        container.classList.remove('shadowed');
+    }
+}
+
+window.addEventListener('scroll', handleScrollShadow, { passive: true });
+// 首次加载也执行一次（在DOM就绪后）
+document.addEventListener('DOMContentLoaded', handleScrollShadow);
 
 // 纯前端：从本地 JSON 读取游戏列表并缓存
 let GAMES = [];
