@@ -29,11 +29,13 @@
         /* 游戏详情页样式 */
         .game-detail {
             display: none;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: none;
+            margin: 0;
             padding: 20px;
             background: white;
             min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .game-header {
@@ -66,13 +68,28 @@
 
         .game-frame {
             width: 100%;
-            height: 600px;
+            height: 65vh;
+            min-height: 420px;
             border: none;
             border-radius: 10px;
-            margin: 20px 0;
-            display: none;
+            margin: 0;
+            display: block;
             background: #f0f0f0;
         }
+        /* 详情主体两栏布局 */
+        .detail-main {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px;
+            gap: 24px;
+            align-items: start;
+        }
+        .detail-left, .detail-right { min-width: 0; }
+        .recommended-games h3 { margin-top: 0; }
+        @media (max-width: 1024px) {
+            .detail-main { grid-template-columns: 1fr; }
+            .recommended-games { margin-top: 16px; }
+        }
+
 
         .game-description {
             background: #f8f9fa;
@@ -96,13 +113,13 @@
         }
 
         .recommended-games {
-            margin-top: 40px;
+            margin-top: 0;
         }
 
         .recommended-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1px;  /* 从15px改为5px */
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
             margin-top: 20px;
         }
 
@@ -410,18 +427,24 @@
             </div>
         </div>
 
-        <iframe id="game-iframe" class="game-frame" src=""></iframe>
+        <div class="detail-main">
+            <div id="detail-left" class="detail-left">
+                <iframe id="game-iframe" class="game-frame" src=""></iframe>
 
-        <div class="game-description">
-            <h3>游戏说明</h3>
-            <p id="detail-description-full">详细游戏说明...</p>
-        </div>
-
-        <div class="recommended-games">
-            <h3>推荐游戏</h3>
-            <div id="recommended-grid" class="recommended-grid">
-                <!-- 推荐游戏将在这里动态生成 -->
+                <div class="game-description">
+                    <h3>游戏说明</h3>
+                    <p id="detail-description-full">详细游戏说明...</p>
+                </div>
             </div>
+
+            <aside id="detail-right" class="detail-right">
+                <div class="recommended-games">
+                    <h3>推荐游戏</h3>
+                    <div id="recommended-grid" class="recommended-grid">
+                        <!-- 推荐游戏将在这里动态生成 -->
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -773,15 +796,17 @@
             iframe.setAttribute('frameborder', '0');
             iframe.setAttribute('scrolling', 'no');
             iframe.style.width = '100%';
-            iframe.style.height = '600px';
             iframe.style.border = 'none';
             iframe.style.display = 'block';
 
             // 添加到页面
             const gameDetailElement = document.getElementById('game-detail');
-            const insertPoint = gameDetailElement.querySelector('.game-description');
+            const leftCol = document.getElementById('detail-left') || gameDetailElement;
+            const insertPoint = leftCol.querySelector('.game-description');
             if (insertPoint) {
                 insertPoint.parentNode.insertBefore(iframe, insertPoint);
+            } else {
+                leftCol.appendChild(iframe);
             }
 
             // 监听加载事件
