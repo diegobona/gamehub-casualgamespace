@@ -16,8 +16,34 @@ import argparse
 from pathlib import Path
 
 REQUIRED_FIELDS = ["name", "category", "thumbnail", "url", "description", "instructions"]
+def clean_cell_value(val: str) -> str:
+    """清洗单元格文本：去首尾空白、去掉成对包裹引号，以及 Excel 导出可能产生的前置引号。
+    支持成对引号："...", '...', “...”, ‘...’
+    同时尽量处理只有前置引号的情况。
+    """
+    if val is None:
+        return ""
+    s = str(val).strip()
+    if s == "":
+        return ""
+
+    pairs = [("\"", "\""), ("'", "'"), ('“', '”'), ('‘', '’')]
+    for a, b in pairs:
+        if s.startswith(a) and s.endswith(b) and len(s) >= 2:
+            s = s[1:-1].strip()
+            break
+
+    # Excel 为避免公式/科学计数法，可能导出以引号开头的文本（只在前面有引号）
+    if s.startswith("'") and not s.endswith("'"):
+        s = s[1:].lstrip()
+    if s.startswith('"') and not s.endswith('"'):
+        s = s[1:].lstrip()
+
+    return s
+
 
 def norm_name(s: str) -> str:
+    s = clean_cell_value(s)
     if s is None:
         return ""
     # 忽略大小写、去掉首尾空白、压缩中间空白
@@ -111,12 +137,12 @@ def read_csv_rows(csv_path: Path, preferred_encoding: str | None = None):
 def build_game_obj(next_id: int, row: dict) -> dict:
     return {
         "id": next_id,
-        "name": row.get("name", "").strip(),
-        "category": row.get("category", "").strip(),
-        "thumbnail": row.get("thumbnail", "").strip(),
-        "url": row.get("url", "").strip(),
-        "description": row.get("description", "").strip(),
-        "instructions": row.get("instructions", "").strip(),
+        "name": clean_cell_value(row.get("name", "")),
+        "category": clean_cell_value(row.get("category", "")),
+        "thumbnail": clean_cell_value(row.get("thumbnail", "")),
+        "url": clean_cell_value(row.get("url", "")),
+        "description": clean_cell_value(row.get("description", "")),
+        "instructions": clean_cell_value(row.get("instructions", "")),
         "use": "iframe",
     }
 
