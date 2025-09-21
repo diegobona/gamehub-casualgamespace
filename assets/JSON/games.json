@@ -118,5 +118,505 @@
     "description": "Take control of time itself in a thrilling world where every move counts. Navigate through a landscape full of dormant dangers that spring to life only when you act. Push your skills to the limit",
     "instructions": "perfect your timing",
     "use": "iframe"
+  },
+  {
+    "id": 206,
+    "name": "Creature Quest",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/creature-quest/cover/creature-quest.png?w=320",
+    "url": "https://play.gamepix.com/creature-quest/embed?sid=1",
+    "description": "Guide a charming creature to its meal in Creature Quest",
+    "instructions": "a delightful puzzle where strategic rope cutting meets physics-driven fun. Time your actions perfectly to collect stars and satisfy the creature\"\"s hunger. Perfect for quick",
+    "use": "iframe"
+  },
+  {
+    "id": 207,
+    "name": "Haunted Brainrot 3D",
+    "category": "escape",
+    "thumbnail": "https://img.gamepix.com/games/haunted-brainrot-3d/cover/haunted-brainrot-3d.png?w=320",
+    "url": "https://play.gamepix.com/haunted-brainrot-3d/embed?sid=1",
+    "description": "Immerse yourself in a nightmarish escape challenge where eerie puzzles and stealthy maneuvers are your only allies. Navigate a crumbling",
+    "instructions": "haunted prison without guidance",
+    "use": "iframe"
+  },
+  {
+    "id": 208,
+    "name": "One Two Start",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/one-two-start/cover/one-two-start.png?w=320",
+    "url": "https://play.gamepix.com/one-two-start/embed?sid=1",
+    "description": "Embark on your journey as a rookie runner aiming for 5km. Test your limits with each record-breaking sprint",
+    "instructions": "gaining speed and stamina. Overcome obstacles with jumps and slides",
+    "use": "iframe"
+  },
+  {
+    "id": 209,
+    "name": "Shape Cutter",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/shape-cutter/cover/shape-cutter.png?w=320",
+    "url": "https://play.gamepix.com/shape-cutter/embed?sid=1",
+    "description": "Test your precision and strategic genius in Shape Cutter! Slice through geometric shapes with skill",
+    "instructions": "guiding pieces toward glowing stars. Each cut challenges your creativity",
+    "use": "iframe"
+  },
+  {
+    "id": 210,
+    "name": "Guess Brainrot",
+    "category": "trivia",
+    "thumbnail": "https://img.gamepix.com/games/guess-brainrot/cover/guess-brainrot.png?w=320",
+    "url": "https://play.gamepix.com/guess-brainrot/embed?sid=1",
+    "description": "Dive into Guess Brainrot",
+    "instructions": "where chaos reigns in a whirlwind of quick quizzes and quirky mini-games. Challenge your reflexes and wit alongside viral sensations. With unpredictable twists at every turn",
+    "use": "iframe"
+  },
+  {
+    "id": 211,
+    "name": "Wednesday Addams Beauty Salon",
+    "category": "games-for-girls",
+    "thumbnail": "https://img.gamepix.com/games/wednesday-addams-beauty-salon/cover/wednesday-addams-beauty-salon.png?w=320",
+    "url": "https://play.gamepix.com/wednesday-addams-beauty-salon/embed?sid=1",
+    "description": "Step into Wednesday Addams\"\" world for a hauntingly glamorous transformation. Indulge in three levels of eerie elegance as you pamper Wednesday with chilling facials",
+    "instructions": "striking dark makeup",
+    "use": "iframe"
+  },
+  {
+    "id": 212,
+    "name": "Shadow Soldier Revenge of the Ruins",
+    "category": "first-person-shooter",
+    "thumbnail": "https://img.gamepix.com/games/shadow-soldier-revenge-of-the-ruins/cover/shadow-soldier-revenge-of-the-ruins.png?w=320",
+    "url": "https://play.gamepix.com/shadow-soldier-revenge-of-the-ruins/embed?sid=1",
+    "description": "Unleash your inner warrior in \"Shadow Soldier: Revenge of the Ruins\" where lightning-fast combat and stunning environments collide. Master an arsenal of powerful weapons",
+    "instructions": "execute precise maneuvers",
+    "use": "iframe"
+  },
+  {
+    "id": 213,
+    "name": "Curvy Punch",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/curvy-punch/cover/curvy-punch.png?w=320",
+    "url": "https://play.gamepix.com/curvy-punch/embed?sid=1",
+    "description": "Join the uproarious battle in Curvy Punch! Unleash wildly curved punches to outsmart opponents and navigate obstacles. Flip",
+    "instructions": "dodge",
+    "use": "iframe"
+  },
+  {
+    "id": 214,
+    "name": "Bid Wars 1 Auction Simulator",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/bid-wars-1-auction-simulator/cover/bid-wars-1-auction-simulator.png?w=320",
+    "url": "https://play.gamepix.com/bid-wars-1-auction-simulator/embed?sid=1",
+    "description": "Dive into the thrilling world of auctions in Bid Wars 1! Uncover hidden treasures in high-stakes bidding battles",
+    "instructions": "spot valuable items",
+    "use": "iframe"
+  },
+  {
+    "id": 215,
+    "name": "Pretty Sheep Run",
+    "category": "runner",
+    "thumbnail": "https://img.gamepix.com/games/pretty-sheep-run/cover/pretty-sheep-run.png?w=320",
+    "url": "https://play.gamepix.com/pretty-sheep-run/embed?sid=1",
+    "description": "Guide a charming sheep in Pretty Sheep Run",
+    "instructions": "navigating endless platforms and dodging hazards. Convert numbers and enhance your gun\"\"s power and speed as you sprint to the finish. Merge guns for powerful upgrades",
+    "use": "iframe"
+  },
+  {
+    "id": 216,
+    "name": "Fish World",
+    "category": "match-3",
+    "thumbnail": "https://img.gamepix.com/games/fish-world/cover/fish-world.png?w=320",
+    "url": "https://play.gamepix.com/fish-world/embed?sid=1",
+    "description": "Dive into Fish World",
+    "instructions": "an exhilarating undersea adventure where you race against time! Strategically connect vibrant fish in under 30 seconds",
+    "use": "iframe"
+  },
+  {
+    "id": 217,
+    "name": "Teddy Bear Factory",
+    "category": "tap",
+    "thumbnail": "https://img.gamepix.com/games/teddy-bear-factory/cover/teddy-bear-factory.png?w=320",
+    "url": "https://play.gamepix.com/teddy-bear-factory/embed?sid=1",
+    "description": "Step into the whimsical world of Teddy Bear Factory",
+    "instructions": "where your keen eye is your greatest asset. Swiftly spot and remove imperfect toys on the production line",
+    "use": "iframe"
+  },
+  {
+    "id": 218,
+    "name": "Alone In The Evil Mansion",
+    "category": "horror",
+    "thumbnail": "https://img.gamepix.com/games/alone-in-the-evil-mansion/cover/alone-in-the-evil-mansion.png?w=320",
+    "url": "https://play.gamepix.com/alone-in-the-evil-mansion/embed?sid=1",
+    "description": "Explore the spine-chilling depths of a haunted mansion",
+    "instructions": "where survival hinges on strategic resource management and unraveling sinister secrets. Navigate atmospheric environments with classic tank controls as fear lurks in every shadow",
+    "use": "iframe"
+  },
+  {
+    "id": 219,
+    "name": "Ludo Star",
+    "category": "board",
+    "thumbnail": "https://img.gamepix.com/games/ludo-star/cover/ludo-star.png?w=320",
+    "url": "https://play.gamepix.com/ludo-star/embed?sid=1",
+    "description": "Step into a world where strategy meets chance. Unleash your tactical skills",
+    "instructions": "customize your experience with unique dice skins",
+    "use": "iframe"
+  },
+  {
+    "id": 220,
+    "name": "Fragile Balance",
+    "category": "building",
+    "thumbnail": "https://img.gamepix.com/games/fragile-balance/cover/fragile-balance.png?w=320",
+    "url": "https://play.gamepix.com/fragile-balance/embed?sid=1",
+    "description": "Challenge your precision and patience in Fragile Balance. Carefully stack brick blocks on a narrow platform",
+    "instructions": "striving to build the tallest tower without toppling it. Each decision is crucial in this minimalist",
+    "use": "iframe"
+  },
+  {
+    "id": 221,
+    "name": "Ultimate Bus Simulator Driver Duty 3D",
+    "category": "truck",
+    "thumbnail": "https://img.gamepix.com/games/ultimate-bus-simulator-driver-duty-3d/cover/ultimate-bus-simulator-driver-duty-3d.png?w=320",
+    "url": "https://play.gamepix.com/ultimate-bus-simulator-driver-duty-3d/embed?sid=1",
+    "description": "Navigate a bustling city in Ultimate Bus Simulator Driver Duty 3D. Master diverse missions from precision parking to thrilling rescue operations. Hone your skills",
+    "instructions": "follow traffic rules",
+    "use": "iframe"
+  },
+  {
+    "id": 222,
+    "name": "Fill The Animal Color",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/fill-the-animal/cover/fill-the-animal.png?w=320",
+    "url": "https://play.gamepix.com/fill-the-animal/embed?sid=1",
+    "description": "Dive into a world of creativity with Fill The Animal Color! Paint charming animals using your selected colors",
+    "instructions": "bringing each to life in your unique style. Perfect for kids and animal enthusiasts",
+    "use": "iframe"
+  },
+  {
+    "id": 223,
+    "name": "Flip for Fortune Collecting Coins Game",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/flip-for-fortune-collecting-coins-game/cover/flip-for-fortune-collecting-coins-game.png?w=320",
+    "url": "https://play.gamepix.com/flip-for-fortune-collecting-coins-game/embed?sid=1",
+    "description": "Leap through the sky",
+    "instructions": "master aerial maneuvers",
+    "use": "iframe"
+  },
+  {
+    "id": 224,
+    "name": "Bear and Shapes",
+    "category": "educational",
+    "thumbnail": "https://img.gamepix.com/games/bear-and-shapes/cover/bear-and-shapes.png?w=320",
+    "url": "https://play.gamepix.com/bear-and-shapes/embed?sid=1",
+    "description": "Join two adorable teddy bears on a puzzle-filled journey! Test young minds as they strategically match shapes to build paths. Engaging and educational",
+    "instructions": "this game fosters early logic skills through playful interaction with vibrant",
+    "use": "iframe"
+  },
+  {
+    "id": 225,
+    "name": "Connect the Blocks Mind Grid",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/connect-the-blocks-mind-grid/cover/connect-the-blocks-mind-grid.png?w=320",
+    "url": "https://play.gamepix.com/connect-the-blocks-mind-grid/embed?sid=1",
+    "description": "Dive into a world of logic and strategy with Connect the Blocks Mind Grid. Tackle ever-changing tile arrangements",
+    "instructions": "rotating and moving pieces to construct a single",
+    "use": "iframe"
+  },
+  {
+    "id": 226,
+    "name": "Merge Fellas Italian Brainrot",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/merge-fellas-italian-brainrot/cover/merge-fellas-italian-brainrot.png?w=320",
+    "url": "https://play.gamepix.com/merge-fellas-italian-brainrot/embed?sid=1",
+    "description": "Dive into a zany merge puzzle adventure where quirky characters evolve into bizarre creations. Unleash chaos and humor by combining Brainrot fellas",
+    "instructions": "pushing your strategic limits to uncover the wildest transformations. Can you unravel the ultimate twist in this addictive",
+    "use": "iframe"
+  },
+  {
+    "id": 227,
+    "name": "Brainrot Merge",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/brainrot-merge/cover/brainrot-merge.png?w=320",
+    "url": "https://play.gamepix.com/brainrot-merge/embed?sid=1",
+    "description": "Dive into zany evolution with Brainrot Merge! Drop and merge quirky creatures",
+    "instructions": "from bouncing chimps to rolling spions",
+    "use": "iframe"
+  },
+  {
+    "id": 228,
+    "name": "Turbo Tables",
+    "category": "educational",
+    "thumbnail": "https://img.gamepix.com/games/turbo-tables/cover/turbo-tables.png?w=320",
+    "url": "https://play.gamepix.com/turbo-tables/embed?sid=1",
+    "description": "Compete against time and test your multiplication prowess in Turbo Tables. Mastering times tables becomes exciting with escalating challenges",
+    "instructions": "strategic power-ups",
+    "use": "iframe"
+  },
+  {
+    "id": 229,
+    "name": "Hungry Snake Feed",
+    "category": "snake",
+    "thumbnail": "https://img.gamepix.com/games/hungry-snake-feed/cover/hungry-snake-feed.png?w=320",
+    "url": "https://play.gamepix.com/hungry-snake-feed/embed?sid=1",
+    "description": "Guide your ever-hungry snake through a colorful maze",
+    "instructions": "devouring food to grow longer while skillfully dodging obstacles. With simple controls and captivating visuals",
+    "use": "iframe"
+  },
+  {
+    "id": 230,
+    "name": "Robot Run",
+    "category": "runner",
+    "thumbnail": "https://img.gamepix.com/games/robot-run/cover/robot-run.png?w=320",
+    "url": "https://play.gamepix.com/robot-run/embed?sid=1",
+    "description": "Navigate through a perilous tech lab",
+    "instructions": "dodging lasers and obstacles. In Robot Run",
+    "use": "iframe"
+  },
+  {
+    "id": 231,
+    "name": "Black and Pink",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/black-and-pink/cover/black-and-pink.png?w=320",
+    "url": "https://play.gamepix.com/black-and-pink/embed?sid=1",
+    "description": "Transform the world by swapping dark and vibrant hues while skillfully dodging obstacles. Navigate dynamic levels with precision",
+    "instructions": "conquering each challenge as the intensity rises. As you master each stage",
+    "use": "iframe"
+  },
+  {
+    "id": 232,
+    "name": "Number Sums",
+    "category": "math",
+    "thumbnail": "https://img.gamepix.com/games/number-sum/cover/number-sum.png?w=320",
+    "url": "https://play.gamepix.com/number-sum/embed?sid=1",
+    "description": "Dive into Number Sums",
+    "instructions": "a logic puzzle game that will put your number-crunching skills to the test. Strategically select grid cells to achieve precise target sums across rows and columns. With 5000 levels",
+    "use": "iframe"
+  },
+  {
+    "id": 233,
+    "name": "Funny Blocks",
+    "category": "block",
+    "thumbnail": "https://img.gamepix.com/games/funny-blocks/cover/funny-blocks.png?w=320",
+    "url": "https://play.gamepix.com/funny-blocks/embed?sid=1",
+    "description": "Dive into a world of vibrant puzzles with Funny Blocks! Strategize to fit floating pieces onto the grid and unveil cute animal shapes. Mind your steps and the ticking clock",
+    "instructions": "balancing creativity and quick thinking. Perfect for all ages",
+    "use": "iframe"
+  },
+  {
+    "id": 234,
+    "name": "Magic 15 Puzzle",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/magic-15-puzzle/cover/magic-15-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/magic-15-puzzle/embed?sid=1",
+    "description": "Slide and swap numbered tiles to master the classic 15 puzzle! Strategically maneuver the pieces into their correct order",
+    "instructions": "using your wits and speed to conquer each configuration. Simple yet challenging",
+    "use": "iframe"
+  },
+  {
+    "id": 235,
+    "name": "Tic Tac Toe Cat",
+    "category": "cats",
+    "thumbnail": "https://img.gamepix.com/games/tic-tac-toe-cat/cover/tic-tac-toe-cat.png?w=320",
+    "url": "https://play.gamepix.com/tic-tac-toe-cat/embed?sid=1",
+    "description": "Join the adorable cats in Tic Tac Toe Cat",
+    "instructions": "where strategic placement on a playful grid leads to victory. Align three or more feline friends to outsmart the dog and claim triumph with every purr and whisker. Enjoy charming",
+    "use": "iframe"
+  },
+  {
+    "id": 236,
+    "name": "Shelter Security Gatekeeper Simulator",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/shelter-security-gatekeeper-simulator/cover/shelter-security-gatekeeper-simulator.png?w=320",
+    "url": "https://play.gamepix.com/shelter-security-gatekeeper-simulator/embed?sid=1",
+    "description": "Guard the gates of a peculiar post-apocalyptic shelter! Embrace chaos and humor while inspecting documents",
+    "instructions": "scanning luggage",
+    "use": "iframe"
+  },
+  {
+    "id": 237,
+    "name": "Vault Vault Collecting Coins",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/vault-vault-collecting-coins/cover/vault-vault-collecting-coins.png?w=320",
+    "url": "https://play.gamepix.com/vault-vault-collecting-coins/embed?sid=1",
+    "description": "Leap between platforms",
+    "instructions": "tapping coins from treasure vaults in this addictive platformer. With endless level generation and intuitive controls",
+    "use": "iframe"
+  },
+  {
+    "id": 238,
+    "name": "Mega Coin Mayhem Collect Coins Game",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/mega-coin-mayhem-collect-coins-game/cover/mega-coin-mayhem-collect-coins-game.png?w=320",
+    "url": "https://play.gamepix.com/mega-coin-mayhem-collect-coins-game/embed?sid=1",
+    "description": "Race against time in a bustling city",
+    "instructions": "dashing past towering obstacles to amass golden coins. Experience the thrill of fast-paced action as you skillfully maneuver through vibrant streets",
+    "use": "iframe"
+  },
+  {
+    "id": 239,
+    "name": "Animal Feed Puzzle",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/animal-feed-puzzle/cover/animal-feed-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/animal-feed-puzzle/embed?sid=1",
+    "description": "Dive into the vibrant world of Animal Feed Puzzle",
+    "instructions": "where each level challenges your wits to nourish adorable animals. Navigate through cleverly designed puzzles that sharpen your mind while offering endless fun. Perfect for all ages",
+    "use": "iframe"
+  },
+  {
+    "id": 240,
+    "name": "A Penguin\"\"s Odyssey",
+    "category": "animal",
+    "thumbnail": "https://img.gamepix.com/games/a-penguin-s-odyssey/cover/a-penguin-s-odyssey.png?w=320",
+    "url": "https://play.gamepix.com/a-penguin-s-odyssey/embed?sid=1",
+    "description": "Embark on an icy adventure in A Penguin\"\"s Odyssey! Navigate treacherous waters",
+    "instructions": "dodge lurking dangers",
+    "use": "iframe"
+  },
+  {
+    "id": 241,
+    "name": "Chrono Chef",
+    "category": "cooking",
+    "thumbnail": "https://img.gamepix.com/games/chrono-chef/cover/chrono-chef.png?w=320",
+    "url": "https://play.gamepix.com/chrono-chef/embed?sid=1",
+    "description": "Embark on a culinary time-travel adventure in Chrono Chef! Gather ingredients from eras like Prehistoric and Medieval",
+    "instructions": "cook them at your Chrono-Stove",
+    "use": "iframe"
+  },
+  {
+    "id": 242,
+    "name": "Queens Land",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/queens-land/cover/queens-land.png?w=320",
+    "url": "https://play.gamepix.com/queens-land/embed?sid=1",
+    "description": "Embark on a mind-bending journey",
+    "instructions": "combining the charm of chess and vibrant logic puzzles. Strategically position queens as they elegantly navigate the board like kings",
+    "use": "iframe"
+  },
+  {
+    "id": 243,
+    "name": "Planet Defences",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/planet-defences/cover/planet-defences.png?w=320",
+    "url": "https://play.gamepix.com/planet-defences/embed?sid=1",
+    "description": "Shield your world from an unrelenting meteor storm in Planet Defences! Construct and upgrade strategic towers to fend off cosmic threats. With endless",
+    "instructions": "fast-paced gameplay and increasing challenges",
+    "use": "iframe"
+  },
+  {
+    "id": 244,
+    "name": "Missile Control Infiltration Strike",
+    "category": "war",
+    "thumbnail": "https://img.gamepix.com/games/missile-control-infiltration-strike/cover/missile-control-infiltration-strike.png?w=320",
+    "url": "https://play.gamepix.com/missile-control-infiltration-strike/embed?sid=1",
+    "description": "Command a high-speed missile in a thrilling arcade adventure! Hone your precision and reflexes as you navigate perilous landscapes",
+    "instructions": "dodge obstacles",
+    "use": "iframe"
+  },
+  {
+    "id": 245,
+    "name": "Barry Prison Run GTA",
+    "category": "car",
+    "thumbnail": "https://img.gamepix.com/games/barry-prison-run-gta/cover/barry-prison-run-gta.png?w=320",
+    "url": "https://play.gamepix.com/barry-prison-run-gta/embed?sid=1",
+    "description": "Embark on a thrilling escape as Barry",
+    "instructions": "an ex-prisoner navigating a sprawling cityscape. Embrace chaos and freedom with exhilarating stunts and unpredictable encounters in a lively",
+    "use": "iframe"
+  },
+  {
+    "id": 246,
+    "name": "Snowboard Game Party",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/snowboard-game-party/cover/snowboard-game-party.png?w=320",
+    "url": "https://play.gamepix.com/snowboard-game-party/embed?sid=1",
+    "description": "Race through exhilarating snowy landscapes in Snowboard Game Party. Navigate perilous tracks against other players",
+    "instructions": "dodging obstacles like snowballs and fences. Master agile controls to maintain speed and secure victory. Earn points to unlock and personalize gear",
+    "use": "iframe"
+  },
+  {
+    "id": 247,
+    "name": "Snake Nokia Classic",
+    "category": "retro",
+    "thumbnail": "https://img.gamepix.com/games/snake-nokia-classic/cover/snake-nokia-classic.png?w=320",
+    "url": "https://play.gamepix.com/snake-nokia-classic/embed?sid=1",
+    "description": "Experience the nostalgia of early mobile gaming with Snake Nokia Classic. Maneuver your pixelated snake on a vibrant grid",
+    "instructions": "gobbling food to expand while evading self-collision. It’s a thrilling throwback with its addictive simplicity and fast-paced action",
+    "use": "iframe"
+  },
+  {
+    "id": 248,
+    "name": "Tiny Billiard",
+    "category": "sports",
+    "thumbnail": "https://img.gamepix.com/games/tiny-billiard/cover/tiny-billiard.png?w=320",
+    "url": "https://play.gamepix.com/tiny-billiard/embed?sid=1",
+    "description": "Dive into the wacky world of Tiny Billiard",
+    "instructions": "where one-tap precision leads you to trick shots and mini table mastery. Whether you\"\"re a beginner or a pro",
+    "use": "iframe"
+  },
+  {
+    "id": 249,
+    "name": "Dog Coloring Book",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/dog-coloring-book/cover/dog-coloring-book.png?w=320",
+    "url": "https://play.gamepix.com/dog-coloring-book/embed?sid=1",
+    "description": "Immerse yourself in the tranquil world of Dog Coloring Book",
+    "instructions": "where you bring charming dog illustrations to life with your vibrant hues. A delightful escape for all ages",
+    "use": "iframe"
+  },
+  {
+    "id": 250,
+    "name": "OffRoad 4x4 Driving Simulator",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/offroad-4x4-driving-simulator/cover/offroad-4x4-driving-simulator.png?w=320",
+    "url": "https://play.gamepix.com/offroad-4x4-driving-simulator/embed?sid=1",
+    "description": "Conquer rugged terrains with OffRoad 4x4 Driving Simulator. Navigate challenging mountain trails",
+    "instructions": "enjoy realistic driving physics",
+    "use": "iframe"
+  },
+  {
+    "id": 251,
+    "name": "Impossible Bike Stunt Ride",
+    "category": "bike",
+    "thumbnail": "https://img.gamepix.com/games/impossible-bike-stunt-ride/cover/impossible-bike-stunt-ride.png?w=320",
+    "url": "https://play.gamepix.com/impossible-bike-stunt-ride/embed?sid=1",
+    "description": "Defy gravity on impossible tracks with death-defying stunts in Impossible Bike Stunt Ride. Feel the adrenaline rush as you navigate tricky courses",
+    "instructions": "showcasing your racing skills. Perfect for thrill-seekers",
+    "use": "iframe"
+  },
+  {
+    "id": 252,
+    "name": "Punch the Ape",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/punch-the-ape/cover/punch-the-ape.png?w=320",
+    "url": "https://play.gamepix.com/punch-the-ape/embed?sid=1",
+    "description": "Unleash your frustration with powerful punches in this hilariously chaotic stress-relief game. Touch the screen to deliver a flurry of strikes",
+    "instructions": "overcoming quirky foes and unleashing your inner champion. Satisfy your urge to vent in a frenzied",
+    "use": "iframe"
+  },
+  {
+    "id": 253,
+    "name": "Kids Supermarket",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/kids-supermarket/cover/kids-supermarket.png?w=320",
+    "url": "https://play.gamepix.com/kids-supermarket/embed?sid=1",
+    "description": "Dive into Kids Supermarket",
+    "instructions": "where shopping transforms into a playful learning adventure. Enhance observation and categorization skills while navigating through realistic aisles brimming with diverse goods. Enjoy the thrill of solo shopping",
+    "use": "iframe"
+  },
+  {
+    "id": 254,
+    "name": "Christmas Run Puzzle",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/christmas-run-puzzle/cover/christmas-run-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/christmas-run-puzzle/embed?sid=1",
+    "description": "Immerse yourself in a festive challenge with Christmas Run Puzzle! Slide tiles to complete joyful holiday scenes featuring Santa and his merry crew. Each level offers a heartwarming test of wit",
+    "instructions": "bringing snowy landscapes and cheerful spirits to life. Ideal for all ages",
+    "use": "iframe"
+  },
+  {
+    "id": 255,
+    "name": "Button Dash",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/button-dash/cover/button-dash.png?w=320",
+    "url": "https://play.gamepix.com/button-dash/embed?sid=1",
+    "description": "Dive into Button Dash",
+    "instructions": "where speed and precision collide! Hone your reflexes and pattern skills in this electrifying arcade experience. Rapidly tap the right buttons while dodging decoys to keep your streak alive in this colorful",
+    "use": "iframe"
   }
 ]
