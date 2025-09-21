@@ -62,5 +62,5 @@ server.on('request', (req, res) => {
 
 const port = process.env.PORT || 8080;
 server.listen(port, () => {
-    console.log(`GameHub server running at http://localhost:${port}`);
+    console.log(`CasualGameSpace server running at http://localhost:${port}`);
 });

@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CasualGameSpace - 免费在线游戏平台 | 射击、竞速、益智游戏</title>
-    <meta name="description" content="CasualGameSpace提供超过50款免费在线游戏，包括射击游戏、竞速游戏、益智游戏等。无需下载，即点即玩，享受最佳游戏体验。">
-    <meta name="keywords" content="免费游戏,在线游戏,射击游戏,竞速游戏,益智游戏,HTML5游戏">
+    <title>CasualGameSpace - Free Online Game Platform | Shooting, Racing, Puzzle Games</title>
+    <meta name="description" content="CasualGameSpace offers over 1000 free online games, including shooting games, racing games, puzzle games, etc. There's no need to download. Just click and play to enjoy the best gaming experience.">
+    <meta name="keywords" content="Free games, online games, shooting games, racing games, puzzle games, HTML5 games">
     <meta name="author" content="CasualGameSpace">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="CasualGameSpace - 免费在线游戏平台">
-    <meta property="og:description" content="超过50款免费在线游戏，即点即玩">
+    <meta property="og:title" content="CasualGameSpace - Free online game platform">
+    <meta property="og:description" content="Over 1000 free online games that can be played instantly with just a click.">
     <meta property="og:image" content="https://casualgamespace.com/assets/img/logo.png">
     <meta property="og:url" content="https://casualgamespace.com">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CasualGameSpace - 免费在线游戏平台">
-    <meta name="twitter:description" content="超过1000款免费在线游戏，即点即玩">
+    <meta name="twitter:title" content="CasualGameSpace - Free online game platform">
+    <meta name="twitter:description" content="Over 1000 free online games that can be played instantly with just a click.">
     <meta name="twitter:image" content="https://casualgamespace.com/assets/img/logo.png">
 
     <link rel="canonical" href="https://casualgamespace.com">
@@ -374,8 +374,8 @@
         <!-- 导航栏 -->
         <div class="navbar">
             <div class="navbar-brand">
-                <img src="/assets/img/logo.png" alt="GameHub" style="height: 40px;">
-                <span style="margin-left: 10px; font-size: 1.5em; font-weight: bold;">GameHub</span>
+                <img src="/assets/img/logo.png" alt="CasualGameSpace" style="height: 40px;">
+                <span style="margin-left: 10px; font-size: 1.5em; font-weight: bold;">CasualGameSpace</span>
             </div>
         </div>
 
@@ -383,14 +383,14 @@
         <section class="hero is-halfheight">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="heroTitle">GameHub</h1>
-                    <p class="hero-subtitle">发现并享受最棒的免费在线游戏</p>
+                    <h1 class="heroTitle">CasualGameSpace</h1>
+                    <p class="hero-subtitle">Discover and enjoy the best free online games</p>
 
                     <!-- 搜索栏 -->
                     <div class="search-container">
                         <div class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="searchInput" data-func="search" placeholder="搜索游戏..." onkeyup="searchGames()">
+                            <input type="text" id="searchInput" data-func="search" placeholder="Search..." onkeyup="searchGames()">
                         </div>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
         <!-- 游戏分类 -->
         <section class="game-categories">
             <div class="container">
-                <h2 class="category-title">游戏分类</h2>
+                <h2 class="category-title">Game Category</h2>
                 <div class="categories-grid" id="categories">
                     <!-- 分类将通过JavaScript动态生成 -->
                 </div>
@@ -566,7 +566,7 @@
             };
 
             // 上一页
-            addBtn('上一页', () => changePage(PAGINATION.currentPage - 1), { disabled: PAGINATION.currentPage <= 1 });
+            addBtn('Previous', () => changePage(PAGINATION.currentPage - 1), { disabled: PAGINATION.currentPage <= 1 });
 
             // 页码窗口
             const maxButtons = 7;
@@ -587,7 +587,7 @@
             }
 
             // 下一页
-            addBtn('下一页', () => changePage(PAGINATION.currentPage + 1), { disabled: PAGINATION.currentPage >= totalPages });
+            addBtn('Next', () => changePage(PAGINATION.currentPage + 1), { disabled: PAGINATION.currentPage >= totalPages });
         }
 
         function changePage(p) {
@@ -655,7 +655,7 @@
             if (document.getElementById('game-iframe')) {
                 document.getElementById('game-iframe').style.display = 'none';
             }
-            document.title = 'GameHub';
+            document.title = 'CasualGameSpace';
 
             // 重置分类选择状态
             const categoryCards = document.querySelectorAll('.category-card');
@@ -728,7 +728,7 @@
 
             // 更新页面标题
             const categoryName = getCategoryName(category);
-            document.title = `${categoryName}游戏 - GameHub`;
+            document.title = `${categoryName}游戏 - CasualGameSpace`;
         }
 
         // 分类筛选功能
@@ -750,7 +750,7 @@
                 });
             }
 
-            console.log('筛选结果:', filteredGames.length, '个游戏');
+            console.log('筛选结果:', filteredGames.length, 'games');
 
             // 渲染游戏
             renderGames(filteredGames);
@@ -789,9 +789,9 @@
             if (!searchBar) return;
 
             if (category === 'all') {
-                searchBar.placeholder = `搜索游戏`;
+                searchBar.placeholder = `Search`;
             } else {
-                searchBar.placeholder = `搜索游戏`;
+                searchBar.placeholder = `Search`;
             }
         }
 
@@ -910,7 +910,7 @@
                 console.error('游戏iframe加载失败');
             };
 
-            document.title = `${game.name} - GameHub`;
+            document.title = `${game.name} - CasualGameSpace`;
             generateRecommendedGames();
 
             // 所有关键DOM已就绪：揭盖详情，隐藏加载层

@@ -58,14 +58,14 @@ async function fetchJsonWithFallback(relPath, options) {
 
 // 添加分类数据和渲染函数
 const CATEGORIES = [
-    { id: 'all', name: '全部', icon: '🎮' },
-    { id: 'shooter', name: '射击', icon: '🔫' },
-    { id: 'racing', name: '竞速', icon: '🏎️' },
-    { id: 'puzzle', name: '益智', icon: '🧩' },
-    { id: 'adventure', name: '冒险', icon: '🗺️' },
-    { id: 'action', name: '动作', icon: '⚡' },
-    { id: 'sports', name: '体育', icon: '⚽' },
-    { id: 'strategy', name: '策略', icon: '🎯' }
+    { id: 'all', name: 'All', icon: '🎮' },
+    { id: 'shooter', name: 'Shooter', icon: '🔫' },
+    { id: 'racing', name: 'Racing', icon: '🏎️' },
+    { id: 'puzzle', name: 'Puzzle', icon: '🧩' },
+    { id: 'adventure', name: 'Adventure', icon: '🗺️' },
+    { id: 'action', name: 'Action', icon: '⚡' },
+    { id: 'sports', name: 'Sports', icon: '⚽' },
+    { id: 'strategy', name: 'Strategy', icon: '🎯' }
 ];
 
 // 渲染分类卡片
@@ -123,7 +123,7 @@ fetchJsonWithFallback('assets/JSON/games.json')
 
         const searchBar = document.querySelector('[data-func="search"]');
         if (searchBar) {
-            searchBar.placeholder = `搜索 ${GAMES.length} 个游戏`;
+            searchBar.placeholder = `Search`;
         }
 
         // 渲染分类卡片
