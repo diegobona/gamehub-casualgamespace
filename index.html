@@ -168,7 +168,7 @@
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
             gap: 10px;
             max-width: 1200px;
             margin: 0 auto 20px auto;
@@ -214,7 +214,7 @@
 
         @media (max-width: 768px) {
             .categories-grid {
-                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
                 gap: 8px;
                 margin-bottom: 30px;
             }
@@ -426,14 +426,14 @@
 
     <!-- 游戏详情页 -->
     <div id="game-detail" class="game-detail">
-        <button class="back-button" onclick="goHome()">← 返回游戏列表</button>
+        <button class="back-button" onclick="goHome()">← Back To Home</button>
 
         <div class="game-header">
             <img id="detail-thumbnail" class="game-thumbnail" src="" alt="">
             <div class="game-info">
-                <h1 id="detail-title">游戏标题</h1>
-                <span id="detail-category" class="game-category">分类</span>
-                <p id="detail-description-short">游戏简介...</p>
+                <h1 id="detail-title">Game Name</h1>
+                <span id="detail-category" class="game-category">Game Category</span>
+                <p id="detail-description-short">Game Description...</p>
             </div>
         </div>
 
@@ -442,14 +442,14 @@
                 <iframe id="game-iframe" class="game-frame" src=""></iframe>
 
                 <div class="game-description">
-                    <h3>游戏说明</h3>
-                    <p id="detail-description-full">详细游戏说明...</p>
+                    <h3 style="font-weight: bolder;">Game Instructions</h3>
+                    <p id="detail-description-full" >Game Instructions...</p>
                 </div>
             </div>
 
             <aside id="detail-right" class="detail-right">
                 <div class="recommended-games">
-                    <h3>推荐游戏</h3>
+                    <h3 style="font-weight: bolder;">Recommended Games</h3>
                     <div id="recommended-grid" class="recommended-grid">
                         <!-- 推荐游戏将在这里动态生成 -->
                     </div>
@@ -701,7 +701,7 @@
             }
 
             // 检查分类是否有效
-            const validCategories = ['shooter', 'racing', 'puzzle', 'adventure', 'action', 'sports', 'strategy'];
+            const validCategories = ['shooter', 'racing', 'puzzle', 'adventure', 'action', 'sports', 'strategy', 'escape', 'retro', 'educational', 'platformer', 'casual', 'simulation', 'runner', 'horror', 'building'];
             const normalizedCategory = category.toLowerCase();
 
             if (!validCategories.includes(normalizedCategory)) {

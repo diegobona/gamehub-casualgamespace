@@ -65,7 +65,16 @@ const CATEGORIES = [
     { id: 'adventure', name: 'Adventure', icon: '🗺️' },
     { id: 'action', name: 'Action', icon: '⚡' },
     { id: 'sports', name: 'Sports', icon: '⚽' },
-    { id: 'strategy', name: 'Strategy', icon: '🎯' }
+    { id: 'strategy', name: 'Strategy', icon: '🎯' },
+    { id: 'escape', name: 'Escape', icon: '🚪' },
+    { id: 'retro', name: 'Retro', icon: '👾' },
+    { id: 'educational', name: 'Educational', icon: '📚' },
+    { id: 'platformer', name: 'Platformer', icon: '🏃' },
+    { id: 'casual', name: 'Casual', icon: '☕' },
+    { id: 'simulation', name: 'Simulation', icon: '🎮' },
+    { id: 'runner', name: 'Runner', icon: '🏃‍♂️' },
+    { id: 'horror', name: 'Horror', icon: '👻' },
+    { id: 'building', name: 'Building', icon: '🏗️' }
 ];
 
 // 渲染分类卡片
