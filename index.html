@@ -112,6 +112,14 @@
             background: #5a6268;
         }
 
+        /* 分页样式 */
+        .pagination { display: none; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; }
+        .pagination button { padding: 6px 10px; border: 1px solid #ddd; background: #fff; border-radius: 6px; cursor: pointer; }
+        .pagination button:hover { background: #f5f5f5; }
+        .pagination button[disabled] { opacity: .5; cursor: not-allowed; }
+        .pagination .active { background: #007bff; color: #fff; border-color: #007bff; }
+        .pagination .ellipsis { padding: 0 4px; color: #999; }
+
         .recommended-games {
             margin-top: 0;
         }
@@ -405,6 +413,8 @@
                 <div class="games" id="games">
                     <!-- 游戏将通过JavaScript动态生成 -->
                 </div>
+                <div class="pagination" id="pagination"></div>
+
             </div>
         </section>
 
@@ -473,6 +483,8 @@
         // 全局变量
         let allGames = [];
         let currentGame = null;
+        // 分页状态
+        const PAGINATION = { pageSize: 50, currentPage: 1, list: [] };
 
         // 简单的slug生成函数
         function generateSlug(name) {
@@ -482,14 +494,26 @@
                 .trim();
         }
 
-        // 渲染游戏列表函数 - 确保全局可用
-        function renderGames(games) {
+        // 渲染游戏列表（带分页）
+        function renderGames(games, options = {}) {
             const gamesContainer = document.querySelector('.games');
+            const pagerEl = document.getElementById('pagination');
             if (!gamesContainer) return;
 
-            gamesContainer.innerHTML = '';
+            const resetPage = options.resetPage !== false;
+            PAGINATION.list = Array.isArray(games) ? games : [];
+            if (resetPage) PAGINATION.currentPage = 1;
 
-            games.forEach(game => {
+            const total = PAGINATION.list.length;
+            const totalPages = Math.max(1, Math.ceil(total / PAGINATION.pageSize));
+            if (PAGINATION.currentPage > totalPages) PAGINATION.currentPage = totalPages;
+
+            // 渲染当前页
+            gamesContainer.innerHTML = '';
+            const start = (PAGINATION.currentPage - 1) * PAGINATION.pageSize;
+            const pageItems = PAGINATION.list.slice(start, start + PAGINATION.pageSize);
+
+            pageItems.forEach(game => {
                 const gameEl = document.createElement('div');
                 gameEl.classList = 'game';
                 gameEl.title = game.name;
@@ -509,7 +533,75 @@
                     }
                 });
             });
+
+            renderPaginationControls(totalPages);
         }
+
+        function renderPaginationControls(totalPages) {
+            const pagerEl = document.getElementById('pagination');
+            if (!pagerEl) return;
+
+            if (!PAGINATION.list || PAGINATION.list.length <= PAGINATION.pageSize) {
+                pagerEl.style.display = 'none';
+                pagerEl.innerHTML = '';
+                return;
+            }
+
+            pagerEl.style.display = 'flex';
+            pagerEl.innerHTML = '';
+
+            const addBtn = (label, handler, { disabled = false, active = false } = {}) => {
+                const btn = document.createElement('button');
+                btn.textContent = label;
+                if (disabled) btn.setAttribute('disabled', 'disabled');
+                if (active) btn.classList.add('active');
+                if (!disabled) btn.addEventListener('click', handler);
+                pagerEl.appendChild(btn);
+            };
+            const addEllipsis = () => {
+                const span = document.createElement('span');
+                span.className = 'ellipsis';
+                span.textContent = '…';
+                pagerEl.appendChild(span);
+            };
+
+            // 上一页
+            addBtn('上一页', () => changePage(PAGINATION.currentPage - 1), { disabled: PAGINATION.currentPage <= 1 });
+
+            // 页码窗口
+            const maxButtons = 7;
+            let start = Math.max(1, PAGINATION.currentPage - 3);
+            let end = Math.min(totalPages, start + maxButtons - 1);
+            start = Math.max(1, end - maxButtons + 1);
+
+            if (start > 1) {
+                addBtn('1', () => changePage(1));
+                if (start > 2) addEllipsis();
+            }
+            for (let p = start; p <= end; p++) {
+                addBtn(String(p), () => changePage(p), { active: p === PAGINATION.currentPage });
+            }
+            if (end < totalPages) {
+                if (end < totalPages - 1) addEllipsis();
+                addBtn(String(totalPages), () => changePage(totalPages));
+            }
+
+            // 下一页
+            addBtn('下一页', () => changePage(PAGINATION.currentPage + 1), { disabled: PAGINATION.currentPage >= totalPages });
+        }
+
+        function changePage(p) {
+            const totalPages = Math.max(1, Math.ceil(PAGINATION.list.length / PAGINATION.pageSize));
+            const target = Math.min(Math.max(1, p), totalPages);
+            if (target === PAGINATION.currentPage) return;
+            PAGINATION.currentPage = target;
+            renderGames(PAGINATION.list, { resetPage: false });
+            const gamesTop = document.getElementById('games');
+            if (gamesTop) {
+                window.scrollTo({ top: gamesTop.offsetTop - 80, behavior: 'smooth' });
+            }
+        }
+        window.changePage = changePage;
 
         // 暴露renderGames到全局
         window.renderGames = renderGames;

@@ -166,27 +166,36 @@ fetchJsonWithFallback('assets/JSON/games.json')
         registerError('Could not load games');
     });
 
-// 渲染游戏列表
-function renderGames(games) {
+// 渲染游戏列表（内部无分页版本，作为后备）
+function renderGamesInternal(games) {
     const gamesContainer = document.getElementById('games');
     if (!gamesContainer) return;
-    
+
     gamesContainer.innerHTML = '';
-    
+
     games.forEach(game => {
         const gameEl = document.createElement('div');
         gameEl.className = 'game';
         gameEl.onclick = () => showGameDetail(generateSlug(game.name));
-        
+
         gameEl.innerHTML = `
             <img src="${game.thumbnail}" alt="${game.name}" loading="lazy">
             <div class="game-info">
                 <h3 class="game-title">${game.name}</h3>
             </div>
         `;
-        
+
         gamesContainer.appendChild(gameEl);
     });
+}
+
+// 兼容导出：若页面定义了 window.renderGames（带分页），优先调用；否则用内部后备
+function renderGames(games) {
+    if (window.renderGames) {
+        window.renderGames(games);
+    } else {
+        renderGamesInternal(games);
+    }
 }
 
 // 用本地内存数据打开游戏

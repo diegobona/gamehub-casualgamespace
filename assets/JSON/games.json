@@ -618,5 +618,1475 @@
     "description": "Dive into Button Dash",
     "instructions": "where speed and precision collide! Hone your reflexes and pattern skills in this electrifying arcade experience. Rapidly tap the right buttons while dodging decoys to keep your streak alive in this colorful",
     "use": "iframe"
+  },
+  {
+    "id": 256,
+    "name": "Fidget Spinner Hand Spinner Game",
+    "category": "spinner",
+    "thumbnail": "https://img.gamepix.com/games/fidget-spinner-hand-spinner-game/cover/fidget-spinner-hand-spinner-game.png?w=320",
+    "url": "https://play.gamepix.com/fidget-spinner-hand-spinner-game/embed?sid=1",
+    "description": "Spin",
+    "instructions": "merge",
+    "use": "iframe"
+  },
+  {
+    "id": 257,
+    "name": "Clean Before Your Wife Returns - Hidden Object",
+    "category": "hidden-object",
+    "thumbnail": "https://img.gamepix.com/games/clean-before-your-wife-returns-hidden-object/cover/clean-before-your-wife-returns-hidden-object.png?w=320",
+    "url": "https://play.gamepix.com/clean-before-your-wife-returns-hidden-object/embed?sid=1",
+    "description": "Race against the clock as a frantic husband in this comedic hidden object adventure. Scour cluttered rooms",
+    "instructions": "unearth missing items",
+    "use": "iframe"
+  },
+  {
+    "id": 258,
+    "name": "Squid Scape",
+    "category": "escape",
+    "thumbnail": "https://img.gamepix.com/games/squid-scape/cover/squid-scape.png?w=320",
+    "url": "https://play.gamepix.com/squid-scape/embed?sid=1",
+    "description": "Navigate a world of masked guards in Squid Scape",
+    "instructions": "where every step counts. Test your wits through 30 nerve-wracking levels",
+    "use": "iframe"
+  },
+  {
+    "id": 259,
+    "name": "Hexa Block Honey Cells",
+    "category": "block",
+    "thumbnail": "https://img.gamepix.com/games/hexa-block-honey-cells/cover/hexa-block-honey-cells.png?w=320",
+    "url": "https://play.gamepix.com/hexa-block-honey-cells/embed?sid=1",
+    "description": "Immerse yourself in a vibrant puzzle world",
+    "instructions": "where your mission is to strategically place colorful hexagonal blocks. Each level brings new challenges",
+    "use": "iframe"
+  },
+  {
+    "id": 260,
+    "name": "Freddy in Five Nights Terrors",
+    "category": "horror",
+    "thumbnail": "https://img.gamepix.com/games/freddy-in-five-nights-terrors/cover/freddy-in-five-nights-terrors.png?w=320",
+    "url": "https://play.gamepix.com/freddy-in-five-nights-terrors/embed?sid=1",
+    "description": "Dive into a chilling nightmare where each night intensifies your fears. Monitor cameras",
+    "instructions": "conserve power",
+    "use": "iframe"
+  },
+  {
+    "id": 261,
+    "name": "Strongblade",
+    "category": "match-3",
+    "thumbnail": "https://img.gamepix.com/games/strongblade/cover/strongblade.png?w=320",
+    "url": "https://play.gamepix.com/strongblade/embed?sid=1",
+    "description": "Dive into a vibrant fantasy realm where match-3 puzzles meet creative construction. Solve diverse challenges to upgrade your campgrounds",
+    "instructions": "unleash explosive combos",
+    "use": "iframe"
+  },
+  {
+    "id": 262,
+    "name": "Explainable Minesweeper",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/explainable-minesweeper/cover/explainable-minesweeper.png?w=320",
+    "url": "https://play.gamepix.com/explainable-minesweeper/embed?sid=1",
+    "description": "Dive into Explainable Minesweeper",
+    "instructions": "where logic reigns supreme. Strategically infer and uncover each tile without the luck-based risks of the classic game. Use the Hint button to get insightful explanations",
+    "use": "iframe"
+  },
+  {
+    "id": 263,
+    "name": "Lady and Nubik. Build and Dig",
+    "category": "two-player",
+    "thumbnail": "https://img.gamepix.com/games/lady-and-nubik-build-and-dig/cover/lady-and-nubik-build-and-dig.png?w=320",
+    "url": "https://play.gamepix.com/lady-and-nubik-build-and-dig/embed?sid=1",
+    "description": "Join forces in a delightful two-player adventure where building and digging take center stage. Use strategic construction and clever digging to navigate the world",
+    "instructions": "defeating obstacles and collecting precious diamonds. Embrace the challenge and creativity as you help Lady and Nubik grow in a dynamic",
+    "use": "iframe"
+  },
+  {
+    "id": 264,
+    "name": "Goat Jump",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/goat-jump/cover/goat-jump.png?w=320",
+    "url": "https://play.gamepix.com/goat-jump/embed?sid=1",
+    "description": "Escape the mundane by becoming a playful goat and leaping to new heights in Goat Jump! Enjoy limitless fun as you bound upward",
+    "instructions": "challenging friends to beat your high score. Simple yet addictive",
+    "use": "iframe"
+  },
+  {
+    "id": 265,
+    "name": "Garden Master",
+    "category": "farming",
+    "thumbnail": "https://img.gamepix.com/games/garden-master/cover/garden-master.png?w=320",
+    "url": "https://play.gamepix.com/garden-master/embed?sid=1",
+    "description": "Step into the shoes of a industrious gnome in Garden Master! Nurture your plants with care",
+    "instructions": "fend off mischievous gophers",
+    "use": "iframe"
+  },
+  {
+    "id": 266,
+    "name": "Girl Games Unblocked Mini Fun",
+    "category": "games-for-girls",
+    "thumbnail": "https://img.gamepix.com/games/girl-games-unblocked-mini-fun/cover/girl-games-unblocked-mini-fun.png?w=320",
+    "url": "https://play.gamepix.com/girl-games-unblocked-mini-fun/embed?sid=1",
+    "description": "Dive into endless fun with Girl Games Unblocked: Mini Fun! Explore a delightful mix of relaxing and skillful minigames",
+    "instructions": "from fashion design to cooking. Perfect for casual play or mastering new skills",
+    "use": "iframe"
+  },
+  {
+    "id": 267,
+    "name": "Rotate Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/rotate-puzzle/cover/rotate-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/rotate-puzzle/embed?sid=1",
+    "description": "Challenge your mind in Rotate Puzzle",
+    "instructions": "where you\"\"ll twist and shift pieces to reveal stunning images. With grid sizes that increase in complexity",
+    "use": "iframe"
+  },
+  {
+    "id": 268,
+    "name": "CookieNyan",
+    "category": "match-3",
+    "thumbnail": "https://img.gamepix.com/games/cookienyan/cover/cookienyan.png?w=320",
+    "url": "https://play.gamepix.com/cookienyan/embed?sid=1",
+    "description": "Indulge in CookieNyan\"\"s delightful puzzle extravaganza",
+    "instructions": "where matching cookies unlocks a sweet symphony of shapes. Strategize as you craft striped and rainbow cookies to clear the board",
+    "use": "iframe"
+  },
+  {
+    "id": 269,
+    "name": "2048 Sea Vehicles",
+    "category": "2048",
+    "thumbnail": "https://img.gamepix.com/games/2048-sea-vehicles/cover/2048-sea-vehicles.png?w=320",
+    "url": "https://play.gamepix.com/2048-sea-vehicles/embed?sid=1",
+    "description": "Set sail on a nautical puzzle adventure in 2048 Sea Vehicles. Merge bagels into boats",
+    "instructions": "then boats into grand ships. Strategize your moves to craft a mighty fleet",
+    "use": "iframe"
+  },
+  {
+    "id": 270,
+    "name": "Tap Out Click Blocks Away",
+    "category": "tap",
+    "thumbnail": "https://img.gamepix.com/games/tap-out-click-blocks-away/cover/tap-out-click-blocks-away.png?w=320",
+    "url": "https://play.gamepix.com/tap-out-click-blocks-away/embed?sid=1",
+    "description": "Immerse yourself in Tap Out Click Blocks Away",
+    "instructions": "where every tap is a strategic move. Navigate and eliminate blocks in a vivid 3D world",
+    "use": "iframe"
+  },
+  {
+    "id": 271,
+    "name": "Movie Star Daily Routine",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/movie-star-daily-routine/cover/movie-star-daily-routine.png?w=320",
+    "url": "https://play.gamepix.com/movie-star-daily-routine/embed?sid=1",
+    "description": "Step into the glamorous life of a movie star! Discover the secrets to maintaining that perfect look",
+    "instructions": "creating stunning film-ready styles",
+    "use": "iframe"
+  },
+  {
+    "id": 272,
+    "name": "Domino Sausage Duel",
+    "category": "board",
+    "thumbnail": "https://img.gamepix.com/games/domino-sausage-duel/cover/domino-sausage-duel.png?w=320",
+    "url": "https://play.gamepix.com/domino-sausage-duel/embed?sid=1",
+    "description": "Domino Sausage Duel delivers dynamic excitement as players strategically redirect dominoes",
+    "instructions": "aiming to offload them through clever chain cuts. Engage in intense head-to-head matches against AI or online opponents",
+    "use": "iframe"
+  },
+  {
+    "id": 273,
+    "name": "Space Defender",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/space-defender-alien-shooter-html5-game/cover/space-defender-alien-shooter-html5-game.png?w=320",
+    "url": "https://play.gamepix.com/space-defender-alien-shooter-html5-game/embed?sid=1",
+    "description": "Pilot a powerful space fighter and battle relentless alien waves in Space Defender. Experience intense",
+    "instructions": "fast-paced action and strategic combat across stunning celestial battlefields. Thrilling space battles await you as you defend the galaxy with agile maneuvers and precision shooting",
+    "use": "iframe"
+  },
+  {
+    "id": 274,
+    "name": "Easy Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/easy-coloring-book-for-kids/cover/easy-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/easy-coloring-book-for-kids/embed?sid=1",
+    "description": "Dive into the vibrant world of Easy Coloring Book for Kids",
+    "instructions": "where young imaginations flourish. This delightful digital canvas invites children to explore colors and boost creativity in a peaceful setting. Perfect for learning or play",
+    "use": "iframe"
+  },
+  {
+    "id": 275,
+    "name": "Christmas Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/christmas-coloring-book-for-kids/cover/christmas-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/christmas-coloring-book-for-kids/embed?sid=1",
+    "description": "Dive into a festive world of creativity with this delightful coloring book. Kids will enjoy hours of holiday fun",
+    "instructions": "coloring cheerful scenes with user-friendly tools that ignite imagination and artistic flair. Perfect for a joyful and relaxing holiday experience",
+    "use": "iframe"
+  },
+  {
+    "id": 276,
+    "name": "Baby Unicorn Memory Match & Hidden Objects",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/baby-unicorn-memory-match-hidden-objects/cover/baby-unicorn-memory-match-hidden-objects.png?w=320",
+    "url": "https://play.gamepix.com/baby-unicorn-memory-match-hidden-objects/embed?sid=1",
+    "description": "Enter a whimsical unicorn realm where memory and attention collide in delightful harmony. Match enchanting cards and uncover hidden treasures as each level brings new",
+    "instructions": "spirited challenges to engage young minds. Enjoy endless fun while honing your skills in this charming",
+    "use": "iframe"
+  },
+  {
+    "id": 277,
+    "name": "Merge Gravity Fruits",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/merge-gravity-fruits/cover/merge-gravity-fruits.png?w=320",
+    "url": "https://play.gamepix.com/merge-gravity-fruits/embed?sid=1",
+    "description": "Dive into an exhilarating merge adventure with Merge Gravity Fruits! Explore weightless realms",
+    "instructions": "blending vibrant fruits to unlock the elusive royal fruit. Navigate through tricky bombs",
+    "use": "iframe"
+  },
+  {
+    "id": 278,
+    "name": "Web Slinger Insect Capture Challenge",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/web-slinger-insect-capture-challenge/cover/web-slinger-insect-capture-challenge.png?w=320",
+    "url": "https://play.gamepix.com/web-slinger-insect-capture-challenge/embed?sid=1",
+    "description": "Showcase your web-slinging prowess as a skilled spider in this vibrant arcade adventure. Master precision and strategy to ensnare elusive insects",
+    "instructions": "navigating lively micro-worlds. Hone your web-throwing technique to capture swift red ants before time runs out",
+    "use": "iframe"
+  },
+  {
+    "id": 279,
+    "name": "Sustainable 5",
+    "category": "crazy",
+    "thumbnail": "https://img.gamepix.com/games/sustainable-5/cover/sustainable-5.png?w=320",
+    "url": "https://play.gamepix.com/sustainable-5/embed?sid=1",
+    "description": "Dive into the thrilling final chapter of Sustainable! As a museum guard",
+    "instructions": "navigate complex intrigue among over 30 characters",
+    "use": "iframe"
+  },
+  {
+    "id": 280,
+    "name": "Pixel Differences",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/pixel-differences/cover/pixel-differences.png?w=320",
+    "url": "https://play.gamepix.com/pixel-differences/embed?sid=1",
+    "description": "Dive into a pixelated challenge where precision meets pressure! Spot subtle differences between two images within a ticking clock. With limited chances for error",
+    "instructions": "each click needs careful thought. Earn stars with flawless focus",
+    "use": "iframe"
+  },
+  {
+    "id": 281,
+    "name": "Neon Brick Blast Master",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/neon-brick-blast-master/cover/neon-brick-blast-master.png?w=320",
+    "url": "https://play.gamepix.com/neon-brick-blast-master/embed?sid=1",
+    "description": "Smash through vibrant neon barriers in Neon Brick Blast Master! Navigate challenging levels with a bouncing ball",
+    "instructions": "tackling escalating difficulties and dynamic obstacles. Immerse yourself in its dazzling visuals and pulse-pounding soundscapes. Ideal for thrill-seekers and casual gamers alike",
+    "use": "iframe"
+  },
+  {
+    "id": 282,
+    "name": "Hunter Tung Tung Sahur",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/hunter-tung-tung-sahur/cover/hunter-tung-tung-sahur.png?w=320",
+    "url": "https://play.gamepix.com/hunter-tung-tung-sahur/embed?sid=1",
+    "description": "Fend off hordes of Tung Tung Sahur monsters with quick reflexes and sharp aim. Navigate the chaotic world",
+    "instructions": "obliterate threats",
+    "use": "iframe"
+  },
+  {
+    "id": 283,
+    "name": "Run from Baba Yaga",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/run-from-baba-yaga/cover/run-from-baba-yaga.png?w=320",
+    "url": "https://play.gamepix.com/run-from-baba-yaga/embed?sid=1",
+    "description": "Navigate a magical",
+    "instructions": "ever-shifting forest filled with treasure and peril. Control six unique characters as you outsmart the dreaded Baba Yaga. Strategically traverse the hexagonal path",
+    "use": "iframe"
+  },
+  {
+    "id": 284,
+    "name": "American Football Memory & Matching Game",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/american-football-memory-matching-game/cover/american-football-memory-matching-game.png?w=320",
+    "url": "https://play.gamepix.com/american-football-memory-matching-game/embed?sid=1",
+    "description": "Test your memory and quick thinking with this fast-paced football-themed card game. Match identical pairs before time runs out",
+    "instructions": "earning points for each correct guess. Increasingly challenging levels keep you engaged",
+    "use": "iframe"
+  },
+  {
+    "id": 285,
+    "name": "Baba Yaga Memory Magic",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/baba-yaga-memory-magic/cover/baba-yaga-memory-magic.png?w=320",
+    "url": "https://play.gamepix.com/baba-yaga-memory-magic/embed?sid=1",
+    "description": "Unleash your mental prowess in Baba Yaga Memory Magic! Flip enchanted cards to uncover pairs against the clock. As the pace escalates",
+    "instructions": "your focus and visual recall are put to the test. Embark on a magical adventure",
+    "use": "iframe"
+  },
+  {
+    "id": 286,
+    "name": "Drive Mad 2",
+    "category": "racing",
+    "thumbnail": "https://img.gamepix.com/games/drive-mad-2/cover/drive-mad-2.png?w=320",
+    "url": "https://play.gamepix.com/drive-mad-2/embed?sid=1",
+    "description": "Rev up for the ultimate 3D driving frenzy in Drive Mad 2! Navigate bizarre and treacherous tracks filled with wild obstacles. Master quick reflexes",
+    "instructions": "collect nitro boosts",
+    "use": "iframe"
+  },
+  {
+    "id": 287,
+    "name": "Labubu Gokart",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/labubu-gokart/cover/labubu-gokart.png?w=320",
+    "url": "https://play.gamepix.com/labubu-gokart/embed?sid=1",
+    "description": "Rev up for a wild ride with Labubu Gokart! Navigate dynamic tracks",
+    "instructions": "dodge tumbling bombs",
+    "use": "iframe"
+  },
+  {
+    "id": 288,
+    "name": "Logic Islands",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/logic-islands/cover/logic-islands.png?w=320",
+    "url": "https://play.gamepix.com/logic-islands/embed?sid=1",
+    "description": "Embark on a cerebral adventure in Logic Islands",
+    "instructions": "where you design precise archipelagos and connect mysterious walls. Journey through six fantastical worlds",
+    "use": "iframe"
+  },
+  {
+    "id": 289,
+    "name": "Zombie Reaper Shooter",
+    "category": "zombie",
+    "thumbnail": "https://img.gamepix.com/games/zombie-reaper-shooter/cover/zombie-reaper-shooter.png?w=320",
+    "url": "https://play.gamepix.com/zombie-reaper-shooter/embed?sid=1",
+    "description": "Dive into a thrilling zombie apocalypse as you battle relentless undead hordes with an arsenal of unique weapons. In a world where survival is bleak",
+    "instructions": "navigate through Nightmare missions and military bases",
+    "use": "iframe"
+  },
+  {
+    "id": 290,
+    "name": "Fire Snake",
+    "category": "snake",
+    "thumbnail": "https://img.gamepix.com/games/fire-snake/cover/fire-snake.png?w=320",
+    "url": "https://play.gamepix.com/fire-snake/embed?sid=1",
+    "description": "Guide the fiery snake through perilous paths",
+    "instructions": "dodging treacherous obstacles and gathering sparkling coins. Navigate complex levels",
+    "use": "iframe"
+  },
+  {
+    "id": 291,
+    "name": "Hungry Noob Cafe Simulator",
+    "category": "restaurant",
+    "thumbnail": "https://img.gamepix.com/games/hungry-noob-cafe-simulator/cover/hungry-noob-cafe-simulator.png?w=320",
+    "url": "https://play.gamepix.com/hungry-noob-cafe-simulator/embed?sid=1",
+    "description": "Join Noob and his chef buddy on a whimsical journey to transform an abandoned spot into a bustling cafe. Customize",
+    "instructions": "cook",
+    "use": "iframe"
+  },
+  {
+    "id": 292,
+    "name": "Colour Catch",
+    "category": "brain",
+    "thumbnail": "https://img.gamepix.com/games/colour-catch/cover/colour-catch.png?w=320",
+    "url": "https://play.gamepix.com/colour-catch/embed?sid=1",
+    "description": "Immerse yourself in Colour Catch",
+    "instructions": "where quick thinking meets puzzling fun! Strategically place pieces to align with the vibrant colors and help frogs and salamanders nab their meals. Watch as transparent creatures adapt",
+    "use": "iframe"
+  },
+  {
+    "id": 293,
+    "name": "Kraken Memory Card for Kids",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/kraken-memory-card-for-kids/cover/kraken-memory-card-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/kraken-memory-card-for-kids/embed?sid=1",
+    "description": "Unleash your memory skills with Kraken Memory Card for Kids! Delight in matching pairs before the clock stops to win. As levels advance",
+    "instructions": "the challenge intensifies",
+    "use": "iframe"
+  },
+  {
+    "id": 294,
+    "name": "Mummy Matching Game",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/mummy-matching-game/cover/mummy-matching-game.png?w=320",
+    "url": "https://play.gamepix.com/mummy-matching-game/embed?sid=1",
+    "description": "Unleash your memory in the Mummy Matching Game",
+    "instructions": "where every flipped card brings suspense. Race against time to pair up hidden treasures as challenges intensify. Perfect for a quick mental workout",
+    "use": "iframe"
+  },
+  {
+    "id": 295,
+    "name": "Space Impostors Shooting Adventure",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/space-impostors-shooting-adventure/cover/space-impostors-shooting-adventure.png?w=320",
+    "url": "https://play.gamepix.com/space-impostors-shooting-adventure/embed?sid=1",
+    "description": "Embark on a thrilling journey in Space Impostors Shooting Adventure",
+    "instructions": "where you battle relentless alien impostors aboard a doomed spaceship. Choose from four exciting modes and engage in nonstop shooting action",
+    "use": "iframe"
+  },
+  {
+    "id": 296,
+    "name": "Mountain Car Stunt",
+    "category": "truck",
+    "thumbnail": "https://img.gamepix.com/games/monster-truck-mountain-car-stunts/cover/monster-truck-mountain-car-stunts.png?w=320",
+    "url": "https://play.gamepix.com/monster-truck-mountain-car-stunts/embed?sid=1",
+    "description": "Conquer towering peaks with jaw-dropping stunts in Mountain Car Stunt. Navigate challenging mountain tracks using responsive controls and realistic physics. Face increasing difficulty as you master multiple levels",
+    "instructions": "all in stunning 3D. Show off your skills in this addictive",
+    "use": "iframe"
+  },
+  {
+    "id": 297,
+    "name": "Good Mom Bad Mom",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/good-mom-bad-mom/cover/good-mom-bad-mom.png?w=320",
+    "url": "https://play.gamepix.com/good-mom-bad-mom/embed?sid=1",
+    "description": "Experience the chaotic joy of motherhood in Good Mom Bad Mom. Make choices that shape your parenting style as you navigate thrilling obstacle courses",
+    "instructions": "collect baby essentials",
+    "use": "iframe"
+  },
+  {
+    "id": 298,
+    "name": "TickTock Challenge",
+    "category": "brain",
+    "thumbnail": "https://img.gamepix.com/games/ticktock-challenge/cover/ticktock-challenge.png?w=320",
+    "url": "https://play.gamepix.com/ticktock-challenge/embed?sid=1",
+    "description": "Dive into the TickTock Challenge",
+    "instructions": "where rapid-fire minigames test your wits. Master everything from bubble shooting to 2048 puzzles under the relentless ticking timer. Fast-paced and wildly entertaining",
+    "use": "iframe"
+  },
+  {
+    "id": 299,
+    "name": "Chibi Labubu Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/chibi-labubu-coloring-book-for-kids/cover/chibi-labubu-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/chibi-labubu-coloring-book-for-kids/embed?sid=1",
+    "description": "Enter a world of creativity with Chibi Labubu Coloring Book for Kids! Young artists can express themselves by coloring cute drawings in a soothing environment",
+    "instructions": "enhancing their imagination and fine motor skills. With user-friendly controls",
+    "use": "iframe"
+  },
+  {
+    "id": 300,
+    "name": "Magnet Egg Puzzle",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/magnet-egg-puzzle/cover/magnet-egg-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/magnet-egg-puzzle/embed?sid=1",
+    "description": "Guide an egg to its target using magnetic pathways in this physics-based puzzle. Strategize",
+    "instructions": "adjust",
+    "use": "iframe"
+  },
+  {
+    "id": 301,
+    "name": "Shape Balance 2",
+    "category": "brain",
+    "thumbnail": "https://img.gamepix.com/games/shape-balance-2/cover/shape-balance-2.png?w=320",
+    "url": "https://play.gamepix.com/shape-balance-2/embed?sid=1",
+    "description": "Challenge your precision and balance instincts in Shape Balance 2",
+    "instructions": "where your task is to artfully stack varied shapes without toppling. Navigate through new levels with enhanced graphics",
+    "use": "iframe"
+  },
+  {
+    "id": 302,
+    "name": "Domino Online Multiplayer",
+    "category": "board",
+    "thumbnail": "https://img.gamepix.com/games/domino-online-multiplayer/cover/domino-online-multiplayer.png?w=320",
+    "url": "https://play.gamepix.com/domino-online-multiplayer/embed?sid=1",
+    "description": "Dive into strategic battles with Domino Online Multiplayer! Challenge AI",
+    "instructions": "real players",
+    "use": "iframe"
+  },
+  {
+    "id": 303,
+    "name": "My Kitties. Catworld",
+    "category": "cats",
+    "thumbnail": "https://img.gamepix.com/games/my-kitties-catworld/cover/my-kitties-catworld.png?w=320",
+    "url": "https://play.gamepix.com/my-kitties-catworld/embed?sid=1",
+    "description": "Dive into a whimsical feline realm where you craft a vibrant household of unique kittens. Experiment with colors to discover unexpected hues like neon-green and pink. Expand your collection",
+    "instructions": "complete amusing tasks",
+    "use": "iframe"
+  },
+  {
+    "id": 304,
+    "name": "Mushroom Fever Match 3",
+    "category": "match-3",
+    "thumbnail": "https://img.gamepix.com/games/mushroom-fever-match-3/cover/mushroom-fever-match-3.png?w=320",
+    "url": "https://play.gamepix.com/mushroom-fever-match-3/embed?sid=1",
+    "description": "Enter a vibrant forest where cheerful mushrooms spice up the classic match-3 fun. Strategize to connect trios",
+    "instructions": "conquer enchanting puzzles",
+    "use": "iframe"
+  },
+  {
+    "id": 305,
+    "name": "Noob Saving Friends",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/noob-saving-friends/cover/noob-saving-friends.png?w=320",
+    "url": "https://play.gamepix.com/noob-saving-friends/embed?sid=1",
+    "description": "Join Nubik on an epic quest to save friends in a vibrant world. Mine ores",
+    "instructions": "upgrade tools",
+    "use": "iframe"
+  },
+  {
+    "id": 306,
+    "name": "Labubu Jigsaw Puzzles for Kids Game",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/labubu-jigsaw-puzzles-for-kids-game/cover/labubu-jigsaw-puzzles-for-kids-game.png?w=320",
+    "url": "https://play.gamepix.com/labubu-jigsaw-puzzles-for-kids-game/embed?sid=1",
+    "description": "Discover delightful puzzling adventures with Labubu Jigsaw Puzzles. Young players can enjoy hours of fun as they piece together charming scenes",
+    "instructions": "enhancing focus and problem-solving skills. With intuitive controls and playful imagery",
+    "use": "iframe"
+  },
+  {
+    "id": 307,
+    "name": "Sprunki Dead Rails",
+    "category": "zombie",
+    "thumbnail": "https://img.gamepix.com/games/sprunki-dead-rails/cover/sprunki-dead-rails.png?w=320",
+    "url": "https://play.gamepix.com/sprunki-dead-rails/embed?sid=1",
+    "description": "Defend your train from relentless zombies in Sprunki Dead Rails! Build defenses",
+    "instructions": "deploy turrets",
+    "use": "iframe"
+  },
+  {
+    "id": 308,
+    "name": "Summer Shell",
+    "category": "two-player",
+    "thumbnail": "https://img.gamepix.com/games/summer-shell/cover/summer-shell.png?w=320",
+    "url": "https://play.gamepix.com/summer-shell/embed?sid=1",
+    "description": "Dive into the vibrant world of Summer Shell",
+    "instructions": "where strategic thinking and quick reflexes are vital. Collect colorful shells to boost your score and outsmart challenges",
+    "use": "iframe"
+  },
+  {
+    "id": 309,
+    "name": "Match Mania",
+    "category": "brain",
+    "thumbnail": "https://img.gamepix.com/games/match-mania/cover/match-mania.png?w=320",
+    "url": "https://play.gamepix.com/match-mania/embed?sid=1",
+    "description": "Unravel hidden sequences in Match Mania",
+    "instructions": "a brain-teasing swap-and-match puzzle game. Guess the secret order of quirky items using match count clues. With increasing complexity and endless item variety",
+    "use": "iframe"
+  },
+  {
+    "id": 310,
+    "name": "Evony: The Kings Return",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/evony-the-kings-return/cover/evony-the-kings-return.png?w=320",
+    "url": "https://play.gamepix.com/evony-the-kings-return/embed?sid=1",
+    "description": "Conquer a world of war and undead as you command an army in Evony: The King\"\"s Return. Strategically move your troops",
+    "instructions": "blast through obstacles",
+    "use": "iframe"
+  },
+  {
+    "id": 311,
+    "name": "Rabbit Doll Jigsaw Puzzles for Kids",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/rabbit-doll-jigsaw-puzzles-for-kids/cover/rabbit-doll-jigsaw-puzzles-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/rabbit-doll-jigsaw-puzzles-for-kids/embed?sid=1",
+    "description": "Piece together charming rabbit images with Puppet Rabbit Jigsaw Puzzles! Slide tiles to reveal cute scenes",
+    "instructions": "starting easy and growing complex. Enjoy relaxing gameplay that sharpens your mind",
+    "use": "iframe"
+  },
+  {
+    "id": 312,
+    "name": "Puppet Rabbit Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/puppet-rabbit-jigsaw-puzzles/cover/puppet-rabbit-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/puppet-rabbit-jigsaw-puzzles/embed?sid=1",
+    "description": "Piece together adorable rabbit images in Puppet Rabbit Jigsaw Puzzles. Engage your mind as you slide tiles to create complete pictures",
+    "instructions": "scaling in complexity. Relax and sharpen your skills",
+    "use": "iframe"
+  },
+  {
+    "id": 313,
+    "name": "Anime Wolf Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/anime-wolf-jigsaw-puzzles/cover/anime-wolf-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/anime-wolf-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in tranquil brain-teasing fun with Anime Wolf Jigsaw Puzzles. Choose stunning images",
+    "instructions": "adjust the challenge to your liking",
+    "use": "iframe"
+  },
+  {
+    "id": 314,
+    "name": "Flowers Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/flowers-coloring-book-for-kids/cover/flowers-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/flowers-coloring-book-for-kids/embed?sid=1",
+    "description": "Unleash your child\"\"s creativity with this interactive coloring adventure",
+    "instructions": "featuring beautiful floral designs! Choose from a diverse palette and tools to transform each page into vibrant masterpieces",
+    "use": "iframe"
+  },
+  {
+    "id": 315,
+    "name": "Pair Up Shapes",
+    "category": "educational",
+    "thumbnail": "https://img.gamepix.com/games/pair-up-shapes/cover/pair-up-shapes.png?w=320",
+    "url": "https://play.gamepix.com/pair-up-shapes/embed?sid=1",
+    "description": "Explore the vibrant world of Pair Up Shapes",
+    "instructions": "where young adventurers match and identify colorful geometric forms. With tap-friendly controls",
+    "use": "iframe"
+  },
+  {
+    "id": 316,
+    "name": "R.E.P.O Dalgona",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/r-e-p-o-dalgona/cover/r-e-p-o-dalgona.png?w=320",
+    "url": "https://play.gamepix.com/r-e-p-o-dalgona/embed?sid=1",
+    "description": "Sculpt dalgona candy with precision in R.E.P.O Dalgona",
+    "instructions": "where every mistake unleashes a relentless robot attack. Can you withstand the pressure and create the perfect treat",
+    "use": "iframe"
+  },
+  {
+    "id": 317,
+    "name": "Italian Brainrot: Find the Difference",
+    "category": "hidden-object",
+    "thumbnail": "https://img.gamepix.com/games/italian-brainrot-find-the-difference/cover/italian-brainrot-find-the-difference.png?w=320",
+    "url": "https://play.gamepix.com/italian-brainrot-find-the-difference/embed?sid=1",
+    "description": "Unleash your detective skills in Italian Brainrot: Find the Difference",
+    "instructions": "a puzzle adventure where wacky charm meets hawk-eyed precision. Explore quirky visuals across 30 levels",
+    "use": "iframe"
+  },
+  {
+    "id": 318,
+    "name": "Nest Quest",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/nest-quest/cover/nest-quest.png?w=320",
+    "url": "https://play.gamepix.com/nest-quest/embed?sid=1",
+    "description": "Help a lost bird find its way home in this charming puzzle adventure. Slide blocks to clear tricky paths",
+    "instructions": "testing your wits with each move. With soothing visuals and intuitive controls",
+    "use": "iframe"
+  },
+  {
+    "id": 319,
+    "name": "Thung Thung Sahur Night Escape",
+    "category": "escape",
+    "thumbnail": "https://img.gamepix.com/games/thung-thung-sahur-night-escape/cover/thung-thung-sahur-night-escape.png?w=320",
+    "url": "https://play.gamepix.com/thung-thung-sahur-night-escape/embed?sid=1",
+    "description": "Unleash your stealth skills in the haunting world of Thung Thung Sahur Night Escape. Navigate a chilling",
+    "instructions": "deserted village",
+    "use": "iframe"
+  },
+  {
+    "id": 320,
+    "name": "Truck Transport Simulator",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/truck-transport-simulator/cover/truck-transport-simulator.png?w=320",
+    "url": "https://play.gamepix.com/truck-transport-simulator/embed?sid=1",
+    "description": "Navigate treacherous terrains in Truck Transport Simulator",
+    "instructions": "a thrilling driving adventure. Master fully-loaded cargo missions across diverse landscapes. Carefully control your truck to keep your goods secure",
+    "use": "iframe"
+  },
+  {
+    "id": 321,
+    "name": "Baby Animals Memory Match",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/baby-animals-memory-match/cover/baby-animals-memory-match.png?w=320",
+    "url": "https://play.gamepix.com/baby-animals-memory-match/embed?sid=1",
+    "description": "Test your memory with Baby Animals Memory Match! Flip cards in a race against time to find adorable pairs. With each matched pair",
+    "instructions": "earn points and build your score. As the timer ticks down faster",
+    "use": "iframe"
+  },
+  {
+    "id": 322,
+    "name": "Monster Tamer RPG Adventure & Battle",
+    "category": "rpg",
+    "thumbnail": "https://img.gamepix.com/games/monster-tamer-rpg-adventure-battle/cover/monster-tamer-rpg-adventure-battle.png?w=320",
+    "url": "https://play.gamepix.com/monster-tamer-rpg-adventure-battle/embed?sid=1",
+    "description": "Dive into a vibrant world where you capture diverse creatures and engage in thrilling turn-based battles. Navigate smoothly through lush landscapes",
+    "instructions": "interact dynamically with NPCs",
+    "use": "iframe"
+  },
+  {
+    "id": 323,
+    "name": "Case Opener - Case Clicker Simulator",
+    "category": "clicker",
+    "thumbnail": "https://img.gamepix.com/games/case-opener-case-clicking-simulator/cover/case-opener-case-clicking-simulator.png?w=320",
+    "url": "https://play.gamepix.com/case-opener-case-clicking-simulator/embed?sid=1",
+    "description": "Embark on a skin-hunting adventure in Case Opener! Each click reveals dazzling Counter-Strike 2 skins to expand your collection or sell for profit. Upgrade your luck and speed for even bigger rewards. With vibrant visuals and daily bonuses",
+    "instructions": "this single-player journey promises endless",
+    "use": "iframe"
+  },
+  {
+    "id": 324,
+    "name": "3D Super Rolling Ball Race",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/3d-super-rolling-ball-race/cover/3d-super-rolling-ball-race.png?w=320",
+    "url": "https://play.gamepix.com/3d-super-rolling-ball-race/embed?sid=1",
+    "description": "Embark on an exhilarating 3D adventure where precision and speed are key. Navigate challenging platforms and avoid plunging into the abyss. Harness your racing spirit",
+    "instructions": "master precise controls",
+    "use": "iframe"
+  },
+  {
+    "id": 325,
+    "name": "Kawaii Anime Memory Match",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/kawaii-anime-memory-match/cover/kawaii-anime-memory-match.png?w=320",
+    "url": "https://play.gamepix.com/kawaii-anime-memory-match/embed?sid=1",
+    "description": "Test your memory skills with Kawaii Anime Memory Match! Flip cards to reveal charming anime images",
+    "instructions": "pair them up before time runs out",
+    "use": "iframe"
+  },
+  {
+    "id": 326,
+    "name": "Alphabet War",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/alphabet-war/cover/alphabet-war.png?w=320",
+    "url": "https://play.gamepix.com/alphabet-war/embed?sid=1",
+    "description": "Enter a whimsical classroom where alphabet monsters reign! Strategically control your letter heroes in thrilling battles through over 100 engaging levels. With smooth mechanics and vibrant graphics",
+    "instructions": "face fearsome enemies and conquer challenges. A delightful adventure accessible for all ages",
+    "use": "iframe"
+  },
+  {
+    "id": 327,
+    "name": "Math Mastermind",
+    "category": "math",
+    "thumbnail": "https://img.gamepix.com/games/math-mastermind-brain-workout-challenge/cover/math-mastermind-brain-workout-challenge.png?w=320",
+    "url": "https://play.gamepix.com/math-mastermind-brain-workout-challenge/embed?sid=1",
+    "description": "Dive into Math Mastermind and tackle brain-teasing puzzles that challenge your calculation speed. Solve progressively harder equations under pressure",
+    "instructions": "earning bonus points for swift success. With a sleek design and hint system",
+    "use": "iframe"
+  },
+  {
+    "id": 328,
+    "name": "Tricky Math Quest",
+    "category": "math",
+    "thumbnail": "https://img.gamepix.com/games/tricky-math-quest/cover/tricky-math-quest.png?w=320",
+    "url": "https://play.gamepix.com/tricky-math-quest/embed?sid=1",
+    "description": "Dive into a colorful journey of 60 mind-bending levels that challenge your logic and observation through clever math puzzles and deceptive visual riddles. Perfect for all ages",
+    "instructions": "unleash your creativity while unraveling tricky patterns and hidden clues in this engaging mental workout. Stay sharp",
+    "use": "iframe"
+  },
+  {
+    "id": 329,
+    "name": "La Casa de Tung Tung Sahur",
+    "category": "two-player",
+    "thumbnail": "https://img.gamepix.com/games/la-casa-de-tung-tung-sahur/cover/la-casa-de-tung-tung-sahur.png?w=320",
+    "url": "https://play.gamepix.com/la-casa-de-tung-tung-sahur/embed?sid=1",
+    "description": "Join the Tung Tung Sahur Brothers on a thrilling bank heist adventure! Navigate through challenging mazes",
+    "instructions": "collect coins and seek elusive keys to unlock the massive vault. Team up with a friend in this exciting",
+    "use": "iframe"
+  },
+  {
+    "id": 330,
+    "name": "Solitaire World Tour",
+    "category": "solitaire",
+    "thumbnail": "https://img.gamepix.com/games/solitaire-world-tour/cover/solitaire-world-tour.png?w=320",
+    "url": "https://play.gamepix.com/solitaire-world-tour/embed?sid=1",
+    "description": "Embark on a captivating card-flipping journey with Solitaire World Tour. Conquer 100 handcrafted levels",
+    "instructions": "unlock strategic combos",
+    "use": "iframe"
+  },
+  {
+    "id": 331,
+    "name": "GridMaster",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/gridmaster/cover/gridmaster.png?w=320",
+    "url": "https://play.gamepix.com/gridmaster/embed?sid=1",
+    "description": "GridMaster offers a soothing yet demanding puzzle experience. Strategically place shapes on a 9x9 grid to clear lines and squares",
+    "instructions": "channeling the spirit of Sudoku. With intuitive controls and a minimalist design",
+    "use": "iframe"
+  },
+  {
+    "id": 332,
+    "name": "Home Makeover Fix ASMR Clean",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/home-makover-fix-asmr-clean/cover/home-makover-fix-asmr-clean.png?w=320",
+    "url": "https://play.gamepix.com/home-makover-fix-asmr-clean/embed?sid=1",
+    "description": "Immerse yourself in the tranquil world of home makeovers. Experience the soothing sounds of cleaning and restoration",
+    "instructions": "transforming everyday tasks into a relaxing journey. Enjoy the peaceful ambience as spaces evolve",
+    "use": "iframe"
+  },
+  {
+    "id": 333,
+    "name": "Realistic Dragon Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/realistic-dragon-jigsaw-puzzle/cover/realistic-dragon-jigsaw-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/realistic-dragon-jigsaw-puzzle/embed?sid=1",
+    "description": "Dive into the captivating world of Realistic Dragon Jigsaw Puzzle",
+    "instructions": "where each piece unveils stunning artistry. Challenge your mind as you drag and drop pieces to complete intricate images. With hundreds of puzzles and varying difficulty",
+    "use": "iframe"
+  },
+  {
+    "id": 334,
+    "name": "Fruit Clash",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/fruit-clash/cover/fruit-clash.png?w=320",
+    "url": "https://play.gamepix.com/fruit-clash/embed?sid=1",
+    "description": "Enter the vibrant world of Fruit Clash",
+    "instructions": "where merging fruits leads to endless surprises! Transform humble fruits into legendary superfruits while exploring colorful stages brimming with juicy challenges. Evolving fruits unlock boosts and special rewards",
+    "use": "iframe"
+  },
+  {
+    "id": 335,
+    "name": "Golf Mini",
+    "category": "golf",
+    "thumbnail": "https://img.gamepix.com/games/golf-mini/cover/golf-mini.png?w=320",
+    "url": "https://play.gamepix.com/golf-mini/embed?sid=1",
+    "description": "Tee off into fun with Golf Mini! Navigate inventive courses loaded with obstacles and cunning traps. Master your aim to sink shots with precision",
+    "instructions": "all while tackling escalating difficulties in Challenge mode. It\"\"s a delightful blend of strategy and skill",
+    "use": "iframe"
+  },
+  {
+    "id": 336,
+    "name": "Food Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/food-coloring-book-for-kids/cover/food-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/food-coloring-book-for-kids/embed?sid=1",
+    "description": "Unleash creativity with Food Coloring Book for Kids! Dive into a vibrant world where young artists can fill whimsical food-themed pages with dazzling colors",
+    "instructions": "fostering fine motor skills and focus. This joyful and stress-free coloring adventure inspires imagination",
+    "use": "iframe"
+  },
+  {
+    "id": 337,
+    "name": "Golf Puzzle",
+    "category": "golf",
+    "thumbnail": "https://img.gamepix.com/games/golf-puzzle/cover/golf-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/golf-puzzle/embed?sid=1",
+    "description": "Master the art of angles in Golf Puzzle",
+    "instructions": "a captivating physics-based challenge. Strategically adjust platforms to guide the ball into the hole. With each of the 25 mind-bending levels",
+    "use": "iframe"
+  },
+  {
+    "id": 338,
+    "name": "Captain Quashard Strike FPS",
+    "category": "first-person-shooter",
+    "thumbnail": "https://img.gamepix.com/games/captain-quashard-strike-fps/cover/captain-quashard-strike-fps.png?w=320",
+    "url": "https://play.gamepix.com/captain-quashard-strike-fps/embed?sid=1",
+    "description": "Dive into a dystopian future with Captain Quashard",
+    "instructions": "a cybernetically enhanced soldier. Engage in intense first-person combat against rogue AIs and corrupt powers",
+    "use": "iframe"
+  },
+  {
+    "id": 339,
+    "name": "Idle Pocket Farm Boss",
+    "category": "farming",
+    "thumbnail": "https://img.gamepix.com/games/idle-pocket-farm-boss/cover/idle-pocket-farm-boss.png?w=320",
+    "url": "https://play.gamepix.com/idle-pocket-farm-boss/embed?sid=1",
+    "description": "Cultivate your dream farm in Idle Pocket Farm Boss! Purchase plots",
+    "instructions": "plant seeds",
+    "use": "iframe"
+  },
+  {
+    "id": 340,
+    "name": "Idle Merge Car and Race",
+    "category": "idle",
+    "thumbnail": "https://img.gamepix.com/games/idle-merge-car-and-race/cover/idle-merge-car-and-race.png?w=320",
+    "url": "https://play.gamepix.com/idle-merge-car-and-race/embed?sid=1",
+    "description": "Merge and race your way to success! Create a car racing empire by combining vehicles",
+    "instructions": "unlocking upgrades",
+    "use": "iframe"
+  },
+  {
+    "id": 341,
+    "name": "Airport Simulator: Plane Tycoon",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/airport-simulator-plane-tycoon/cover/airport-simulator-plane-tycoon.png?w=320",
+    "url": "https://play.gamepix.com/airport-simulator-plane-tycoon/embed?sid=1",
+    "description": "Take control of the skies in Airport Simulator Plane Tycoon! Design and manage a bustling airport from the ground up. Strategically plan runways",
+    "instructions": "juggle flight schedules",
+    "use": "iframe"
+  },
+  {
+    "id": 342,
+    "name": "Cute Bubble Tea Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/cute-bubble-tea-jigsaw-puzzles/cover/cute-bubble-tea-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/cute-bubble-tea-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in Cute Bubble Tea Jigsaw Puzzles",
+    "instructions": "where you\"\"ll strategically piece together charming images. With intuitive controls and progressively challenging puzzles",
+    "use": "iframe"
+  },
+  {
+    "id": 343,
+    "name": "Kawaii Unicorn Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/kawaii-unicorn-jigsaw-puzzles/cover/kawaii-unicorn-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/kawaii-unicorn-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in the enchanting realm of Kawaii Unicorn Jigsaw Puzzles! Rearrange vibrant tiles and tackle gradually tougher challenges. With intuitive controls and engaging gameplay",
+    "instructions": "perfect your skills while enjoying moments of blissful puzzle-solving",
+    "use": "iframe"
+  },
+  {
+    "id": 344,
+    "name": "Anime Ghoul Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/anime-ghoul-jigsaw-puzzles/cover/anime-ghoul-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/anime-ghoul-jigsaw-puzzles/embed?sid=1",
+    "description": "Dive into the vibrant realm of Anime Ghoul Jigsaw Puzzles",
+    "instructions": "where your mind meets an artistic challenge. Navigate through various difficulty levels and vibrant images by seamlessly aligning tiles. Whether you seek relaxation or mental agility",
+    "use": "iframe"
+  },
+  {
+    "id": 345,
+    "name": "Treasure Dash Jungle Adventure",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/treasure-dash-jungle-adventure-collecting-coins/cover/treasure-dash-jungle-adventure-collecting-coins.png?w=320",
+    "url": "https://play.gamepix.com/treasure-dash-jungle-adventure-collecting-coins/embed?sid=1",
+    "description": "Dive into a vibrant jungle adventure",
+    "instructions": "sprinting through ancient ruins and dodging perilous traps. With stunning sunset vistas",
+    "use": "iframe"
+  },
+  {
+    "id": 346,
+    "name": "Bombardino Crocodilo: Terror Jumpscare",
+    "category": "horror",
+    "thumbnail": "https://img.gamepix.com/games/bombardino-crocodilo-terror-jumpscare/cover/bombardino-crocodilo-terror-jumpscare.png?w=320",
+    "url": "https://play.gamepix.com/bombardino-crocodilo-terror-jumpscare/embed?sid=1",
+    "description": "Navigate through a cursed mansion in Bombardino Crocodilo: Terror Jumpscare",
+    "instructions": "where eerie dolls and intense chases await. Outsmart a cunning crocodile-monster and avoid the chilling presence of Tung Tung Sahur. With tension rising and scares lurking",
+    "use": "iframe"
+  },
+  {
+    "id": 347,
+    "name": "Lily Adventure",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/lily-adventure/cover/lily-adventure.png?w=320",
+    "url": "https://play.gamepix.com/lily-adventure/embed?sid=1",
+    "description": "Navigate through an enchanting world in Lily Adventure",
+    "instructions": "collecting magical crystals and outsmarting devious traps. Swift reflexes are key as danger lurks in every corner—an enemy encounter spells instant defeat. Enjoy this thrilling platformer on mobile and computer",
+    "use": "iframe"
+  },
+  {
+    "id": 348,
+    "name": "Bubble Pop Balloons",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/bubble-pop-balloons/cover/bubble-pop-balloons.png?w=320",
+    "url": "https://play.gamepix.com/bubble-pop-balloons/embed?sid=1",
+    "description": "Dive into the delightful world of Bubble Pop Balloons",
+    "instructions": "where a single tap unleashes vibrant cascades. Effortlessly chain colorful bubbles for maximum points and endless fun. With soothing sounds and smooth animations",
+    "use": "iframe"
+  },
+  {
+    "id": 349,
+    "name": "Gorilla Coloring Book for Kids",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/gorilla-coloring-book-for-kids/cover/gorilla-coloring-book-for-kids.png?w=320",
+    "url": "https://play.gamepix.com/gorilla-coloring-book-for-kids/embed?sid=1",
+    "description": "Unleash your creativity and dive into a world of vibrant gorilla art! This engaging game offers a delightful assortment of images and tools",
+    "instructions": "perfectly crafted for all ages. Let your imagination soar as you color stunning masterpieces",
+    "use": "iframe"
+  },
+  {
+    "id": 350,
+    "name": "Barbee Met Gala Transformation",
+    "category": "barbie",
+    "thumbnail": "https://img.gamepix.com/games/barbee-met-gala-transformation/cover/barbee-met-gala-transformation.png?w=320",
+    "url": "https://play.gamepix.com/barbee-met-gala-transformation/embed?sid=1",
+    "description": "Step into the glamour of the Met Gala and unleash your creativity as you style Barbie and her friends. Choose from dazzling gowns",
+    "instructions": "bold makeup",
+    "use": "iframe"
+  },
+  {
+    "id": 351,
+    "name": "Spooky Kawaii Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/spooky-kawaii-jigsaw-puzzles/cover/spooky-kawaii-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/spooky-kawaii-jigsaw-puzzles/embed?sid=1",
+    "description": "Dive into Spooky Kawaii Jigsaw Puzzles",
+    "instructions": "where vibrant art meets a hauntingly delightful twist. Piece together captivating images by dragging and dropping tiles to perfection. With varying challenge levels",
+    "use": "iframe"
+  },
+  {
+    "id": 352,
+    "name": "Zombie Tung Tung Sahur Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/zombie-tung-tung-sahur-jigsaw-puzzle/cover/zombie-tung-tung-sahur-jigsaw-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/zombie-tung-tung-sahur-jigsaw-puzzle/embed?sid=1",
+    "description": "Dive into the quirky chaos of Zombie Tung Tung Sahur Jigsaw Puzzle",
+    "instructions": "where late-night laughter meets undead whimsy. Unravel vibrant",
+    "use": "iframe"
+  },
+  {
+    "id": 353,
+    "name": "Scary Ninja Tung Tung Sahur Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/scary-ninja-tung-tung-sahur-jigsaw-puzzle/cover/scary-ninja-tung-tung-sahur-jigsaw-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/scary-ninja-tung-tung-sahur-jigsaw-puzzle/embed?sid=1",
+    "description": "Piece together stunning images in Scary Ninja Tung Tung Sahur Jigsaw Puzzle. This captivating game challenges your mind while offering relaxing and satisfying gameplay. With multiple difficulty levels",
+    "instructions": "it’s ideal for honing concentration and problem-solving skills",
+    "use": "iframe"
+  },
+  {
+    "id": 354,
+    "name": "Mine",
+    "category": "arcade",
+    "thumbnail": "https://img.gamepix.com/games/mine/cover/mine.png?w=320",
+    "url": "https://play.gamepix.com/mine/embed?sid=1",
+    "description": "Test your luck in Mine",
+    "instructions": "a thrilling game of chance where each level brings increased risk. Carefully navigate through 10 explosive stages",
+    "use": "iframe"
+  },
+  {
+    "id": 355,
+    "name": "Chinese Dragon Coloring Book",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/chinese-dragon-coloring-book/cover/chinese-dragon-coloring-book.png?w=320",
+    "url": "https://play.gamepix.com/chinese-dragon-coloring-book/embed?sid=1",
+    "description": "Immerse yourself in a creative journey with our Chinese Dragon Coloring Book. Choose from diverse mythical designs and express your artistry using intuitive coloring tools and effects. Perfect for all ages",
+    "instructions": "it offers a relaxing",
+    "use": "iframe"
+  },
+  {
+    "id": 356,
+    "name": "Baby Tiger Coloring Book",
+    "category": "coloring",
+    "thumbnail": "https://img.gamepix.com/games/baby-tiger-coloring-book/cover/baby-tiger-coloring-book.png?w=320",
+    "url": "https://play.gamepix.com/baby-tiger-coloring-book/embed?sid=1",
+    "description": "Unleash your creativity with Baby Tiger Coloring Book! Dive into a world of adorable tiger illustrations and vibrant palettes. Perfect for all ages",
+    "instructions": "the intuitive tools and soothing atmosphere offer a relaxing escape",
+    "use": "iframe"
+  },
+  {
+    "id": 357,
+    "name": "Ultimate R1",
+    "category": "racing",
+    "thumbnail": "https://img.gamepix.com/games/ultimate-r1/cover/ultimate-r1.png?w=320",
+    "url": "https://play.gamepix.com/ultimate-r1/embed?sid=1",
+    "description": "Race around the globe in Ultimate R1",
+    "instructions": "mastering thrilling tracks and challenging top-notch drivers. Harness incredible speed and precision as you upgrade and customize your car. With demanding courses and exciting arcade physics",
+    "use": "iframe"
+  },
+  {
+    "id": 358,
+    "name": "3D Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/3d-jigsaw-puzzle/cover/3d-jigsaw-puzzle.png?w=320",
+    "url": "https://play.gamepix.com/3d-jigsaw-puzzle/embed?sid=1",
+    "description": "Immerse yourself in the timeless challenge of assembling intricate jigsaw puzzles with a modern twist. Experience captivating",
+    "instructions": "lifelike 3D graphics that bring each piece to life",
+    "use": "iframe"
+  },
+  {
+    "id": 359,
+    "name": "Archery Practice",
+    "category": "archery",
+    "thumbnail": "https://img.gamepix.com/games/archery-practice/cover/archery-practice.png?w=320",
+    "url": "https://play.gamepix.com/archery-practice/embed?sid=1",
+    "description": "Master the art of precision in Archery Practice! Drag and release your arrow",
+    "instructions": "aiming to hit the bullseye and rack up points. Miss three times",
+    "use": "iframe"
+  },
+  {
+    "id": 360,
+    "name": "Gorilla Sliding Puzzles",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/gorilla-sliding-puzzles/cover/gorilla-sliding-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/gorilla-sliding-puzzles/embed?sid=1",
+    "description": "Tackle brain-bending puzzles in Gorilla Sliding Puzzles! Shift tiles strategically to reassemble stunning images. As challenges escalate",
+    "instructions": "your problem-solving prowess will be your greatest ally. Perfect for casual players and puzzle enthusiasts alike",
+    "use": "iframe"
+  },
+  {
+    "id": 361,
+    "name": "Hair Salon and Dress Up Girl",
+    "category": "educational",
+    "thumbnail": "https://img.gamepix.com/games/hair-salon-and-dress-up-girl/cover/hair-salon-and-dress-up-girl.png?w=320",
+    "url": "https://play.gamepix.com/hair-salon-and-dress-up-girl/embed?sid=1",
+    "description": "Unleash your inner stylist in Hair Salon And Dress Up Girl. Transform models with your unique hairstyles",
+    "instructions": "vibrant dyes",
+    "use": "iframe"
+  },
+  {
+    "id": 362,
+    "name": "Build a Queen 2025",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/build-a-queen-2025/cover/build-a-queen-2025.png?w=320",
+    "url": "https://play.gamepix.com/build-a-queen-2025/embed?sid=1",
+    "description": "Embark on a regal adventure in Build A Queen 2025! Navigate vibrant platform levels",
+    "instructions": "choose dazzling outfits",
+    "use": "iframe"
+  },
+  {
+    "id": 363,
+    "name": "Jumpers",
+    "category": "runner",
+    "thumbnail": "https://img.gamepix.com/games/jumpers/cover/jumpers.png?w=320",
+    "url": "https://play.gamepix.com/jumpers/embed?sid=1",
+    "description": "Leap into an endless world of excitement with Jumpers! Navigate an isometric landscape",
+    "instructions": "unlocking unique characters as you achieve new heights. Tap or click to vault over obstacles in a quest for the highest score",
+    "use": "iframe"
+  },
+  {
+    "id": 364,
+    "name": "Knock Knock Memory Recall",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/knock-knock-memory-recall/cover/knock-knock-memory-recall.png?w=320",
+    "url": "https://play.gamepix.com/knock-knock-memory-recall/embed?sid=1",
+    "description": "Knock Knock Memory Recall invites you to test your memory skills with a delightful twist. Briefly glimpse animals behind doors",
+    "instructions": "remember their positions",
+    "use": "iframe"
+  },
+  {
+    "id": 365,
+    "name": "Twisted Blocks",
+    "category": "block",
+    "thumbnail": "https://img.gamepix.com/games/twisted-blocks/cover/twisted-blocks.png?w=320",
+    "url": "https://play.gamepix.com/twisted-blocks/embed?sid=1",
+    "description": "Navigate vibrant blocks through intricate mazes",
+    "instructions": "aligning them with matching exits in Twisted Blocks. Combine strategic thinking with clever moves to overcome evolving obstacles. Sharpen your logic skills with each puzzle",
+    "use": "iframe"
+  },
+  {
+    "id": 366,
+    "name": "Ninja Gorilla Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/ninja-gorilla-jigsaw-puzzles/cover/ninja-gorilla-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/ninja-gorilla-jigsaw-puzzles/embed?sid=1",
+    "description": "Dive into the captivating world of Ninja Gorilla Jigsaw Puzzles",
+    "instructions": "where each piece fits with a satisfying drag and drop. Enjoy countless hours of puzzling fun with stunning images ranging from tranquil landscapes to vivid art",
+    "use": "iframe"
+  },
+  {
+    "id": 367,
+    "name": "Mafia GTA Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/mafia-gta-jigsaw-puzzles/cover/mafia-gta-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/mafia-gta-jigsaw-puzzles/embed?sid=1",
+    "description": "Reconstruct engaging images in Mafia GTA Jigsaw Puzzles by strategically arranging tiles with ease. Enjoy progressively challenging levels that sharpen your focus and maintain your interest",
+    "instructions": "perfect for any time you have available. Dive into this captivating puzzle world for satisfying",
+    "use": "iframe"
+  },
+  {
+    "id": 368,
+    "name": "Vampire Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/scary-vampire-jigsaw-puzzles/cover/scary-vampire-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/scary-vampire-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in the chilling allure of Scary Vampire Jigsaw Puzzles! Piece together hauntingly beautiful images",
+    "instructions": "navigating varying difficulty levels. Feel the satisfaction of perfectly completing each eerie scene",
+    "use": "iframe"
+  },
+  {
+    "id": 369,
+    "name": "Werewolf Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/werewolf-jigsaw-puzzles/cover/werewolf-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/werewolf-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in addictive puzzle-solving with Werewolf Jigsaw Puzzles. Drag and drop tiles to form stunning images",
+    "instructions": "navigating serene landscapes and vibrant art. With varying difficulty levels",
+    "use": "iframe"
+  },
+  {
+    "id": 370,
+    "name": "LeapRush",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/leaprush/cover/leaprush.png?w=320",
+    "url": "https://play.gamepix.com/leaprush/embed?sid=1",
+    "description": "In LeapRush",
+    "instructions": "guide a playful pup across the sea by leaping between appearing platforms. Master the art of timing and precision in this escalating challenge",
+    "use": "iframe"
+  },
+  {
+    "id": 371,
+    "name": "The Little Runner",
+    "category": "platformer",
+    "thumbnail": "https://img.gamepix.com/games/the-little-runner/cover/the-little-runner.png?w=320",
+    "url": "https://play.gamepix.com/the-little-runner/embed?sid=1",
+    "description": "Embark on an endless run and master the art of the perfect jump in The Little Runner. Tap or hold to soar over obstacles in this minimalist challenge",
+    "instructions": "as you aim for your highest score. Easy to customize and accessible on any device",
+    "use": "iframe"
+  },
+  {
+    "id": 372,
+    "name": "Sorcerer Jigsaw Puzzles",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/sorcerer-jigsaw-puzzles/cover/sorcerer-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/sorcerer-jigsaw-puzzles/embed?sid=1",
+    "description": "Piece together enchanting images in Sorcerer Jigsaw Puzzles. Strategically move tiles to complete stunning visuals",
+    "instructions": "with challenges that grow alongside your skills. Easy-to-learn controls and progressively tougher levels ensure endless puzzling pleasure",
+    "use": "iframe"
+  },
+  {
+    "id": 373,
+    "name": "Shaman Memory Match",
+    "category": "memory",
+    "thumbnail": "https://img.gamepix.com/games/shaman-memory-match/cover/shaman-memory-match.png?w=320",
+    "url": "https://play.gamepix.com/shaman-memory-match/embed?sid=1",
+    "description": "Unleash your memory skills in Shaman\"\"s captivating card challenge. Flip and match image pairs against a ticking clock",
+    "instructions": "making each move increasingly thrilling. Strategize to maintain your streak and earn points",
+    "use": "iframe"
+  },
+  {
+    "id": 374,
+    "name": "Wizard Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/wizard-jigsaw-puzzles/cover/wizard-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/wizard-jigsaw-puzzles/embed?sid=1",
+    "description": "Immerse yourself in Wizard Jigsaw Puzzles",
+    "instructions": "where transforming scattered pieces into stunning images sharpens your mind. Tap and arrange tiles to gradually reveal captivating pictures",
+    "use": "iframe"
+  },
+  {
+    "id": 375,
+    "name": "Golem Jigsaw Puzzle",
+    "category": "jigsaw-puzzles",
+    "thumbnail": "https://img.gamepix.com/games/golem-jigsaw-puzzles/cover/golem-jigsaw-puzzles.png?w=320",
+    "url": "https://play.gamepix.com/golem-jigsaw-puzzles/embed?sid=1",
+    "description": "Dive into Golem Jigsaw Puzzles",
+    "instructions": "where your problem-solving skills are put to the test! Slide and swap tiles to form perfect images",
+    "use": "iframe"
+  },
+  {
+    "id": 376,
+    "name": "Ball Down Pro",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/ball-down-pro/cover/ball-down-pro.png?w=320",
+    "url": "https://play.gamepix.com/ball-down-pro/embed?sid=1",
+    "description": "Navigate a perilous descent in Ball Down Pro! Master your reflexes to keep the ball from plummeting while the challenge intensifies. With only three lives",
+    "instructions": "every move counts. Experience progressively harder gameplay and aim for high scores in this endless",
+    "use": "iframe"
+  },
+  {
+    "id": 377,
+    "name": "Fishing",
+    "category": "fishing",
+    "thumbnail": "https://img.gamepix.com/games/fishing/cover/fishing.png?w=320",
+    "url": "https://play.gamepix.com/fishing/embed?sid=1",
+    "description": "Dive into a thrilling race against time in this immersive fishing adventure. Perfect your aim to reel in the biggest fish and rack up high scores",
+    "instructions": "all within a frantic 60-second window. With responsive controls and a progressively challenging level",
+    "use": "iframe"
+  },
+  {
+    "id": 378,
+    "name": "Save the Birds",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/save-the-birds/cover/save-the-birds.png?w=320",
+    "url": "https://play.gamepix.com/save-the-birds/embed?sid=1",
+    "description": "Dive into a whimsical challenge where you must protect birds by deftly avoiding ghosts with a simple tap to change direction. Navigate through an endless",
+    "instructions": "ever-intensifying level",
+    "use": "iframe"
+  },
+  {
+    "id": 379,
+    "name": "Tung Sahur Horror Escape",
+    "category": "horror",
+    "thumbnail": "https://img.gamepix.com/games/tung-sahur-horror-escape/cover/tung-sahur-horror-escape.png?w=320",
+    "url": "https://play.gamepix.com/tung-sahur-horror-escape/embed?sid=1",
+    "description": "Dive into a nightmarish labyrinth in Tung Sahur Horror Escape. Outsmart the eerie Tung Sahur as you navigate sinister corridors",
+    "instructions": "solve chilling puzzles",
+    "use": "iframe"
+  },
+  {
+    "id": 380,
+    "name": "Squid Game 3 Playground",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/squid-game-3-playground/cover/squid-game-3-playground.png?w=320",
+    "url": "https://play.gamepix.com/squid-game-3-playground/embed?sid=1",
+    "description": "Engage in a strategic showdown in Squid Game 3 Playground. Assemble elite fighters",
+    "instructions": "arm them for battle",
+    "use": "iframe"
+  },
+  {
+    "id": 381,
+    "name": "Chicken Jockey: Minecraft Glass Bridge",
+    "category": "action",
+    "thumbnail": "https://img.gamepix.com/games/chicken-jockey-minecraft-glass-bridge/cover/chicken-jockey-minecraft-glass-bridge.png?w=320",
+    "url": "https://play.gamepix.com/chicken-jockey-minecraft-glass-bridge/embed?sid=1",
+    "description": "Ride chaos on terrified chickens in Chicken Jockey: Minecraft Glass Bridge! Test your nerves as you navigate a glass bridge",
+    "instructions": "identifying safe paths and avoiding deadly drops. With each step a gamble",
+    "use": "iframe"
+  },
+  {
+    "id": 382,
+    "name": "Sprunki Find Tung Tung Tung Sahur",
+    "category": "puzzle",
+    "thumbnail": "https://img.gamepix.com/games/sprunki-find-tung-tung-tung-sahur/cover/sprunki-find-tung-tung-tung-sahur.png?w=320",
+    "url": "https://play.gamepix.com/sprunki-find-tung-tung-tung-sahur/embed?sid=1",
+    "description": "Embark on a whimsical journey to find the elusive Tung Tung Tung Sahur! Dive into vibrant",
+    "instructions": "chaotic scenes blending Sprunki and Minecraft charm. Sharpen your observation skills to uncover hidden figures before time ticks away in this thrilling",
+    "use": "iframe"
+  },
+  {
+    "id": 383,
+    "name": "Slash",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/slash/cover/slash.png?w=320",
+    "url": "https://play.gamepix.com/slash/embed?sid=1",
+    "description": "Dive into the endless challenge of Slash",
+    "instructions": "where swift reflexes are key! Maneuver your knife with precision to slice only the yellow blocks. With just three chances",
+    "use": "iframe"
+  },
+  {
+    "id": 384,
+    "name": "Cups Tower Builder",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/cups-tower-builder/cover/cups-tower-builder.png?w=320",
+    "url": "https://play.gamepix.com/cups-tower-builder/embed?sid=1",
+    "description": "Test your precision and strategy as you stack cups sky-high in this addictive tower-building challenge. Tap to drop each cup",
+    "instructions": "aiming for stability while climbing to new heights. With its minimalist design and increasing difficulty",
+    "use": "iframe"
+  },
+  {
+    "id": 385,
+    "name": "Tung Tung Sahur Zombie",
+    "category": "zombie",
+    "thumbnail": "https://img.gamepix.com/games/tung-tung-sahur-zombie/cover/tung-tung-sahur-zombie.png?w=320",
+    "url": "https://play.gamepix.com/tung-tung-sahur-zombie/embed?sid=1",
+    "description": "Immerse yourself in a zombie-ravaged world",
+    "instructions": "battling the undead and rival survivors. With realistic survival mechanics and a dynamic environment",
+    "use": "iframe"
+  },
+  {
+    "id": 386,
+    "name": "Ultrahero Vs Monsters Royale Battle",
+    "category": "fighting",
+    "thumbnail": "https://img.gamepix.com/games/ultrahero-vs-monsters-royale-battle/cover/ultrahero-vs-monsters-royale-battle.png?w=320",
+    "url": "https://play.gamepix.com/ultrahero-vs-monsters-royale-battle/embed?sid=1",
+    "description": "Dive into a thrilling clash as a daring Ultrahero fending off relentless monster waves. Strategically merge fast-paced combat with tactical tower defense to protect your base. Upgrade skills",
+    "instructions": "crush foes",
+    "use": "iframe"
+  },
+  {
+    "id": 387,
+    "name": "Twisty Roads",
+    "category": "car",
+    "thumbnail": "https://img.gamepix.com/games/twisty-roads/cover/twisty-roads.png?w=320",
+    "url": "https://play.gamepix.com/twisty-roads/embed?sid=1",
+    "description": "Dive into Twisty Roads for heart-pounding racing action! Navigate treacherous tracks",
+    "instructions": "gather coins",
+    "use": "iframe"
+  },
+  {
+    "id": 388,
+    "name": "Commando Arcade Shooter",
+    "category": "shooter",
+    "thumbnail": "https://img.gamepix.com/games/commando-arcade-shooter/cover/commando-arcade-shooter.png?w=320",
+    "url": "https://play.gamepix.com/commando-arcade-shooter/embed?sid=1",
+    "description": "Dive into relentless action as a fearless commando in this thrilling platform shooter. Battle through diverse locations",
+    "instructions": "tackle formidable bosses",
+    "use": "iframe"
+  },
+  {
+    "id": 389,
+    "name": "Chicken Jockey: Penguin Rescue",
+    "category": "adventure",
+    "thumbnail": "https://img.gamepix.com/games/chicken-jockey-penguin-rescue/cover/chicken-jockey-penguin-rescue.png?w=320",
+    "url": "https://play.gamepix.com/chicken-jockey-penguin-rescue/embed?sid=1",
+    "description": "Embark on a frosty quest as Chicken Jockey! Navigate treacherous terrains",
+    "instructions": "solve puzzling challenges",
+    "use": "iframe"
+  },
+  {
+    "id": 390,
+    "name": "Triple Match 3D",
+    "category": "match-3",
+    "thumbnail": "https://img.gamepix.com/games/triple-match-3d/cover/triple-match-3d.png?w=320",
+    "url": "https://play.gamepix.com/triple-match-3d/embed?sid=1",
+    "description": "Dive into Triple Match 3D",
+    "instructions": "where every level is a delightful challenge of matching vibrant objects. Enhance your focus and memory by uncovering three identical items from a dazzling assortment. With its stress-relieving puzzles and escalating difficulty",
+    "use": "iframe"
+  },
+  {
+    "id": 391,
+    "name": "AgeWars",
+    "category": "strategy",
+    "thumbnail": "https://img.gamepix.com/games/agewars/cover/agewars.png?w=320",
+    "url": "https://play.gamepix.com/agewars/embed?sid=1",
+    "description": "AgeWars plunges you into an epic strategic battle where cunning tactics and relentless evolution define victory. Forge your ultimate army with unique gear combinations",
+    "instructions": "adapt through diverse ages",
+    "use": "iframe"
+  },
+  {
+    "id": 392,
+    "name": "The Last of Survival",
+    "category": "shooter",
+    "thumbnail": "https://img.gamepix.com/games/the-last-of-survival/cover/the-last-of-survival.png?w=320",
+    "url": "https://play.gamepix.com/the-last-of-survival/embed?sid=1",
+    "description": "Enter a relentless battle for survival in a post-apocalyptic world teeming with zombies. Utilize strategic movements and precise aiming to fend off relentless undead hordes. Scavenge vital resources",
+    "instructions": "climb the leaderboard",
+    "use": "iframe"
+  },
+  {
+    "id": 393,
+    "name": "Huggy Wuggy Attack",
+    "category": "first-person-shooter",
+    "thumbnail": "https://img.gamepix.com/games/huggy-wuggy-attack/cover/huggy-wuggy-attack.png?w=320",
+    "url": "https://play.gamepix.com/huggy-wuggy-attack/embed?sid=1",
+    "description": "Dive into the thrilling chaos of Huggy Wuggy Attack! Battle waves of enemies using pistols and machine guns in immersive survival and escalating difficulty modes. Strategically shoot",
+    "instructions": "dodge",
+    "use": "iframe"
+  },
+  {
+    "id": 394,
+    "name": "Sky Balloon Brawl",
+    "category": "casual",
+    "thumbnail": "https://img.gamepix.com/games/sky-balloon-brawl/cover/sky-balloon-brawl.png?w=320",
+    "url": "https://play.gamepix.com/sky-balloon-brawl/embed?sid=1",
+    "description": "Take to the skies in Sky Balloon Brawl",
+    "instructions": "an addictive arcade throwback where you dodge crafty mice while bursting their balloons. With pixelated charm and a thrilling soundtrack",
+    "use": "iframe"
+  },
+  {
+    "id": 395,
+    "name": "Cannon Ball Strike",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/cannon-ball-strike/cover/cannon-ball-strike.png?w=320",
+    "url": "https://play.gamepix.com/cannon-ball-strike/embed?sid=1",
+    "description": "In Cannon Ball Strike",
+    "instructions": "precision and timing reign supreme. Skillfully aim and launch colored balls from your cannon into moving buckets below. With limited ammo and the pressure of color-coded targets",
+    "use": "iframe"
+  },
+  {
+    "id": 396,
+    "name": "Smiles Connect Puzzle Fun",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/smiles-connect-puzzle-fun/cover/smiles-connect-puzzle-fun.png?w=320",
+    "url": "https://play.gamepix.com/smiles-connect-puzzle-fun/embed?sid=1",
+    "description": "Dive into a vibrant world of smiles as you race against the clock! Tap quickly to remove joyful faces",
+    "instructions": "sparing only the elusive red one. Simple yet addictive",
+    "use": "iframe"
+  },
+  {
+    "id": 397,
+    "name": "Model Dress Up Makeover Games",
+    "category": "dress-up",
+    "thumbnail": "https://img.gamepix.com/games/model-dress-up-makeover-games/cover/model-dress-up-makeover-games.png?w=320",
+    "url": "https://play.gamepix.com/model-dress-up-makeover-games/embed?sid=1",
+    "description": "Enter a glamorous world of fashion as you transform supermodels with stunning makeovers. Experiment with trendy hairstyles",
+    "instructions": "dazzling accessories",
+    "use": "iframe"
+  },
+  {
+    "id": 398,
+    "name": "Snake Eats Apples",
+    "category": "snake",
+    "thumbnail": "https://img.gamepix.com/games/snake-eats-apples/cover/snake-eats-apples.png?w=320",
+    "url": "https://play.gamepix.com/snake-eats-apples/embed?sid=1",
+    "description": "Guide a hungry snake through an endless challenge",
+    "instructions": "collecting apples as you navigate with intuitive touch or keyboard controls. Each apple boosts your score",
+    "use": "iframe"
+  },
+  {
+    "id": 399,
+    "name": "Monkey Drums",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/monkey-drums/cover/monkey-drums.png?w=320",
+    "url": "https://play.gamepix.com/monkey-drums/embed?sid=1",
+    "description": "Get ready for endless rhythmic fun in Monkey Drums",
+    "instructions": "where quick reflexes keep bouncing balls in motion! Tap or use arrow keys to juggle the challenge as you strive for higher scores in an ever-escalating test of skill. Perfect for all screens",
+    "use": "iframe"
+  },
+  {
+    "id": 400,
+    "name": "Slide the Box",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/slide-the-box/cover/slide-the-box.png?w=320",
+    "url": "https://play.gamepix.com/slide-the-box/embed?sid=1",
+    "description": "Unleash your reflexes in Slide the Box! Tap the screen to slide boxes in their indicated directions",
+    "instructions": "racing to achieve the ultimate high score. With smooth controls and slick design",
+    "use": "iframe"
+  },
+  {
+    "id": 401,
+    "name": "Red Arrows",
+    "category": "hyper-casual",
+    "thumbnail": "https://img.gamepix.com/games/red-arrows/cover/red-arrows.png?w=320",
+    "url": "https://play.gamepix.com/red-arrows/embed?sid=1",
+    "description": "Dive into the fast-paced action of Red Arrows! Tap swiftly to catch escaping arrows in this endless challenge that grows tougher with each click. Enjoy smooth gameplay",
+    "instructions": "a responsive design",
+    "use": "iframe"
+  },
+  {
+    "id": 402,
+    "name": "Italian Brainrot Call",
+    "category": "simulation",
+    "thumbnail": "https://img.gamepix.com/games/italian-brainrot-call/cover/italian-brainrot-call.png?w=320",
+    "url": "https://play.gamepix.com/italian-brainrot-call/embed?sid=1",
+    "description": "Dive into Italian Brainrot Call",
+    "instructions": "a whirlwind simulation where each chaotic video call fuses absurdity with outrageous antics. Survive the unpredictable barrage of wild characters and revel in the hilariously nonsensical interactions. Can you hang up before total brainrot consumes you",
+    "use": "iframe"
   }
 ]
